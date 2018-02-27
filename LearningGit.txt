@@ -175,3 +175,14 @@ How to import project in eclipse that is newly created repository, make reposito
 (d) to get updated use Team >> Push from Upstream
 
 5. its done now....
+
+
+*******************************************************************************************************************
+**************************************************** Question 4 **************************************************
+*******************************************************************************************************************
+The above "Question 3" can be also done in below 4 steps .... 
+
+1. create repository in githug browser name "SpringBootMavenSpringMvc"
+2. go to local work space and open 'git bash here'... clone the repository "SpringBootMavenSpringMvc" here, a repository folder gets copied here with same name as "SpringBootMavenSpringMvc"...
+3. create project with same name as "SpringBootMavenSpringMvc"
+4. From eclipse itself execute command as a) add to index, b) commit c) push to upstream ... all contents gets committed in your master repository

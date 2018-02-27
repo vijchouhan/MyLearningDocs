@@ -194,3 +194,9 @@ https://www.tutorialspoint.com/svn/index.htm
 Restful webservice:- 
 
 https://en.wikipedia.org/wiki/Java_API_for_RESTful_Web_Services
+
+---------------------------------------------------------------
+Spring Boot, Maven, Spring Mvc project
+
+https://www.boraji.com/spring-boot-creating-web-application-using-spring-mvc
+https://www.boraji.com/how-to-create-a-maven-project-in-eclipse

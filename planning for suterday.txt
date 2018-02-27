@@ -1,0 +1,67 @@
+Spring:- 
+	Spring Boot
+	Spring MVC
+	Spring Core
+	Spring JDBC
+	Spring AOP
+	Spring Batch
+	Spring Integration
+
+Hibernate:- 
+
+WebService:- 
+	Soap
+	Restful
+
+Core Java:- 
+	Basics Concepts
+	Feature 5, 6,7, 8
+	Concurrency
+	Lambda
+	Collection
+	Thread
+	IO
+	Exception
+
+Design Principle and Patterns
+
+J2EE:-
+	JSP
+	Servlet
+	JDBC
+	
+Scripting Language:-
+	Java Script
+	Angular Js
+	Ajax, JSON
+
+Database:- 
+
+Unit Testing:- 
+	JUnit
+
+Build:- 
+	Maven
+	
+Subversion:-
+	SVN
+	GIT
+
+Server:- 
+	Tomcat
+	WebLogic
+
+Project Archetecture
+	Microservice
+	
+Cloud Basics:-
+
+AWS Basics:- 
+
+Project Model:- 
+	Agile
+	
+Others:- 
+	Jenkins
+	Jeera
+	

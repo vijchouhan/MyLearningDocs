@@ -210,3 +210,8 @@ https://stackoverflow.com/questions/30019585/log4j2-why-would-you-use-it-over-lo
 Spring Boot: ApplicationRunner and CommandLineRunner
 
 https://dzone.com/articles/spring-boot-applicationrunner-and-commandlinerunne
+
+--------------------------------------------------------------
+Using the H2 Database Console in Spring Boot with Spring Security
+
+https://dzone.com/articles/using-the-h2-database-console-in-spring-boot-with

@@ -204,8 +204,9 @@ https://howtodoinjava.com/spring5/webmvc/controller-getmapping-postmapping/
 ---------------------------------------------------------------
 
 log 4j.... update
-
+https://www.boraji.com/spring-boot-log4j-2-configuration-example
 https://stackoverflow.com/questions/30019585/log4j2-why-would-you-use-it-over-log4j
+
 ---------------------------------------------------------------
 Spring Boot: ApplicationRunner and CommandLineRunner
 
@@ -215,3 +216,9 @@ https://dzone.com/articles/spring-boot-applicationrunner-and-commandlinerunne
 Using the H2 Database Console in Spring Boot with Spring Security
 
 https://dzone.com/articles/using-the-h2-database-console-in-spring-boot-with
+-------------------------------------------------------
+
+git add command for specific to add .java file
+
+https://stackoverflow.com/questions/10033925/git-add-java-doesnt-work
+

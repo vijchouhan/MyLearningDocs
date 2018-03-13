@@ -186,3 +186,217 @@ The above "Question 3" can be also done in below 4 steps ....
 2. go to local work space and open 'git bash here'... clone the repository "SpringBootMavenSpringMvc" here, a repository folder gets copied here with same name as "SpringBootMavenSpringMvc"...
 3. create project with same name as "SpringBootMavenSpringMvc"
 4. From eclipse itself execute command as a) add to index, b) commit c) push to upstream ... all contents gets committed in your master repository
+
+
+*******************************************************************************************************************
+**************************************************** Question 5 **************************************************
+*******************************************************************************************************************
+1. how to git add only java file from the root directory of the project, below is the command for the same
+
+git add \./\*.java
+
+----------------------- below is the logs--------------start-----
+username--- MINGW64 /d/MyApplication/WORKSPACE/SpringBootMavenSpringMvc (master)
+$ git status
+On branch master
+Your branch is up-to-date with 'origin/master'.
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+        modified:   pom.xml
+        modified:   src/main/java/com/springboot/MainApp.java
+        modified:   src/main/java/com/springboot/controller/HelloController.java
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+        src/main/resources/log4j2.xml
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+username--- MINGW64 /d/MyApplication/WORKSPACE/SpringBootMavenSpringMvc (master)
+$ git add \./\*.java
+
+username--- MINGW64 /d/MyApplication/WORKSPACE/SpringBootMavenSpringMvc (master)
+$ git status
+On branch master
+Your branch is up-to-date with 'origin/master'.
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+        modified:   src/main/java/com/springboot/MainApp.java
+        modified:   src/main/java/com/springboot/controller/HelloController.java
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+        modified:   pom.xml
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+        src/main/resources/log4j2.xml
+-------------------------------------------------end----------------------
+
+2. how to commit added above java files from the root directory of the project
+
+$ git commit -m "added only java changes"
+
+-----------------------------------------------log-----------------------------start
+username--- MINGW64 /d/MyApplication/WORKSPACE/SpringBootMavenSpringMvc (master)
+$ git commit -m "added only java changes"
+[master 7170b89] added only java changes
+ 2 files changed, 14 insertions(+), 3 deletions(-)
+
+username--- MINGW64 /d/MyApplication/WORKSPACE/SpringBootMavenSpringMvc (master)
+$ git status
+On branch master
+Your branch is ahead of 'origin/master' by 1 commit.
+  (use "git push" to publish your local commits)
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+        modified:   pom.xml
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+        src/main/resources/log4j2.xml
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+-----------------------------------------------log-----------------------------end
+
+3. similarily git add only .xml file from the root directory of the project
+
+$ git add \./\*.xml
+
+------------------------------log---------------------start---------------
+username--- MINGW64 /d/MyApplication/WORKSPACE/SpringBootMavenSpringMvc (master)
+$ git add \./\*.xml
+
+username--- MINGW64 /d/MyApplication/WORKSPACE/SpringBootMavenSpringMvc (master)
+$ git status
+On branch master
+Your branch is ahead of 'origin/master' by 1 commit.
+  (use "git push" to publish your local commits)
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+        modified:   pom.xml
+        new file:   src/main/resources/log4j2.xml
+------------------------------log---------------------end---------------
+
+4. Commited changed files, here only .xml
+
+$ git commit -m "added only .xml changes"
+
+username--- MINGW64 /d/MyApplication/WORKSPACE/SpringBootMavenSpringMvc (master)
+$ git commit -m "added only .xml changes"
+[master 50553fa] added only .xml changes
+ 2 files changed, 86 insertions(+), 27 deletions(-)
+ create mode 100644 src/main/resources/log4j2.xml
+
+username--- MINGW64 /d/MyApplication/WORKSPACE/SpringBootMavenSpringMvc (master)
+$ git status
+On branch master
+Your branch is ahead of 'origin/master' by 2 commits.
+  (use "git push" to publish your local commits)
+nothing to commit, working tree clean
+
+username---- MINGW64 /d/MyApplication/WORKSPACE/SpringBootMavenSpringMvc (master)
+
+
+5. If you get below access error, use the command ($ git config --global user.name = "vijchouhan") .....
+
+$ git config --global user.name = "vijchouhan"
+
+--------------------log file-----------------------start----------
+username---- MINGW64 /d/MyApplication/WORKSPACE/SpringBootMavenSpringMvc (master)
+$ git push origin master
+fatal: unable to access 'https://github.com/vijchouhan/SpringBootMavenSpringMvc.git/': Unknown SSL protocol error in connection to github.com:443
+
+username---- MINGW64 /d/MyApplication/WORKSPACE/SpringBootMavenSpringMvc (master)
+$ git config --global user.name = "vijchouhan"
+--------------------log file-----------------------end-------------
+
+6. Command to git push 
+$ git push origin master
+
+------------log---------------start--------
+username---- MINGW64 /d/MyApplication/WORKSPACE/SpringBootMavenSpringMvc (master)
+$ git push origin master
+fatal: HttpRequestException encountered.
+   An error occurred while sending the request.
+Username for 'https://github.com': vijchouhan
+Counting objects: 17, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (12/12), done.
+Writing objects: 100% (17/17), 2.46 KiB | 0 bytes/s, done.
+Total 17 (delta 3), reused 0 (delta 0)
+remote: Resolving deltas: 100% (3/3), completed with 3 local objects.
+To https://github.com/vijchouhan/SpringBootMavenSpringMvc.git
+   75c315f..50553fa  master -> master
+------------log---------------end--------
+
+7. Similar add only .txt file, below is the command.....
+
+$ git add \./\*.txt
+
+
+*******************************************************************************************************************
+**************************************************** Question 6 **************************************************
+*******************************************************************************************************************
+Git Commit commands..........
+
+$ git commit --hep
+error: unknown option `hep'
+usage: git commit [<options>] [--] <pathspec>...
+
+    -q, --quiet           suppress summary after successful commit
+    -v, --verbose         show diff in commit message template
+
+Commit message options
+    -F, --file <file>     read message from file
+    --author <author>     override author for commit
+    --date <date>         override date for commit
+    -m, --message <message>
+                          commit message
+    -c, --reedit-message <commit>
+                          reuse and edit message from specified commit
+    -C, --reuse-message <commit>
+                          reuse message from specified commit
+    --fixup <commit>      use autosquash formatted message to fixup specified commit
+    --squash <commit>     use autosquash formatted message to squash specified commit
+    --reset-author        the commit is authored by me now (used with -C/-c/--amend)
+    -s, --signoff         add Signed-off-by:
+    -t, --template <file>
+                          use specified template file
+    -e, --edit            force edit of commit
+    --cleanup <default>   how to strip spaces and #comments from message
+    --status              include status in commit message template
+    -S, --gpg-sign[=<key-id>]
+                          GPG sign commit
+
+Commit contents options
+    -a, --all             commit all changed files
+    -i, --include         add specified files to index for commit
+    --interactive         interactively add files
+    -p, --patch           interactively add changes
+    -o, --only            commit only specified files
+    -n, --no-verify       bypass pre-commit and commit-msg hooks
+    --dry-run             show what would be committed
+    --short               show status concisely
+    --branch              show branch information
+    --porcelain           machine-readable output
+    --long                show status in long format (default)
+    -z, --null            terminate entries with NUL
+    --amend               amend previous commit
+    --no-post-rewrite     bypass post-rewrite hook
+    -u, --untracked-files[=<mode>]
+                          show untracked files, optional modes: all, normal, no. (Default: all)
+
+

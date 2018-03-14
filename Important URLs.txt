@@ -222,3 +222,12 @@ git add command for specific to add .java file
 
 https://stackoverflow.com/questions/10033925/git-add-java-doesnt-work
 
+-----------------------------------------------------------
+hibernate one to many relationship
+
+configuration:- https://dzone.com/tutorials/java/hibernate/hibernate-example/hibernate-mapping-one-to-many-1.html
+annotations:-	https://dzone.com/tutorials/java/hibernate/hibernate-example/hibernate-mapping-one-to-many-using-annotations-1.html
+
+-----------------------------------------------------------
+swagger:- 
+https://blog.zenika.com/2013/07/11/documenting-a-rest-api-with-swagger-and-spring-mvc/

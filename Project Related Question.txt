@@ -1,0 +1,28 @@
+Project Related Question:-
+--------------------------------------
+
+1.	Overall functionality of the application ?
+
+2.	What is the flow of project ?
+
+3.	What is architecture of the project ?
+
+4.	To use AWS server, what are the configuration setting required in the project ?
+
+5.	What are the difference server used for which purpose ?
+
+6.	How those all server are communicated with each other ?
+
+7.	How Microservice architecture are used in this project ?
+
+8.	About GIT :- Check in, Check out, Merge, all related process ?
+
+9.	Build process for application ?
+
+10.	Deployement Process for project ?
+
+
+
+
+
+

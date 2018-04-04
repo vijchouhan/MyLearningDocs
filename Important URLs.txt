@@ -232,3 +232,10 @@ annotations:-	https://dzone.com/tutorials/java/hibernate/hibernate-example/hiber
 swagger:- Documenting a REST API with Swagger and Spring MVC
 
 https://blog.zenika.com/2013/07/11/documenting-a-rest-api-with-swagger-and-spring-mvc/
+
+-----------------------------------------------------------
+Spring boot, rest api, exception handling
+
+https://stackoverflow.com/questions/28902374/spring-boot-rest-service-exception-handling
+http://www.springboottutorial.com/spring-boot-exception-handling-for-rest-services
+https://www.journaldev.com/2651/spring-mvc-exception-handling-controlleradvice-exceptionhandler-handlerexceptionresolver

@@ -250,3 +250,15 @@ https://www.tutorialspoint.com/mongodb/mongodb_java.htm
 https://dzone.com/articles/design-decisions-the-data-model-mongodb
 https://docs.mongodb.com/getting-started/shell/import-data/
 
+-------------------------------------------------------------
+Adding business logic to a spring-data-rest application
+
+https://stackoverflow.com/questions/43133805/adding-business-logic-to-a-spring-data-rest-application
+https://spring.io/guides/gs/accessing-mongodb-data-rest/
+
+Validators (http://docs.spring.io/spring-data/rest/docs/current/reference/html/#validation) for validating received objects.
+
+Event Handlers http://docs.spring.io/spring-data/rest/docs/current/reference/html/#events) that will be called when validation was okay.
+
+Custom Controllers (http://docs.spring.io/spring-data/rest/docs/current/reference/html/#customizing-sdr.overriding-sdr-response-handlers) when you manually want to handle the request.
+

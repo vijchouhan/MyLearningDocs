@@ -247,4 +247,6 @@ SQL to MongoDB Mapping Chart
 https://docs.mongodb.com/manual/reference/sql-comparison/
 https://www.tutorialspoint.com/mongodb/mongodb_data_modeling.htm
 https://www.tutorialspoint.com/mongodb/mongodb_java.htm
+https://dzone.com/articles/design-decisions-the-data-model-mongodb
+https://docs.mongodb.com/getting-started/shell/import-data/
 

@@ -239,3 +239,12 @@ Spring boot, rest api, exception handling
 https://stackoverflow.com/questions/28902374/spring-boot-rest-service-exception-handling
 http://www.springboottutorial.com/spring-boot-exception-handling-for-rest-services
 https://www.journaldev.com/2651/spring-mvc-exception-handling-controlleradvice-exceptionhandler-handlerexceptionresolver
+
+-----------------------------------------------------------
+
+SQL to MongoDB Mapping Chart
+
+https://docs.mongodb.com/manual/reference/sql-comparison/
+https://www.tutorialspoint.com/mongodb/mongodb_data_modeling.htm
+https://www.tutorialspoint.com/mongodb/mongodb_java.htm
+

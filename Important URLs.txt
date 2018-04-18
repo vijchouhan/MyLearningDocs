@@ -1,41 +1,41 @@
 Fixed :- 12:30 to 8:30.... sleeping time... 
 ---------------------------------------------
-java feature 8:- 
+1.	java feature 8:- 
 ---------------------------------------------
 http://www.journaldev.com/2389/java-8-features-with-examples#java-stream-api
 
-selenium:- 
+2.	selenium:- 
 ---------------------------------------------
 http://toolsqa.com/selenium-webdriver/webelement-commands/
 
-RESTFul WebService:-
+3.	RESTFul WebService:-
 ---------------------------------------------
 https://docs.oracle.com/cd/E19776-01/820-4867/6nga7f5n6/index.html
 http://www.techferry.com/articles/RESTful-web-services-JAX-RS-annotations.html
 
-microservices:-  
+4.	microservices:-  
 ---------------------------------------------
 https://stackify.com/what-are-microservices/
 
-clould :- 
+5.	clould :- 
 
 https://en.wikipedia.org/wiki/Cloud_computing
 ---------------------------------------------
 
-linked list:-
+6.	linked list:-
 ---------------------------------------------
 https://www.cs.cmu.edu/~adamchik/15-121/lectures/Linked%20Lists/linked%20lists.html
 
 
-Bean Life Cycle:- 
+7.	Bean Life Cycle:- 
 ---------------------------------------------
 http://www.wideskills.com/spring/spring-bean-lifecycle
 
-Hibernate Spring Integrations:-
+8.	Hibernate Spring Integrations:-
 ---------------------------------------------
 https://www.javatpoint.com/hibernate-and-spring-integration
 
-Design Principle:- 
+9.	Design Principle:- 
 ---------------------------------------------
 
 https://en.wikipedia.org/wiki/Single_responsibility_principle
@@ -49,7 +49,7 @@ https://www.javabrahman.com/programming-principles/dependency-inversion-principl
 
 ---------------------------------------------
 
-Spring:-
+10.	Spring:-
 
 singleton injecting prototype bean problem,
 http://www.logicbig.com/tutorials/spring-framework/spring-core/injecting-singleton-with-prototype-bean/
@@ -58,53 +58,52 @@ http://www.logicbig.com/tutorials/spring-framework/spring-core/using-lookup-meth
 
 ---------------------------------------------
 
-Spring used list of desing patterns:- 
+11.	Spring used list of desing patterns:- 
 
 https://www.quora.com/What-are-the-design-patterns-for-the-spring-framework
 ---------------------------------------------
 
-double lock in singletor:- 
+12.	double lock in singletor:- 
 
 http://javarevisited.blogspot.in/2014/05/double-checked-locking-on-singleton-in-java.html
 
 ---------------------------------------------
 
-Memory Management:- 
+13.	Memory Management:- 
 
 https://www.journaldev.com/2856/java-jvm-memory-model-memory-management-in-java
 
 ---------------------------------------------
 
-Micro services:- 
+14.	Micro services:- 
 
 https://stackify.com/what-are-microservices/
 
 ---------------------------------------------
-Memory Management:- 
+15.	Memory Management:- 
 
 https://www.journaldev.com/4098/java-heap-space-vs-stack-memory
 ---------------------------------------------
 
-List of Controller class in Spring
+16.	List of Controller class in Spring
 
 https://www.roseindia.net/spring/spring-mvc-controller.shtml
 
 ---------------------------------------------
-
+17.	New Features and Enhancements in Spring Framework 4.0
 https://docs.spring.io/spring/docs/4.1.5.RELEASE/spring-framework-reference/html/new-in-4.0.html
 ---------------------------------------------
 
-Singleton having Prototype problem
+18.	Singleton having Prototype problem
 ---------------------------------------------
 http://www.logicbig.com/tutorials/spring-framework/spring-core/injecting-singleton-with-prototype-bean/
 http://www.logicbig.com/tutorials/spring-framework/spring-core/using-application-context-aware/
 http://www.logicbig.com/tutorials/spring-framework/spring-core/using-lookup-method/
 http://www.logicbig.com/tutorials/spring-framework/spring-core/using-jsr-330-provider/
 
-Difference between 3 and 4 Spring....
 ---------------------------------------------
 
-call delete method from brower 
+19.	call delete method from brower 
 
 https://stackoverflow.com/questions/38370011/thymeleaf-button-click-to-call-http-delete-method
 https://stackoverflow.com/questions/33230711/java-spring-mvc-rest-delete-method-after-clicked-a-link
@@ -113,35 +112,35 @@ https://stackoverflow.com/questions/165779/are-the-put-delete-head-etc-methods-a
 
 ---------------------------------------------
 
-java concurrency...
+20.	java concurrency...
 
 https://docs.oracle.com/javase/tutorial/essential/concurrency/index.html
 
 ---------------------------------------------
 
-immutable class in java...
+21.	immutable class in java...
 
 https://www.journaldev.com/129/how-to-create-immutable-class-in-java
 
 ---------------------------------------------
 
-Java Task Scheduler.......
+22.	Java Task Scheduler.......
 
 http://www.mkyong.com/java/how-to-run-a-task-periodically-in-java/
 
 ---------------------------------------------
 
-JVM Specification:- 
+23.	JVM Specification:- 
 
 https://docs.oracle.com/javase/specs/jvms/se7/html/jvms-4.html#jvms-4.11
 ---------------------------------------------
 
-Java Collections
+24.	Java Collections
 
 https://docs.oracle.com/javase/tutorial/collections/index.html
 ---------------------------------------------
 
-Java Reflection
+25.	Java Reflection
 
 https://docs.oracle.com/javase/tutorial/reflect/index.html
 ---------------------------------------------
@@ -149,23 +148,23 @@ Note: Class has no public constructor. Instead Class objects are constructed aut
 	and by calls to the defineClass method in the class loader. 
 
 ---------------------------------------------
-Hash Map Internal working
+26.	Hash Map Internal working
 
 https://www.cdn.geeksforgeeks.org/java-util-hashmap-in-java/
 https://www.geeksforgeeks.org/internal-working-of-hashmap-java/
 ---------------------------------------------\
 
-difference between ConcurrentHashMap and HashMap 
+27.	difference between ConcurrentHashMap and HashMap 
 
 http://www.java67.com/2012/08/difference-between-hashmap-and-concurrentHashMap-java-collection.html
 
 ----------------------------------------
-Spring Integration Overview
+28.	Spring Integration Overview
 
 https://docs.spring.io/spring-integration/reference/html/overview.html
 -------------------------------------------------------------
 
-Database normalization:- 
+29.	Database normalization:- 
 
 https://www.studytonight.com/dbms/database-normalization.php
 https://en.wikipedia.org/wiki/Database_normalization
@@ -173,68 +172,68 @@ https://en.wikipedia.org/wiki/Database_normalization
 https://www.slideshare.net/a
 -------------------------------------------------------------
 
-When do we use each SOAP/REST ?
+30.	When do we use each SOAP/REST ?
 
 https://www.infoq.com/articles/rest-soap-when-to-use-each
 
 -------------------------------------------------------------
-Create manven spring mvc project:-
+31.	Create manven spring mvc project:-
 https://www.programcreek.com/2014/02/spring-mvc-helloworld-using-maven-in-eclipse/
 -------------------------------------------------------------
-GIT hub  tutorials :-
+32.	GIT hub  tutorials :-
 
 https://www.git-tower.com/blog/git-cheat-sheet/
 https://www.tutorialspoint.com/git/index.htm
 https://www.cloudways.com/blog/git-cheat-sheet/
 
 ---------------------------------------------------------------
-SVN tutorials:-
+33.	SVN tutorials:-
 https://www.tutorialspoint.com/svn/index.htm
 ---------------------------------------------------------------
-Restful webservice:- 
+34.	Restful webservice:- 
 
 https://en.wikipedia.org/wiki/Java_API_for_RESTful_Web_Services
 
 ---------------------------------------------------------------
-Spring Boot, Maven, Spring Mvc project
+35.	Spring Boot, Maven, Spring Mvc project
 
 https://www.boraji.com/spring-boot-creating-web-application-using-spring-mvc
 https://www.boraji.com/how-to-create-a-maven-project-in-eclipse
 https://howtodoinjava.com/spring5/webmvc/controller-getmapping-postmapping/
 ---------------------------------------------------------------
 
-log 4j.... update
+36.	log 4j.... update
 https://www.boraji.com/spring-boot-log4j-2-configuration-example
 https://stackoverflow.com/questions/30019585/log4j2-why-would-you-use-it-over-log4j
 
 ---------------------------------------------------------------
-Spring Boot: ApplicationRunner and CommandLineRunner
+38.	Spring Boot: ApplicationRunner and CommandLineRunner
 
 https://dzone.com/articles/spring-boot-applicationrunner-and-commandlinerunne
 
 --------------------------------------------------------------
-Using the H2 Database Console in Spring Boot with Spring Security
+39.	Using the H2 Database Console in Spring Boot with Spring Security
 
 https://dzone.com/articles/using-the-h2-database-console-in-spring-boot-with
 -------------------------------------------------------
 
-git add command for specific to add .java file
+40.	git add command for specific to add .java file
 
 https://stackoverflow.com/questions/10033925/git-add-java-doesnt-work
 
 -----------------------------------------------------------
-hibernate one to many relationship
+41.	hibernate one to many relationship
 
 configuration:- https://dzone.com/tutorials/java/hibernate/hibernate-example/hibernate-mapping-one-to-many-1.html
 annotations:-	https://dzone.com/tutorials/java/hibernate/hibernate-example/hibernate-mapping-one-to-many-using-annotations-1.html
 
 -----------------------------------------------------------
-swagger:- Documenting a REST API with Swagger and Spring MVC
+42.	swagger:- Documenting a REST API with Swagger and Spring MVC
 
 https://blog.zenika.com/2013/07/11/documenting-a-rest-api-with-swagger-and-spring-mvc/
 
 -----------------------------------------------------------
-Spring boot, rest api, exception handling
+43.	Spring boot, rest api, exception handling
 
 https://stackoverflow.com/questions/28902374/spring-boot-rest-service-exception-handling
 http://www.springboottutorial.com/spring-boot-exception-handling-for-rest-services
@@ -242,7 +241,7 @@ https://www.journaldev.com/2651/spring-mvc-exception-handling-controlleradvice-e
 
 -----------------------------------------------------------
 
-SQL to MongoDB Mapping Chart
+44.	SQL to MongoDB Mapping Chart
 
 https://docs.mongodb.com/manual/reference/sql-comparison/
 https://www.tutorialspoint.com/mongodb/mongodb_data_modeling.htm
@@ -251,7 +250,7 @@ https://dzone.com/articles/design-decisions-the-data-model-mongodb
 https://docs.mongodb.com/getting-started/shell/import-data/
 
 -------------------------------------------------------------
-Adding business logic to a spring-data-rest application
+45.	Adding business logic to a spring-data-rest application
 
 https://stackoverflow.com/questions/43133805/adding-business-logic-to-a-spring-data-rest-application
 https://spring.io/guides/gs/accessing-mongodb-data-rest/
@@ -261,4 +260,15 @@ Validators (http://docs.spring.io/spring-data/rest/docs/current/reference/html/#
 Event Handlers http://docs.spring.io/spring-data/rest/docs/current/reference/html/#events) that will be called when validation was okay.
 
 Custom Controllers (http://docs.spring.io/spring-data/rest/docs/current/reference/html/#customizing-sdr.overriding-sdr-response-handlers) when you manually want to handle the request.
+-------------------------------------------------------------
+
+46.	Spring Boot – How to Reload Changes Without Restarting the Server
+
+https://www.java4s.com/spring-boot-tutorials/spring-boot-how-to-reload-changes-without-restarting-the-server/
+
+-------------------------------------------------------------
+47.	A QUICK COMPARISON OF YAML WITH PROPERTIES FILE
+
+https://javajee.com/a-quick-comparison-of-yaml-with-properties-file
+
 

@@ -270,5 +270,31 @@ https://www.java4s.com/spring-boot-tutorials/spring-boot-how-to-reload-changes-w
 47.	A QUICK COMPARISON OF YAML WITH PROPERTIES FILE
 
 https://javajee.com/a-quick-comparison-of-yaml-with-properties-file
+-------------------------------------------------------------
+48. Spring Boot IQA
 
+https://www.journaldev.com/8611/spring-boot-interview-questions
+http://www.springboottutorial.com/spring-boot-interview-questions
+https://www.javatpoint.com/spring-boot-interview-questions
+-----------------------------------------------
+49.	Spring IQA
+http://javarevisited.blogspot.in/2011/09/spring-interview-questions-answers-j2ee.html
+
+------------------------------------------------
+50.	Spring Rest IQA
+http://javarevisited.blogspot.in/2018/02/top-20-spring-rest-interview-questions-answers-java.html
+
+-------------------------------------------------
+51.	spring-framework-annotations
+
+https://springframework.guru/spring-framework-annotations/
+-------------------------------------------------
+52.	Object Mapping with Spring Data Mongodb
+
+https://lishman.io/object-mapping-with-spring-data-mongodb
+
+53. Running on Time With Spring’s Scheduled Tasks
+
+https://dzone.com/articles/running-on-time-with-springs-scheduled-tasks
+https://www.callicoder.com/spring-boot-task-scheduling-with-scheduled-annotation/
 

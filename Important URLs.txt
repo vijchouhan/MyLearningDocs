@@ -292,9 +292,13 @@ https://springframework.guru/spring-framework-annotations/
 52.	Object Mapping with Spring Data Mongodb
 
 https://lishman.io/object-mapping-with-spring-data-mongodb
-
+-------------------------------------------------
 53. Running on Time With Spring’s Scheduled Tasks
 
 https://dzone.com/articles/running-on-time-with-springs-scheduled-tasks
 https://www.callicoder.com/spring-boot-task-scheduling-with-scheduled-annotation/
+-------------------------------------------------
+54. Filters and Interceptors
 
+https://dennis-xlc.gitbooks.io/restful-java-with-jax-rs-2-0-en/cn/part1/chapter12/filters_and_interceptors.html
+-------------------------------------------------

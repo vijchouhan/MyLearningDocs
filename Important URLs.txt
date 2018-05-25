@@ -293,12 +293,28 @@ https://springframework.guru/spring-framework-annotations/
 
 https://lishman.io/object-mapping-with-spring-data-mongodb
 -------------------------------------------------
-53. Running on Time With Spring’s Scheduled Tasks
+53.	Running on Time With Spring’s Scheduled Tasks
 
 https://dzone.com/articles/running-on-time-with-springs-scheduled-tasks
 https://www.callicoder.com/spring-boot-task-scheduling-with-scheduled-annotation/
 -------------------------------------------------
-54. Filters and Interceptors
+54.	Filters and Interceptors
 
 https://dennis-xlc.gitbooks.io/restful-java-with-jax-rs-2-0-en/cn/part1/chapter12/filters_and_interceptors.html
 -------------------------------------------------
+
+55.	RabbitMq
+
+https://reflectoring.io/event-messaging-with-spring-boot-and-rabbitmq/
+http://techybechy.com/publish-messages-rabbitmq-java-development/
+https://www.rabbitmq.com/tutorials/tutorial-three-python.html
+http://javasampleapproach.com/java-integration/distributed-system/create-spring-rabbitmq-producerconsumer-application-springboot
+---------------------------------------------------
+
+file upload and call rest post service 	
+
+https://javatutorial.net/java-file-upload-rest-service
+and it's dependency 
+
+https://mvnrepository.com/artifact/org.apache.httpcomponents/httpmime/4.3.1
+https://mvnrepository.com/artifact/org.apache.httpcomponents/httpclient/4.3.6

@@ -1,0 +1,91 @@
+Project 2
+
+Project Title                  :           SWS System Wsparcia Sprzedazy (Sales Support System)
+URL                              :           http://sws13.svc.t-mobile.pl/wf13
+Client                            :           T Mobile Poland
+Technologies                 :           Core Java, Groovy, Scala, JavaScript, CSS, Ajax, JUnit, Spring 3.0, Maven 3.0, 
+                         JSP, Servlet, JSF, SOAP WebService, Spring MVC
+Database/Server/IDE     :           Oracle 11g, Oracle WebLogic Server 11g, IntelliJ Idea 15.0.1
+Version Control System:            SVN
+Team Size                     :           12
+Role                              :           Team Member (Technical Lead)
+Duration                       :           1 Nov 2015 to 25 Feb 2017
+
+Description:-  SWS application is a Sales Support System which supports business market sales, residential market sales, tele-sales and backend for the eSHOP (ATG) application.
+SWS also support retention of the existing customers, annexing (extending existing contract) and exchange equipment (Damaged SIM cards).This is mainly use to create task for a particular task type (Defined in SWS db). It is used by business users, Hotline users, call centers for task creation. For business customers SWS Application also manages data on their contact persons.SWS application provides different services like postpaid, migration from prepaid to postpaid , number portability (in NPIT), WLR (Landline internet), Data (Mobile Internet), ADSL/DSL (Broad Band) etc.
+
+              Roles & Responsibilities:-
+	Understood the business requirement and developed the business logic accordingly.
+	Had daily standup call with onsite team.
+	Communicate and coordinate with teammates and other teams in resolving issues.
+	Prepared the LLD document based on new requirement or new changes. 
+	Implemented the SOAP Webservice and develop the code as per requirements. 
+	Involved in the client and server side coding.
+	Worked on various PR and CR and defects. 
+
+
+Project 3
+
+Project Title                  :           IBOA
+URL                              :           https://i-boa.t-mobile.pl/iboa3 
+Client                            :           T Mobile Poland
+Technologies                 :           Core Java, JSP, JSF, Servlet, JDBC, Java Script, Ajax, XML, HTML, CSS, 
+                                                jQuery, Spring 3.0, Hibernate 2.0, Maven, SOAP WebService.
+Database/Server/IDE     :           Oracle 9, WebLogic Application Server 10.3, Eclipse
+Version Control System:            SVN
+Team Size                     :           5
+Role                              :           Team Member(Technical Lead)
+Duration                       :           20 April 2015 to 31 October 2015
+
+Description:-  IBOA is a web based self-care application deployed in BEA Web Logic Application server 10.3 and connects to the Oracle database version 9 as back end hosted in Solaris Operation system version 10.
+
+A registered T-Mobile user will have the privilege to opt and use all the services / options available via IBOA self-care portal. He can switch between services offered by T-Mobile, he can view the billing amount for his account, history of all invoices. He will make use of his T-Mobile number to login to IBOA portal to view his details about the T-Mobile services opted and his invoices.
+
+Roles & Responsibilities:-
+	I was involved in transition phase of the applications mapped to me and successfully completed it.
+	During the transition phase I used to join the KAP session for the applications mapped to me and get the information from T- Mobile transition panel and respective vendor and shared within the team.
+	I was involved to help to build the project successfully as source code shared by T-Mobile team.
+	I was involved in preparing the SMTD document for the applications mapped to me and updated on daily basis.
+	Had involved on feedback session organized to the respective T-Mobile panel.
+	Had daily stand up meetings within team to discuss the status and update the daily tracker on various activities during the transition phase.
+
+=============================================================================================================================================================
+
+Project: 
+
+Project Title                  :           CHC(Change Helth Care)
+Client                         :           Wipro Homes
+Technologies                   :           Java 8, Spring MVC, Spring Boot, Spring Data Rest, Maven 3.3.9, RestFul Webservice, RabbitMq, Docker, Angular 2, log4j2, Swagger, Microservice based architecture  
+Database/Server/IDE     	   :           MongoDb/Docker/Eclipse(Version: Neon.3)
+Version Control System		   :           Git
+Team Size                      :           11
+Role                           :           Team Member (Technical Lead)
+Duration                       :           1 March 2018 - til date
+
+Description:- 
+
+The solution aims to create a healthcare form processing ecosystem wherein there will be three roles viz. administrator, analyst and quality checker. The solution will assist in seamless claims settlement process by drastically reducing the time and efforts required in manual processing.
+
+The life cycle of the health care form begins, once claims has been received from the mailroom team. The form is digitizing by HOLMES cognitive platform and output is generated. This output is verified by the analyst and a subset reviewed by the quality checker and submitted for settlement in HIPAA Compliant 837(I, P,D) format.
+
+Roles And Responsibilities:-
+
+This is a micro service architecture and maven based application where development started from the beigning having various modules as follows a) Admin, 	b) Analyst, c) Quality Checker, d) Orchestrator, e) User Management
+
+1. Interacted to the business analyst and understood their business requirement of the application and guided to the team member to prepared requirement document,
+
+2. Implemented their business logic while developing various services based on the requirement and guided same to the team member for all modules of the application,
+
+3. Created the database schema document for this application for all modules
+
+4. Implemented Log4j2, Swagger, RabbitMq, Spring Data Rest, MongoDb, Restful web service in this micro service and maven based Spring boot application and guided same to the team member. 
+
+5. Guided to team member on using new technologies, while creating the different service and reviewed their source code.
+ 
+6. Created and managed git repository for this application.
+
+
+
+
+	
+

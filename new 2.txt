@@ -1,0 +1,12 @@
+Spring Core,Spring MVC,Spring JDBC,Spring Boot,Soap Web Service,Restful Web Service,Design Pattern & Design Principle,Core Java,Hibernate,Maven,
+Servlet, JSP, JDBC, JSF, Java Scripts, Ajax, JSON, Tomcat, WebLogic,SVN,SQL,JUnit etc.
+
+@SpringBootApplication  is alternative to below 3 annotations:- 
+------------
+@Configuration
+@EnableAutoConfiguration
+@ComponentScan
+
+http://10.210.16.204/form-processing/CHC/OrchestratorScheduler.git
+
+http://10.210.16.204/form-processing/CHC/OrchestratorSchedulerConsumer.git

@@ -1,4 +1,4 @@
-Project 2
+﻿Project 2
 
 Project Title                  :           SWS System Wsparcia Sprzedazy (Sales Support System)
 URL                              :           http://sws13.svc.t-mobile.pl/wf13
@@ -56,7 +56,7 @@ Project:
 Project Title                  :           CHC(Change Helth Care)
 Client                         :           Wipro Homes
 Technologies                   :           Java 8, Spring MVC, Spring Boot, Spring Data Rest, Maven 3.3.9, RestFul Webservice, RabbitMq, Docker, Angular 2, log4j2, Swagger, Microservice based architecture  
-Database/Server/IDE     	   :           MongoDb/Docker/Eclipse(Version: Neon.3)
+Database/Server/IDE     	:           MongoDb/Docker/Eclipse(Version: Neon.3)
 Version Control System		   :           Git
 Team Size                      :           11
 Role                           :           Team Member (Technical Lead)
@@ -70,18 +70,14 @@ The life cycle of the health care form begins, once claims has been received fro
 
 Roles And Responsibilities:-
 
-This is a micro service architecture and maven based application where development started from the beigning having various modules as follows a) Admin, 	b) Analyst, c) Quality Checker, d) Orchestrator, e) User Management
+This is a micro service architecture based application where development started from the beigning having various modules as follows a) Admin, 	b) Analyst, c) Quality Checker, d) Orchestrator, e) User Management
 
-1. Interacted to the business analyst and understood their business requirement of the application and guided to the team member to prepared requirement document,
-
-2. Implemented their business logic while developing various services based on the requirement and guided same to the team member for all modules of the application,
-
+1. Interacted to the business analyst and understood their business requirement of the application. 
+2. Implemented their business logic and developed various micro services for this application as follow,
+	a) Orcheshtrator Scheduler, b) Orcheshtrator consumer, c) Analsyst and Qc Dashboard Service,
 3. Created the database schema document for this application for all modules
-
-4. Implemented Log4j2, Swagger, RabbitMq, Spring Data Rest, MongoDb, Restful web service in this micro service and maven based Spring boot application and guided same to the team member. 
-
-5. Guided to team member on using new technologies, while creating the different service and reviewed their source code.
- 
+4. Implemented Log4j2, Git, Swagger, RabbitMq, Spring Data Rest, MongoDb, Restful web service, Maven, Micro service, Spring boot for this application.
+5. Guided to team member on using new technologies, while creating the different service and reviewed their source code. 
 6. Created and managed git repository for this application.
 
 

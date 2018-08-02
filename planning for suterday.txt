@@ -3,9 +3,11 @@ Spring:-
 	Spring MVC
 	Spring Core
 	Spring JDBC
-	Spring AOP
-	Spring Batch
-	Spring Integration
+	Spring AOP --- ?
+	Spring Batch --- ?
+	Spring Integration --- ?
+	Spring Data Rest --- ?
+	Spring Security --- ?
 
 Hibernate:- 
 
@@ -22,6 +24,8 @@ Core Java:-
 	Thread
 	IO
 	Exception
+	Memory Management
+	JVM Architecture
 
 Design Principle and Patterns
 
@@ -34,8 +38,9 @@ Scripting Language:-
 	Java Script
 	Angular Js
 	Ajax, JSON
+	Angular
 
-Database:- 
+Database:- MongoDb, Oracle, MySql
 
 Unit Testing:- 
 	JUnit
@@ -64,4 +69,6 @@ Project Model:-
 Others:- 
 	Jenkins
 	Jeera
+	Mongo Compass
+	RabitMq
 	

@@ -17,7 +17,7 @@ Changes to be committed:
         new file:   src/main/webapp/WEB-INF/views/index.jsp
 
 
-VI297398@D-113094685 MINGW64 /d/MyApplication/WORKSPACE/SpringBootMavenSpringMvc (master)
+---- /d/MyApplication/WORKSPACE/SpringBootMavenSpringMvc (master)
 $ git add .
 
 --- /d/MyApplication/WORKSPACE/SpringBootMavenSpringMvc (master)
@@ -39,7 +39,7 @@ Changes to be committed:
         new file:   src/main/webapp/WEB-INF/views/index.jsp
 
 
-VI297398@D-113094685 MINGW64 /d/MyApplication/WORKSPACE/SpringBootMavenSpringMvc (master)
+---- /d/MyApplication/WORKSPACE/SpringBootMavenSpringMvc (master)
 $ git commit -m "modified"
 [master 7925d0c] modified
  10 files changed, 128 insertions(+), 30 deletions(-)

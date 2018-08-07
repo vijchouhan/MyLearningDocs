@@ -22,7 +22,6 @@ Design Principle
 Design Patterns
 
 -----------------New----------------
-
 Micro Service Architecture
 Docker
 Angular 

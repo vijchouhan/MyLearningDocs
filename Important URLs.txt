@@ -262,7 +262,7 @@ Event Handlers http://docs.spring.io/spring-data/rest/docs/current/reference/htm
 Custom Controllers (http://docs.spring.io/spring-data/rest/docs/current/reference/html/#customizing-sdr.overriding-sdr-response-handlers) when you manually want to handle the request.
 -------------------------------------------------------------
 
-46.	Spring Boot – How to Reload Changes Without Restarting the Server
+46.	Spring Boot Â– How to Reload Changes Without Restarting the Server
 
 https://www.java4s.com/spring-boot-tutorials/spring-boot-how-to-reload-changes-without-restarting-the-server/
 
@@ -293,7 +293,7 @@ https://springframework.guru/spring-framework-annotations/
 
 https://lishman.io/object-mapping-with-spring-data-mongodb
 -------------------------------------------------
-53.	Running on Time With Spring’s Scheduled Tasks
+53.	Running on Time With SpringÂ’s Scheduled Tasks
 
 https://dzone.com/articles/running-on-time-with-springs-scheduled-tasks
 https://www.callicoder.com/spring-boot-task-scheduling-with-scheduled-annotation/
@@ -318,3 +318,6 @@ and it's dependency
 
 https://mvnrepository.com/artifact/org.apache.httpcomponents/httpmime/4.3.1
 https://mvnrepository.com/artifact/org.apache.httpcomponents/httpclient/4.3.6
+
+cloud Computing
+https://www.tutorialspoint.com/cloud_computing/cloud_computing_overview.htm

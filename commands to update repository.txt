@@ -1,4 +1,4 @@
-VI297398@D-113094685 MINGW64 /d/MyApplication/WORKSPACE/SpringBootMavenSpringMvc                                                                                                                 (master)
+---- /d/MyApplication/WORKSPACE/SpringBootMavenSpringMvc                                                                                                                 (master)
 $ git status
 On branch master
 Your branch is up-to-date with 'origin/master'.
@@ -20,7 +20,7 @@ Changes to be committed:
 VI297398@D-113094685 MINGW64 /d/MyApplication/WORKSPACE/SpringBootMavenSpringMvc (master)
 $ git add .
 
-VI297398@D-113094685 MINGW64 /d/MyApplication/WORKSPACE/SpringBootMavenSpringMvc (master)
+--- /d/MyApplication/WORKSPACE/SpringBootMavenSpringMvc (master)
 $ git status
 On branch master
 Your branch is up-to-date with 'origin/master'.
@@ -51,14 +51,14 @@ $ git commit -m "modified"
  create mode 100644 src/main/webapp/WEB-INF/views/hello.jsp
  create mode 100644 src/main/webapp/WEB-INF/views/index.jsp
 
-VI297398@D-113094685 MINGW64 /d/MyApplication/WORKSPACE/SpringBootMavenSpringMvc (master)
+---  /d/MyApplication/WORKSPACE/SpringBootMavenSpringMvc (master)
 $ git status
 On branch master
 Your branch is ahead of 'origin/master' by 1 commit.
   (use "git push" to publish your local commits)
 nothing to commit, working tree clean
 
-VI297398@D-113094685 MINGW64 /d/MyApplication/WORKSPACE/SpringBootMavenSpringMvc (master)
+---- /d/MyApplication/WORKSPACE/SpringBootMavenSpringMvc (master)
 $ git push origin master
 fatal: HttpRequestException encountered.
    An error occurred while sending the request.
@@ -71,12 +71,11 @@ Total 26 (delta 4), reused 0 (delta 0)
 remote: Resolving deltas: 100% (4/4), completed with 3 local objects.
 To https://github.com/vijchouhan/SpringBootMavenSpringMvc.git
    2c880a1..7925d0c  master -> master
-
-VI297398@D-113094685 MINGW64 /d/MyApplication/WORKSPACE/SpringBootMavenSpringMvc (master)
+---- /d/MyApplication/WORKSPACE/SpringBootMavenSpringMvc (master)
 $ git status
 On branch master
 Your branch is up-to-date with 'origin/master'.
 nothing to commit, working tree clean
 
-VI297398@D-113094685 MINGW64 /d/MyApplication/WORKSPACE/SpringBootMavenSpringMvc (master)
+---- /d/MyApplication/WORKSPACE/SpringBootMavenSpringMvc (master)
 $

@@ -1,0 +1,30 @@
+::: Time Table:-
+
+12:30 to 8:30 Sliping
+
+11:00 to 7:00 office
+
+9:00 to 12:30 study... 
+
+---------------Repeat---------------
+Core Java:- 5,7,8
+
+Spring:- 
+Spring Boot:-
+Spring Data Rest:-
+
+Hibernante:- 
+
+Soap WebService
+Restful WebService
+
+Design Principle 
+Design Patterns
+
+-----------------New----------------
+
+Micro Service Architecture
+Docker
+Angular 
+Cloud
+AWS

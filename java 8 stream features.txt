@@ -1,0 +1,836 @@
+package com.lease.extraction.service.impl;
+
+import static com.lease.extraction.service.StatusConstant.COMPLETED;
+import static com.lease.extraction.service.StatusConstant.MONTHLY;
+import static com.lease.extraction.service.StatusConstant.PENDING;
+import static com.lease.extraction.service.StatusConstant.PENDINGEXP;
+import static com.lease.extraction.service.StatusConstant.TODAY;
+import static com.lease.extraction.service.StatusConstant.TOMORROW;
+import static com.lease.extraction.service.StatusConstant.WEEKLY;
+import static java.time.temporal.ChronoUnit.DAYS;
+import java.text.SimpleDateFormat;
+import java.time.Duration;
+import java.time.LocalDateTime;
+import java.time.YearMonth;
+import java.time.ZoneId;
+import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.List;
+import java.util.Locale;
+import java.util.Map;
+import java.util.Objects;
+import java.util.TreeMap;
+import java.util.concurrent.CopyOnWriteArrayList;
+import java.util.stream.Collectors;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+import com.lease.extraction.model.AnalystErrors;
+import com.lease.extraction.model.BookOfWork;
+import com.lease.extraction.model.CompletionStatus;
+import com.lease.extraction.model.ContractProcessed;
+import com.lease.extraction.model.OperationalManagerDashboard;
+import com.lease.extraction.model.SLAPerformance;
+import com.lease.extraction.model.TurnaroundTime;
+import com.lease.extraction.model.doclist.File;
+import com.lease.extraction.model.dto.AnalystErrorsDTO;
+import com.lease.extraction.model.dto.ContractProcessedDTO;
+import com.lease.extraction.model.dto.SLAPerformanceDTO;
+import com.lease.extraction.model.dto.TurnaroundTimeDTO;
+import com.lease.extraction.repository.FileRepository;
+import com.lease.extraction.service.OMDashboardService;
+
+
+@Service
+@Transactional
+public class OMDashboardServiceImpl implements OMDashboardService {
+
+  private static Logger logger = LoggerFactory.getLogger(OMDashboardServiceImpl.class);
+
+  private ContractProcessedDTO contractProcessedFactory;
+  private List<ContractProcessed> lstContractProcessed;
+  private List<CompletionStatus> lstCompletionStatus;
+  private TurnaroundTime turnaroundTime;
+  private List<TurnaroundTime> lstTurnaroundTime;
+  private TurnaroundTimeDTO turnaroundTimeFactory;
+  private AnalystErrors analystErrors;
+  private List<AnalystErrors> lstAnalystErrors;
+  private AnalystErrorsDTO analystErrorsFactory;
+  private SLAPerformance slaPerformance;
+  private SLAPerformanceDTO slaPerformanceFactory;
+  private List<SLAPerformance> lstSLAPerformance;
+  private BookOfWork bookOfWork;
+  private OperationalManagerDashboard operationalManagerDashboard;
+
+  public OMDashboardServiceImpl(ContractProcessedDTO contractProcessedFactory,
+      List<ContractProcessed> lstContractProcessed,
+      List<CompletionStatus> lstCompletionStatus,
+      TurnaroundTime turnaroundTime,
+      List<TurnaroundTime> lstTurnaroundTime,
+      TurnaroundTimeDTO turnaroundTimeFactory, AnalystErrors analystErrors,
+      List<AnalystErrors> lstAnalystErrors,
+      AnalystErrorsDTO analystErrorsFactory, SLAPerformance slaPerformance,
+      SLAPerformanceDTO slaPerformanceFactory,
+      List<SLAPerformance> lstSLAPerformance, BookOfWork bookOfWork,
+      OperationalManagerDashboard operationalManagerDashboard,
+      FileRepository repository) {
+    this.contractProcessedFactory = contractProcessedFactory;
+    this.lstContractProcessed = lstContractProcessed;
+    this.lstCompletionStatus = lstCompletionStatus;
+    this.turnaroundTime = turnaroundTime;
+    this.lstTurnaroundTime = lstTurnaroundTime;
+    this.turnaroundTimeFactory = turnaroundTimeFactory;
+    this.analystErrors = analystErrors;
+    this.lstAnalystErrors = lstAnalystErrors;
+    this.analystErrorsFactory = analystErrorsFactory;
+    this.slaPerformance = slaPerformance;
+    this.slaPerformanceFactory = slaPerformanceFactory;
+    this.lstSLAPerformance = lstSLAPerformance;
+    this.bookOfWork = bookOfWork;
+    this.operationalManagerDashboard = operationalManagerDashboard;
+    this.repository = repository;
+  }
+
+  @Autowired
+  private FileRepository repository;
+
+  @Override
+  public OperationalManagerDashboard getOperationalManagerDashboardDetail(String userId,
+      String userRole, String timeScale) {
+    logger.info("DashboardServiceImpl : method getOperationalManagerDashboardDetail start");
+    List<File> lstFileAllUsers = new CopyOnWriteArrayList<File>();
+
+    try {
+      final Date todayDate = calculateDateOnTimeScale(TODAY);
+      final Date tomorrowDate = calculateDateOnTimeScale(TOMORROW);
+      final Date lastWeekDate = calculateDateOnTimeScale(WEEKLY);
+      final Date lastMonthDate = calculateDateOnTimeScale(MONTHLY);
+
+      if (Objects.nonNull(timeScale)) {
+        switch (timeScale) {
+          case TODAY: {
+            lstFileAllUsers = repository.findAllByLastModifiedDateBetween(todayDate, tomorrowDate);
+            logger.info("Today lstFileAllUsers...." + lstFileAllUsers);
+            break;
+          }
+          case WEEKLY: {
+            lstFileAllUsers = repository.findAllByLastModifiedDateBetween(lastWeekDate, todayDate);
+            logger.info("Weekly lstFileAllUsers...." + lstFileAllUsers);
+            break;
+          }
+          case MONTHLY: {
+            lstFileAllUsers = repository.findAllByLastModifiedDateBetween(lastMonthDate, todayDate);
+            logger.info("Monthly lstFileAllUsers...." + lstFileAllUsers);
+            break;
+          }
+        }
+      } else {
+        lstFileAllUsers = repository.findAllByLastModifiedDateBetween(lastWeekDate, todayDate);
+        logger.info("Weekly lstFileAllUsers...." + lstFileAllUsers);
+      }
+
+      List<File> lstFileSelectedUser = new CopyOnWriteArrayList<>();
+      lstFileSelectedUser.addAll(lstFileAllUsers);
+
+      if (Objects.nonNull(userId)) {
+        for (File file : lstFileSelectedUser) {
+          if (file.getReviewer().equals(userId) || file.getQualityChecker().equals(userId)) {
+          } else {
+            lstFileSelectedUser.remove(file);
+          }
+        }
+      }
+      lstFileAllUsers = lstFileSelectedUser;
+
+      operationalManagerDashboard.setUserFilter(userId);
+
+      operationalManagerDashboard.setTimeScale(timeScale);
+
+      operationalManagerDashboard.setBookOfWork(getBookOfWork(lstFileAllUsers));
+
+      operationalManagerDashboard
+          .setCompletionStatus(getCompletionStatus(lstFileAllUsers, timeScale));
+
+      operationalManagerDashboard
+          .setContractProcessed(getContractProcessedFactory(lstFileAllUsers, timeScale));
+
+      operationalManagerDashboard
+          .setTurnaroundTime(getTurnaroundTimeFactory(lstFileAllUsers, timeScale));
+
+      operationalManagerDashboard
+          .setAnalystErrors(getAnalystErrorsFactory(lstFileAllUsers, timeScale));
+
+      operationalManagerDashboard
+          .setSlaPerformance(getSLAPerformanceFactory(lstFileAllUsers, timeScale));
+
+      logger.info("operationalManagerDashboard............" + operationalManagerDashboard);
+      return operationalManagerDashboard;
+    } catch (Exception e) {
+      e.printStackTrace();
+      logger.error("Error while calling getOperationalManagerDashboardDetail " + e.getMessage());
+
+    }
+    return operationalManagerDashboard;
+  }
+
+
+  public BookOfWork getBookOfWork(List<File> lstFileAllUsers) {
+    try {
+      logger.info("DashboardServiceImpl : method getBookOfWork start");
+      int completedCnt = 0;
+      int workInProgressCnt = 0;
+      int unassignedCnt = 0;
+      int exceptionCnt = 0;
+      int totalContractCnt = 0;
+      bookOfWork = new BookOfWork();
+      totalContractCnt = lstFileAllUsers.size();
+      bookOfWork.setTotalContract(totalContractCnt);
+      if (lstFileAllUsers.size() != 0) {
+        for (File file : lstFileAllUsers) {
+          if (file.getQcStatus().equals(PENDING)) {
+            workInProgressCnt++;
+          }
+          if (file.getQcStatus().equals(COMPLETED) && file.getReviewStatus().equals(COMPLETED)) {
+            completedCnt++;
+          }
+          if ((file.getReviewer().equals(null) || file.getReviewer().isEmpty())
+              && (file.getQualityChecker().equals(null) || file.getQualityChecker().isEmpty())) {
+            unassignedCnt++;
+          }
+          if (file.getQcStatus().equals(PENDINGEXP) && file.getReviewStatus().equals(PENDINGEXP)) {
+            exceptionCnt++;
+          }
+        }
+        bookOfWork.setCompleted(completedCnt);
+        bookOfWork.setWorkInProgress(workInProgressCnt);
+        bookOfWork.setUnassigned(unassignedCnt);
+        bookOfWork.setException(exceptionCnt);
+      } else {
+        logger.error("Data not found for Dashboard : BookOfWork");
+      }
+      logger.info("DashboardServiceImpl : method getBookOfWork end");
+      return bookOfWork;
+    } catch (Exception e) {
+      e.printStackTrace();
+      logger.error("Error during execution of the method getBookOfWork " + e.getMessage());
+    }
+    return bookOfWork;
+  }
+
+  public List<CompletionStatus> getCompletionStatus(List<File> lstFileAllUsers, String timeFilter) {
+    try {
+      logger.info("DashboardServiceImpl : method getCompletionStatus start");
+      int completedCnt = 0;
+      int allocatedCnt = 0;
+      Map<Object, List<File>> filesByTodayPerHour = null;
+      Map<Object, List<File>> filesByWeek = null;
+      Map<YearMonth, List<File>> filesByMonth = null;
+
+      if (lstFileAllUsers.size() != 0) {
+        if (Objects.nonNull(timeFilter)) {
+          switch (timeFilter) {
+            case TODAY: {
+/*              filesByTodayPerHour =
+                  lstFileAllUsers.stream()
+                      .collect(Collectors.groupingBy(
+                          f -> LocalDateTime.ofInstant(f.getLastModifiedDate().toInstant(),
+                              ZoneId.systemDefault()).getHour(),
+                          TreeMap::new, Collectors.toList()));*/
+              
+              filesByTodayPerHour =
+                  lstFileAllUsers.stream()
+                      .collect(Collectors.groupingBy(
+                          f -> LocalDateTime.ofInstant(f.getLastModifiedDate().toInstant(),
+                              ZoneId.of("Asia/Calcutta")).getHour(),
+                          TreeMap::new, Collectors.toList()));              
+              
+              break;
+            }
+            case WEEKLY: {
+              filesByWeek = lstFileAllUsers.stream().collect(Collectors
+                  .groupingBy(f -> f.getLastModifiedDate().toInstant().truncatedTo(DAYS)));
+              break;
+            }
+            case MONTHLY: {
+              filesByMonth = lstFileAllUsers.stream()
+                  .collect(Collectors.groupingBy(
+                      f -> YearMonth.from(f.getLastModifiedDate().toInstant()
+                          .atZone(ZoneId.systemDefault()).toLocalDate()),
+                      TreeMap::new, Collectors.toList()));
+              break;
+            }
+          }
+        }
+      }else {
+        logger.error("Data not found for Dashboard : CompletionStatus");
+      }
+
+
+      lstCompletionStatus = null;
+      lstCompletionStatus = new ArrayList<CompletionStatus>();
+
+      // Hours Data.....
+      if (Objects.nonNull(filesByTodayPerHour)) {
+        for (Object inst : filesByTodayPerHour.keySet()) {
+          completedCnt = 0;
+          allocatedCnt = 0;
+          CompletionStatus completionStatus = new CompletionStatus();
+
+          String hourOfDay = inst.toString();
+          hourOfDay = hourOfDay+":00";
+
+          if (timeFilter.equals(TODAY)) {
+            completionStatus.setTimeScale(hourOfDay);
+          }
+
+          List<File> lstFile = filesByTodayPerHour.get(inst);
+          for (File file : lstFile) {
+            if ((!file.getReviewer().equals(null)) || (!file.getReviewer().isEmpty())) {
+              allocatedCnt++;
+            }
+            if (file.getQcStatus().equals(COMPLETED) && file.getReviewStatus().equals(COMPLETED)) {
+              completedCnt++;
+            }
+          }
+
+          completionStatus.setContractAllocated(allocatedCnt);
+          completionStatus.setContractCompleted(completedCnt);
+          lstCompletionStatus.add(completionStatus);
+          completionStatus = null;
+        }
+      }
+
+      // Weekly Data.....
+      if (Objects.nonNull(filesByWeek)) {
+        for (Object inst : filesByWeek.keySet()) {
+          completedCnt = 0;
+          allocatedCnt = 0;
+          CompletionStatus completionStatus = new CompletionStatus();
+
+          Calendar cal = Calendar.getInstance();
+          SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'");
+          cal.setTime(formatter.parse(inst.toString()));
+          String dayOfWeek =
+              cal.getDisplayName(Calendar.DAY_OF_WEEK, Calendar.LONG, Locale.getDefault());
+
+          if (timeFilter.equals(WEEKLY)) {
+            dayOfWeek =
+                cal.getDisplayName(Calendar.DAY_OF_WEEK, Calendar.LONG, Locale.getDefault());
+            completionStatus.setTimeScale(dayOfWeek);
+          }
+
+          List<File> lstFile = filesByWeek.get(inst);
+          for (File file : lstFile) {
+            if ((!file.getReviewer().equals(null)) || (!file.getReviewer().isEmpty())) {
+              allocatedCnt++;
+            }
+            if (file.getQcStatus().equals(COMPLETED) && file.getReviewStatus().equals(COMPLETED)) {
+              completedCnt++;
+            }
+          }
+
+          completionStatus.setContractAllocated(allocatedCnt);
+          completionStatus.setContractCompleted(completedCnt);
+          lstCompletionStatus.add(completionStatus);
+          completionStatus = null;
+        }
+      }
+
+      // Monthly Data.....
+      if (Objects.nonNull(filesByMonth)) {
+        for (Object inst : filesByMonth.keySet()) {
+          completedCnt = 0;
+          allocatedCnt = 0;
+          CompletionStatus completionStatus = new CompletionStatus();
+
+          Calendar cal = Calendar.getInstance();
+          SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM");
+          cal.setTime(formatter.parse(inst.toString()));
+          String monthOfYear =
+              cal.getDisplayName(Calendar.MONTH, Calendar.LONG, Locale.getDefault());
+
+          if (timeFilter.equals(MONTHLY)) {
+            monthOfYear = cal.getDisplayName(Calendar.MONTH, Calendar.LONG, Locale.getDefault());
+            completionStatus.setTimeScale(monthOfYear);
+          }
+
+          List<File> lstFile = filesByMonth.get(inst);
+          for (File file : lstFile) {
+            if ((!file.getReviewer().equals(null)) || (!file.getReviewer().isEmpty())) {
+              allocatedCnt++;
+            }
+            if (file.getQcStatus().equals(COMPLETED) && file.getReviewStatus().equals(COMPLETED)) {
+              completedCnt++;
+            }
+          }
+
+          completionStatus.setContractAllocated(allocatedCnt);
+          completionStatus.setContractCompleted(completedCnt);
+          lstCompletionStatus.add(completionStatus);
+          completionStatus = null;
+        }
+      }
+      logger.info("DashboardServiceImpl : method getCompletionStatus end");
+      return lstCompletionStatus;
+    } catch (Exception e) {
+      e.printStackTrace();
+      logger.error("Error during execution of the method getCompletionStatus " + e.getMessage());
+    }
+    return lstCompletionStatus;
+  }
+
+  public ContractProcessedDTO getContractProcessedFactory(List<File> lstFileAllUsers,
+      String timeFilter) {
+
+    try {
+      logger.info("DashboardServiceImpl : method getContractProcessedFactory start");
+      int completedCnt = 0;
+      int allocatedCnt = 0;
+      Map<Object, List<File>> filesByTodayPerHour = null;
+      Map<Object, List<File>> filesByWeek = null;
+      Map<YearMonth, List<File>> filesByMonth = null;
+
+      if (lstFileAllUsers.size() != 0) {
+        if (Objects.nonNull(timeFilter)) {
+          switch (timeFilter) {
+            case TODAY: {
+/*              filesByTodayPerHour =
+                  lstFileAllUsers.stream()
+                      .collect(Collectors.groupingBy(
+                          f -> LocalDateTime.ofInstant(f.getLastModifiedDate().toInstant(),
+                              ZoneId.systemDefault()).getHour(),
+                          TreeMap::new, Collectors.toList()));*/
+              
+              filesByTodayPerHour =
+                  lstFileAllUsers.stream()
+                      .collect(Collectors.groupingBy(
+                          f -> LocalDateTime.ofInstant(f.getLastModifiedDate().toInstant(),
+                              ZoneId.of("Asia/Calcutta")).getHour(),
+                          TreeMap::new, Collectors.toList()));
+              
+              
+
+              break;
+            }
+            case WEEKLY: {
+              filesByWeek = lstFileAllUsers.stream().collect(Collectors
+                  .groupingBy(f -> f.getLastModifiedDate().toInstant().truncatedTo(DAYS)));
+              break;
+            }
+            case MONTHLY: {
+              filesByMonth = lstFileAllUsers.stream()
+                  .collect(Collectors.groupingBy(
+                      f -> YearMonth.from(f.getLastModifiedDate().toInstant()
+                          .atZone(ZoneId.systemDefault()).toLocalDate()),
+                      TreeMap::new, Collectors.toList()));
+              break;
+            }
+          }
+        }
+      }else{
+        logger.error("Data not found for Dashboard : ContractProcessed");
+      }
+
+      lstContractProcessed = null;
+      lstContractProcessed = new ArrayList<ContractProcessed>();
+      contractProcessedFactory = null;
+      contractProcessedFactory = new ContractProcessedDTO();
+      // Today data
+      if (Objects.nonNull(filesByTodayPerHour)) {
+        int avgTeamWork = 0;
+        int totalfilesToday = filesByTodayPerHour.size();
+        int completedCntForAvg = 0;
+
+        for (Object inst : filesByTodayPerHour.keySet()) {
+
+          completedCnt = 0;
+          ContractProcessed contractProcessed = new ContractProcessed();
+
+          String hourOfDay = inst.toString();
+          hourOfDay = hourOfDay+":00";
+
+          if (timeFilter.equals(TODAY)) {
+            contractProcessed.setTimeScale(hourOfDay);
+          }
+          List<File> lstFile = filesByTodayPerHour.get(inst);
+          /* for (File file : lstFile) {
+            if (file.getQcStatus().equals(COMPLETED) && file.getReviewStatus().equals(COMPLETED)) {
+              completedCnt++;
+            }
+          }*/
+          
+          completedCnt = (int)lstFile.stream().filter(b-> b.getQcStatus().equals(COMPLETED) && b.getReviewStatus().equals(COMPLETED)).count();
+          completedCntForAvg += completedCnt;
+          contractProcessed.setContractProcessed(completedCnt);
+          lstContractProcessed.add(contractProcessed);
+          contractProcessed = null;
+        }
+        avgTeamWork = completedCntForAvg / totalfilesToday;
+        contractProcessedFactory.setAvgTeamWork(avgTeamWork);
+        contractProcessedFactory.setLstContractProcessed(lstContractProcessed);
+      }
+
+      // Weekly Data.....
+      int avgTeamWork = 0;
+      if (Objects.nonNull(filesByWeek)) {
+        List<String> lstTimeScale = new ArrayList<String>();
+        int totalfilesWeekly = filesByWeek.size();
+        int completedCntForAvg = 0;
+        for (Object inst : filesByWeek.keySet()) {
+          completedCnt = 0;
+          allocatedCnt = 0;
+          ContractProcessed contractProcessed = new ContractProcessed();
+
+          Calendar cal = Calendar.getInstance();
+          SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'");
+          cal.setTime(formatter.parse(inst.toString()));
+          String dayOfWeek;
+
+          if (timeFilter.equals(WEEKLY)) {
+            dayOfWeek =
+                cal.getDisplayName(Calendar.DAY_OF_WEEK, Calendar.LONG, Locale.getDefault());
+            lstTimeScale.add(dayOfWeek);
+            contractProcessed.setTimeScale(dayOfWeek);
+          }
+
+          List<File> lstFile = filesByWeek.get(inst);
+/*  for (File file : lstFile) {
+            if (file.getQcStatus().equals(COMPLETED) && file.getReviewStatus().equals(COMPLETED)) {
+              completedCnt++;
+            }
+          }*/
+          completedCnt = (int)lstFile.stream().filter(b-> b.getQcStatus().equals(COMPLETED) && b.getReviewStatus().equals(COMPLETED)).count();
+          completedCntForAvg += completedCnt;
+          contractProcessed.setContractProcessed(completedCnt);
+          lstContractProcessed.add(contractProcessed);
+          contractProcessed = null;
+        }
+
+        avgTeamWork = completedCntForAvg / totalfilesWeekly;
+        contractProcessedFactory.setAvgTeamWork(avgTeamWork);
+        contractProcessedFactory.setLstContractProcessed(lstContractProcessed);
+      }
+
+      // Monthly Data.....
+      if (Objects.nonNull(filesByMonth)) {
+        int totalfilesMonthly = filesByMonth.size();
+        int completedCntForAvg = 0;
+        for (Object inst : filesByMonth.keySet()) {
+
+          ContractProcessed contractProcessed = new ContractProcessed();
+          completedCnt = 0;
+          allocatedCnt = 0;
+
+          Calendar cal = Calendar.getInstance();
+          SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM");
+          cal.setTime(formatter.parse(inst.toString()));
+          String monthOfYear;
+
+          if (timeFilter.equals(MONTHLY)) {
+            monthOfYear = cal.getDisplayName(Calendar.MONTH, Calendar.LONG, Locale.getDefault());
+            contractProcessed.setTimeScale(monthOfYear);
+          }
+
+          List<File> lstFile = filesByMonth.get(inst);
+   /*       for (File file : lstFile) {
+            if (file.getQcStatus().equals(COMPLETED) && file.getReviewStatus().equals(COMPLETED)) {
+              completedCnt++;
+            }
+          }*/
+          completedCnt = (int)lstFile.stream().filter(b-> b.getQcStatus().equals(COMPLETED) && b.getReviewStatus().equals(COMPLETED)).count();
+          completedCntForAvg += completedCnt;
+          contractProcessed.setContractProcessed(completedCnt);
+          lstContractProcessed.add(contractProcessed);
+          contractProcessed = null;
+        }
+        avgTeamWork = completedCntForAvg / totalfilesMonthly;
+        contractProcessedFactory.setAvgTeamWork(avgTeamWork);
+        contractProcessedFactory.setLstContractProcessed(lstContractProcessed);
+      }
+
+      logger.info("DashboardServiceImpl : method getContractProcessedFactory end");
+
+      return contractProcessedFactory;
+    } catch (Exception e) {
+      e.printStackTrace();
+      logger.error("Error during execution of the method getContractProcessed " + e.getMessage());
+    }
+    return contractProcessedFactory;
+
+  }
+
+  public TurnaroundTimeDTO getTurnaroundTimeFactory(List<File> lstFileAllUsers, String timeFilter) {
+    try {
+      logger.info("DashboardServiceImpl : method getTurnaroundTimeFactory start");
+      Map<String, List<File>> valuesByFieldNames = null;
+      if (lstFileAllUsers.size() != 0) {
+        valuesByFieldNames = lstFileAllUsers.stream().collect(Collectors
+            .groupingBy(f -> f.getReviewer().toString(), TreeMap::new, Collectors.toList()));
+      }else{
+        logger.error("Data not found for Dashboard : TurnaroundTime");
+      }
+
+      lstTurnaroundTime = null;
+      lstTurnaroundTime = new ArrayList<TurnaroundTime>();
+      turnaroundTimeFactory = null;
+      turnaroundTimeFactory = new TurnaroundTimeDTO();
+      
+      if (Objects.nonNull(valuesByFieldNames)) {
+        long avgTime = 0;
+        long totalavgTimeForTeam = 0;
+
+        for (Object inst : valuesByFieldNames.keySet()) {
+
+          avgTime = 0;
+          String userInfo = inst.toString();
+
+          turnaroundTime = new TurnaroundTime();
+
+          List<File> lstFile = valuesByFieldNames.get(inst);
+          long totalNoOfFile = lstFile.size();
+/*          long timeDiffForReviewerUser = 0;
+          long totalTimeDiffForReviewerUser = 0;
+          for (File file : lstFile) {
+            if (file.getQcStatus().equals(COMPLETED) && file.getReviewStatus().equals(COMPLETED)) {
+              timeDiffForReviewerUser = calculateDiffDate(file.getReviewStartTime().toString(),
+                  file.getReviewCompletionTime().toString());
+              totalTimeDiffForReviewerUser += timeDiffForReviewerUser;
+            }
+          }
+          */
+          
+          long totalTimeDiffForReviewerUser = 0;
+          totalTimeDiffForReviewerUser =  lstFile.stream().filter(b -> b.getQcStatus().equals(COMPLETED) && b.getReviewStatus().equals(COMPLETED))
+              .mapToLong(b -> calculateDiffDate(b.getReviewStartTime().toString(), b.getReviewCompletionTime().toString()))
+              .sum();
+         
+          
+          avgTime = totalTimeDiffForReviewerUser / totalNoOfFile;
+          turnaroundTime.setAvgTime(avgTime);
+
+          turnaroundTime.setUserInfo(userInfo);
+
+          lstTurnaroundTime.add(turnaroundTime);
+
+          totalavgTimeForTeam += avgTime;
+          turnaroundTime = null;
+        }
+        long avgTeamTime = totalavgTimeForTeam / valuesByFieldNames.size();
+        turnaroundTimeFactory.setTimeScale(timeFilter);
+        turnaroundTimeFactory.setAvgTeamTime(avgTeamTime);
+        turnaroundTimeFactory.setLstTurnaroundTime(lstTurnaroundTime);
+      }
+
+      logger.info("DashboardServiceImpl : method getTurnaroundTimeFactory end");
+
+      return turnaroundTimeFactory;
+    } catch (Exception e) {
+      e.printStackTrace();
+      logger.error("Error during execution of the method getTurnaroundTime " + e.getMessage());
+    }
+    return turnaroundTimeFactory;
+
+  }
+
+  public AnalystErrorsDTO getAnalystErrorsFactory(List<File> lstFileAllUsers, String timeFilter) {
+
+    lstAnalystErrors = new ArrayList<AnalystErrors>();
+    try {
+      logger.info("DashboardServiceImpl : method getAnalystErrorsFactory start");
+
+      Map<String, List<File>> valuesByFieldNames = null;
+      if (lstFileAllUsers.size() != 0) {
+        valuesByFieldNames = lstFileAllUsers.stream().collect(Collectors
+            .groupingBy(f -> f.getReviewer().toString(), TreeMap::new, Collectors.toList()));
+      }else{
+        logger.error("Data not found for Dashboard : AnalystErrors");
+      }
+
+      lstAnalystErrors = null;
+      lstAnalystErrors = new ArrayList<AnalystErrors>();
+      analystErrorsFactory = null;
+      analystErrorsFactory = new AnalystErrorsDTO();
+
+      if (Objects.nonNull(valuesByFieldNames)) {
+        long empErrorCnt = 0;
+        long totalEmpErrorCntPer = 0;
+        long totalFileforErrorCnt = 0;
+        long empErrorPer = 0;
+
+        for (Object inst : valuesByFieldNames.keySet()) {
+
+          empErrorCnt = 0;
+          String userInfo = inst.toString();
+
+          analystErrors = new AnalystErrors();
+          List<File> lstFile = valuesByFieldNames.get(inst);
+          totalFileforErrorCnt = lstFile.size();
+          /*for (File file : lstFile) {
+            if (file.getQcStatus().equals(PENDINGEXP)
+                && file.getReviewStatus().equals(PENDINGEXP)) {
+              empErrorCnt++;
+            }
+          }*/
+          
+          empErrorCnt = lstFile.stream().filter(b->b.getQcStatus().equals(PENDINGEXP) && b.getReviewStatus().equals(PENDINGEXP)).count();
+          empErrorPer = (empErrorCnt * 100) / totalFileforErrorCnt;
+          analystErrors.setEmpError(empErrorPer);
+          analystErrors.setUserInfo(userInfo);
+          lstAnalystErrors.add(analystErrors);
+
+          totalEmpErrorCntPer += empErrorPer;
+          analystErrors = null;
+        }
+        long avgTeamErrorPer = totalEmpErrorCntPer / valuesByFieldNames.size();
+        analystErrorsFactory.setTimeScale(timeFilter);
+        analystErrorsFactory.setAvgTeamError(avgTeamErrorPer);
+        analystErrorsFactory.setLstAnalystErrors(lstAnalystErrors);
+      }
+
+      logger.info("DashboardServiceImpl : method getAnalystErrorsFactory end");
+
+      return analystErrorsFactory;
+    } catch (Exception e) {
+      e.printStackTrace();
+      logger
+          .error("Error during execution of the method getAnalystErrorsFactory " + e.getMessage());
+    }
+    return analystErrorsFactory;
+
+  }
+
+  public SLAPerformanceDTO getSLAPerformanceFactory(List<File> lstFileAllUsers, String timeFilter) {
+    try {
+      logger.info("DashboardServiceImpl : method getSLAPerformanceFactory start");
+      Map<String, List<File>> valuesByFieldNames = null;
+      if (lstFileAllUsers.size() != 0) {
+        valuesByFieldNames = lstFileAllUsers.stream().collect(Collectors
+            .groupingBy(f -> f.getReviewer().toString(), TreeMap::new, Collectors.toList()));
+      }else{
+        logger.error("Data not found for Dashboard : SLAPerformance");
+      }
+
+      lstSLAPerformance = null;
+      lstSLAPerformance = new ArrayList<SLAPerformance>();
+      slaPerformanceFactory = null;
+      slaPerformanceFactory = new SLAPerformanceDTO();
+      long totalCompletedWithinSLA = 0;
+      if (Objects.nonNull(valuesByFieldNames)) {
+        long empSLACntPer = 0;
+        long totalAllocatedContract;
+
+        long totalCompletedWithinSLAForTeam = 0;
+        for (Object inst : valuesByFieldNames.keySet()) {
+
+          totalAllocatedContract = 0;
+          totalCompletedWithinSLA = 0;
+          String userInfo = inst.toString();
+
+          slaPerformance = new SLAPerformance();
+          List<File> lstFile = valuesByFieldNames.get(inst);
+          totalAllocatedContract = lstFile.size();
+         /* for (File file : lstFile) {
+            if (file.getQcStatus().equals(COMPLETED) && file.getReviewStatus().equals(COMPLETED)) {
+              if ((Objects.nonNull(file.getReviewCompletionTime()))
+                  && (Objects.nonNull(file.getTentativeSla()))) {
+                int compareDate = file.getReviewCompletionTime().compareTo(file.getTentativeSla());
+                if (compareDate < 0) {
+                  totalCompletedWithinSLA++;
+                }
+              }
+            }
+          }*/
+
+          totalCompletedWithinSLA = lstFile.stream().filter(b-> b.getQcStatus().equals(COMPLETED) && b.getReviewStatus().equals(COMPLETED))
+              .filter(b->b.getReviewCompletionTime().compareTo(b.getTentativeSla()) < 0).count();
+          
+          
+          empSLACntPer = (totalCompletedWithinSLA * 100) / totalAllocatedContract;
+          slaPerformance.setEmpSLA(empSLACntPer);
+          slaPerformance.setUserInfo(userInfo);
+          lstSLAPerformance.add(slaPerformance);
+          slaPerformance = null;
+          totalCompletedWithinSLAForTeam += empSLACntPer;
+        }
+        long slvPerForTeam = (totalCompletedWithinSLAForTeam) / valuesByFieldNames.size();
+        slaPerformanceFactory.setTimeScale(timeFilter);
+        slaPerformanceFactory.setAvgTeamSLA(slvPerForTeam);
+        slaPerformanceFactory.setLstSLAPerformance(lstSLAPerformance);
+      }
+
+      logger.info("DashboardServiceImpl : method getSLAPerformanceFactory end");
+      return slaPerformanceFactory;
+    } catch (Exception e) {
+      e.printStackTrace();
+      logger
+          .error("Error during execution of the method getSLAPerformanceFactory " + e.getMessage());
+    }
+    return slaPerformanceFactory;
+
+  }
+
+  public long calculateDiffDate(String reviewStartTime, String reviewCompletionTime) {
+    long diffHours = 0;
+    try {
+      logger.info("DashboardServiceImpl : method calculateDiffDate start");
+      DateTimeFormatter formatter = DateTimeFormatter.ofPattern("EEE MMM dd HH:mm:ss zzz yyyy");
+      LocalDateTime revStartTime = LocalDateTime.parse(reviewStartTime, formatter);
+      logger.info("revStartTime   " + revStartTime);
+      
+      LocalDateTime revCompTime = LocalDateTime.parse(reviewCompletionTime, formatter);
+      logger.info("revCompTime   " + revCompTime);
+
+      Duration duration = Duration.between(revStartTime, revCompTime);
+      diffHours = duration.toHours();
+      logger.info("DashboardServiceImpl : method calculateDiffDate end");
+      return diffHours;
+    } catch (Exception e) {
+      logger.error("Error while calling method: calculateDiffDate " + e.getMessage());
+      e.printStackTrace();
+    }
+    return diffHours;
+  }
+
+  public Date calculateDateOnTimeScale(String timeScale) {
+    Calendar cal = Calendar.getInstance();
+    Date date = null;
+    try {
+      logger.info("DashboardServiceImpl : method calculateDateOnTimeScale start");
+      if (Objects.nonNull(timeScale)) {
+        switch (timeScale) {
+          case TODAY: {
+            cal.add(Calendar.DATE, 0);
+            break;
+          }
+          case TOMORROW: {
+            cal.add(Calendar.DATE, 1);
+            break;
+          }
+          case WEEKLY: {
+            cal.add(Calendar.DATE, -7);
+            break;
+          }
+          case MONTHLY: {
+            cal.add(Calendar.YEAR, -1);
+            break;
+          }
+        }
+        cal.set(Calendar.HOUR_OF_DAY, 0);
+        cal.set(Calendar.MINUTE, 0);
+        cal.set(Calendar.SECOND, 0);
+        cal.set(Calendar.MILLISECOND, 0);
+        date = cal.getTime();
+      }
+      logger.info("DashboardServiceImpl : method calculateDateOnTimeScale end");
+      return date;
+    } catch (Exception e) {
+      logger.error("Error while calling method: calculateDateOnTimeScale " + e.getMessage());
+      e.printStackTrace();
+    }
+    return date;
+  }
+}

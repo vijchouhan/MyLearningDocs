@@ -1,4 +1,4 @@
-Fixed :- 12:30 to 8:30.... sleeping time... 
+﻿Fixed :- 12:30 to 8:30.... sleeping time... 
 ---------------------------------------------
 1.	java feature 8:- 
 ---------------------------------------------
@@ -186,6 +186,11 @@ https://www.git-tower.com/blog/git-cheat-sheet/
 https://www.tutorialspoint.com/git/index.htm
 https://www.cloudways.com/blog/git-cheat-sheet/
 
+	Git Merge Conflict:- 
+https://help.github.com/articles/about-merge-conflicts/
+https://help.github.com/articles/resolving-a-merge-conflict-using-the-command-line/
+
+
 ---------------------------------------------------------------
 33.	SVN tutorials:-
 https://www.tutorialspoint.com/svn/index.htm
@@ -310,8 +315,7 @@ http://techybechy.com/publish-messages-rabbitmq-java-development/
 https://www.rabbitmq.com/tutorials/tutorial-three-python.html
 http://javasampleapproach.com/java-integration/distributed-system/create-spring-rabbitmq-producerconsumer-application-springboot
 ---------------------------------------------------
-
-file upload and call rest post service 	
+56. file upload and call rest post service 	
 
 https://javatutorial.net/java-file-upload-rest-service
 and it's dependency 
@@ -319,5 +323,33 @@ and it's dependency
 https://mvnrepository.com/artifact/org.apache.httpcomponents/httpmime/4.3.1
 https://mvnrepository.com/artifact/org.apache.httpcomponents/httpclient/4.3.6
 
-cloud Computing
+---------------------------------------------------
+57. cloud Computing
 https://www.tutorialspoint.com/cloud_computing/cloud_computing_overview.htm
+
+---------------------------------------------------
+
+58. Stream API, grouping by date time
+
+https://stackoverflow.com/questions/49195841/how-to-group-values-from-a-list-with-java-stream-api-groupingby-collector
+https://stackoverflow.com/questions/45060886/grouping-items-by-date/45068322
+https://docs.spring.io/spring-data/mongodb/docs/1.2.0.RELEASE/reference/html/repositories.html#repositories.query-methods
+https://lishman.io/spring-data-mongodb-repository-queries
+https://docs.spring.io/spring-data/mongodb/docs/1.2.0.RELEASE/reference/html/mongo.repositories.html
+https://stackoverflow.com/questions/48162938/group-list-of-objects-based-on-datehourly
+https://stackoverflow.com/questions/45060886/grouping-items-by-date
+https://www.journaldev.com/2774/java-8-stream
+https://www.tutorialspoint.com/java8/java8_streams.htm
+https://docs.oracle.com/javase/8/docs/api/java/util/stream/package-summary.html
+https://stackoverflow.com/questions/10714103/java-how-to-get-time-printed-in-ist
+
+---------------------------------------------------
+60. create java executable file
+
+https://stackoverflow.com/questions/147181/how-can-i-convert-my-java-program-to-an-exe-file
+
+---------------------------------------------------
+61. Intro to Jasypt
+
+https://www.baeldung.com/jasypt
+

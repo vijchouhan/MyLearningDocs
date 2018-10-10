@@ -342,6 +342,7 @@ https://www.journaldev.com/2774/java-8-stream
 https://www.tutorialspoint.com/java8/java8_streams.htm
 https://docs.oracle.com/javase/8/docs/api/java/util/stream/package-summary.html
 https://stackoverflow.com/questions/10714103/java-how-to-get-time-printed-in-ist
+https://www.journaldev.com/2774/java-8-stream
 
 ---------------------------------------------------
 60. create java executable file

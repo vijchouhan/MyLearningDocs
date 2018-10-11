@@ -354,3 +354,12 @@ https://stackoverflow.com/questions/147181/how-can-i-convert-my-java-program-to-
 
 https://www.baeldung.com/jasypt
 
+---------------------------------------------------
+62. Agile Epic
+
+https://www.yodiz.com/blog/what-is-epic-in-agile-methodology-definition-and-template-of-epic/
+
+---------------------------------------------------
+63. Docker
+
+https://docs.docker.com/get-started/part4/#prerequisites

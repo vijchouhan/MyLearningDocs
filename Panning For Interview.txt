@@ -1,0 +1,99 @@
+::: Time Table:- from 10 Oct 2018 till Dec 31-2018
+
+		01:30 to 8:30 Sliping
+
+		11:00 to 7:00 office
+
+		10:00 to 01:00 study... 
+
+OCTOBER:- 11,	12,	13,	S-14,(MicroService, Docker, JUnit, Git)
+
+	  15,	16,	17,	18,	19,	20,	  S-21,	
+	  
+	  22,	23,	24,	25,	26,	27,	S-28,	29,	30, 31.
+		
+=========================Before Interview===========================
+-1.	Docker Basic	---- NEW 		(11,12 Oct)
+
+-2.	JUnit	---- NEW 			(13 Oct)
+
+-3.	Git ---- NEW 				(14 Oct)
+
+-4.	MicroService Basic	---- NEW 	(11,  12)
+
+--->>
+
+5.	Clout Basic	---- NEW 		(15 Oct)
+
+6.	Alige	---- NEW  			(15 Oct)
+
+7.	Memory Management	---- NEW 	(16 Oct)
+
+8.	Spring Data Rest:-	---- NEW 	(17, 18 Oct)
+
+9.	Spring framework:- 			(19 Oct)
+
+10.	Spring Boot:-				(19 Oct)
+
+11.	Restful WebService			(20 Oct)
+
+12.	Design Principle 			(20 Oct)
+
+13.	Design Patterns				(20 Oct)
+
+14.	Oracle DataBase				(21 Oct)
+
+15.	Maven					(22 Oct)
+
+16.	Mongo DabaBase	---- NEW 		(22 Oct)
+
+17.	Hibernante 				(23 Oct)
+
+18.	Core Java:- 5, 7, 8, 9 ---		(24,25 Oct)
+
+19.	Java 8 newly added features - 		(24,25 Oct)
+		Lamda,
+		functional programing
+		Stream Api
+		Time and Date Api
+		Concurreny Collection
+
+20. Spring Security	---- NEW 		(26, 27 Oct)
+
+=========================After Interview start===========================
+
+Soap WebService
+Micro Service Architecture  
+Docker  
+Angular 
+Cloud
+AWS
+Spring Batch
+Spring Integration
+Spring Security
+Spring Cloud
+Spring AOP
+DevOps concept 
+DevOps advantages over agile
+
+Jenkins
+JIRA
+Docker
+Swagger
+RabbitMq
+performance improvement of existing application
+How to optimize code.
+Effort Estimation and Track progress-- any tool
+When you will choose Rest and when SOAP.
+CSRF
+ssl
+Caching/Load Balancer
+Technologies selection for new project
+Which cloud you will prefer and why ( Criteria )
+UML diagram
+technical design document
+Functional Document
+Perfromance Testing
+CICD
+
+

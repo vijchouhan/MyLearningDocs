@@ -2,7 +2,7 @@
 
 		01:30 to 8:30 Sliping
 
-		11:00 to 7:00 office
+		11:00 to 7:00 office 
 
 		10:00 to 01:00 study... 
 
@@ -15,20 +15,21 @@ OCTOBER:- 11,	12,	13,	S-14,(MicroService, Docker, JUnit, Git)
   	  29,	30, 	31.
 		
 =========================Before Interview===========================
--1.	Docker Basic	---- NEW 		(11,12 Oct)
+=========================================================================================================================
+OD = Old Date, ND = New Date
+-1.	Docker Basic	---- NEW 		(OD : 11,12 Oct) -> (ND : 16 Oct)
 
--2.	JUnit	---- NEW 			(13 Oct)
+-2.	JUnit	---- NEW 			(OD : 13 Oct)-> (ND : 16 Oct)
 
 -3.	Git ---- NEW 				(14 Oct)
 
--4.	MicroService Basic	---- NEW 	(11,  12)
+-4.	MicroService Basic	---- NEW 	(11,  12)  Status: Almost done, need to repeat again
 
---->>
 
 5.	Clout Basic	---- NEW 		(15 Oct)
 
 6.	Alige	---- NEW  			(15 Oct)
-
+=========================================================================================================================
 7.	Memory Management	---- NEW 	(16 Oct)
 
 8.	Spring Data Rest:-	---- NEW 	(17, 18 Oct)

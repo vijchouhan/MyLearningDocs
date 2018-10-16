@@ -1,0 +1,249 @@
+****************************************************TUTORIAL 1:-****************************************************
+TUTORIAL 1:- What are Microservices | Microservices Architecture Training | Microservices Tutorial | Edureka
+By Sourav
+
+Monolithik Architecture:-  
+ 
+Monolithik Architecture is like a big container wherein all the software components of an application are assembled together and tightly packaged.
+----------------------------
+Monolithic desadvanges:- 
+large and complex application
+slow development
+Block Continuous Development: 
+Unscalable 
+Unreliable
+Inflexible
+
+----------------------------
+
+What is Microservice Architecture ?
+
+Microservices, aka Microservice Architecture, is an architectural style that structures an application as a collection of small autonomous services,
+modelled around a Business domain.
+In Microservice Architecture, each service is self-contained and implements a Single Business Capability.
+In microservice, the services are small, independend, loosely coupled
+
+--------------------------------
+Part of the michroservice architecture:- 
+Management:- This componennt is responsible for placing services on nodes, idenfifying failure , rebalancing  service across nodes
+
+Service Discovery:- this component maintain list of services and which node they located on. it enable the service look up to find the endpoint for the service. 
+
+API Gageway:- This component is bassically is entry point for client. Clinets don't call directly sevice inistead through this gateway. this call the aproprite service with respect to the request coming from client.
+this might aggreegate result of severage service and return an aggreegate response.
+ 
+--------------------------------------
+
+Feature of Microservices Architecture:- 
+
+Small focused:- It means aim of microservice architecture is simplicity, so that it can be re-written and maintained without any extra effort by the 
+development team.
+Loosely Coupled :- Each microservice is independent with each other, do not need to co-ordinate as well. this make development and deployment really quick.
+Language Neutral:- that means it is free to choose any language for development depends on microservice which fits beast.
+Bounded Context:- this means each microservice doesn't need to understand the implemention of the othere microservice.
+
+Advangages of Microservice Architecture:- 
+
+Independent Development,
+Independent Deployment,
+Fault Isolation:- if any service goes down, that doesn't effect the entire application,
+Mixed Technology stack,
+Granular Scaling:- service can scal indepently
+
+-------------------------------------------------------------------------------------------------------------------------------
+NOTE:- 	tutorial 2 to 4 are just repeat on the same topic
+****************************************************TUTORIAL 5:-****************************************************
+TUTORIAL 5:- Microservices Training | Microservices Docker Example | Microservices Tutorial | Edureka
+By Sourav
+
+
+What is docker ?
+docker is a software, that let you create image. An image is nothing but a template for vertual machine. That image run in a container.
+
+Docker is a tool designed to make it easier to create, deploy, and run application by using containers.
+Docker containers are lightweight arternatives to Virtual Machines and it uses the host OS.
+You don't have to pre-allocate any RAM in containers.
+
+Docker Images:- Read Only template used to create containers, Build By docker Users, Stored in docker Hub Or Your Local Registry.
+
+Docker Container:- Isolated Application Platform, Contains Everything Needed to Run the application.
+
+Docker Registry:- Docker Registry is a storage component for Docker Images, we can store the images in either public/private repositories
+	Docker Hub is Docker's very own cloud repository.
+
+Why use Docker Registries ?
+	Control where your images are being stored
+	Integrate image storage with your in-house development workflow. 
+
+Docker Compose:- docker compose makes it easier to configure and run applications made up of multiple containers. You can run multiple containers with a single command.
+	Docker compose file is YAML file - all container in one YAML file and then running those three connected containers with a single command.
+
+NOTE:- Docker file builds a Docker image and that image coantains all the project's code.
+	You can run that image to create as manay docker container as you want.
+	Then this image can be uploaded on Docker hub, from Docker hub any one can pull the image and build a container.
+ 
+****************************************************TUTORIAL 8:-****************************************************
+TUTORIAL 8:- Spring Boot Tutorial | Microservices Spring Boot | Microservices Architecture Training | Edureka
+
+Spring Boot:- This is spring platform that makes it easy to create Spring-powered, production-grade application. It not only create an opinionated view of Spring platform. But also used to create stand-alone java application.
+
+Why do we need Spring Boot ?
+- It provides faster and widely accessible 'getting started' experience for the all the spring development.
+- finds quick ways to diverge from defaults.
+- provides a range of non-functional features.
+- dones not generate code. Also, XML configuration is not required.
+
+
+Steps to create first spring boot application:-
+1. Add Spring boot starter parent,
+2. Add Spring boot starter web,
+3. Configure java version 8,   
+4. Add Spring boot Plugin, 
+5. Create Spring boot Application launcher.
+
+
+
+
+Starter:-
+
+Spring-boot-starter-webservices - used to develope web service and web application, soap web service
+Spring-boot-starter-test - test junit
+Spring-boot-starter-jdbc - jdbc spring jdbc
+Spring-boot-starter-security - spring securiry, autoconfiguration
+Spring-boot-starter-data-jpa - spring data jpa,
+Spring-boot-starter-data-rest - rest services
+
+
+****************************************************TUTORIAL 9:-****************************************************
+TUTORIAL 9:-Microservices Spring Boot | Microservices Tutorial for Beginners | Microservices Training | Edureka
+
+Challenges with microservice architectures
+
+1. Perceptibility:- there are many small component to deploy and maintain, and at time it is very difficult to monitor and indentfy problem.
+	for solution required great perceptibility aroung this all component. 
+2. Configuration Management: there are great need to maintain to the component across environment, bcs we have small small component.
+3. Debugging:- Maintain and debug each servive is very difficult. need centralized dashboard to dibug the problem.
+4. Consistency :- It is also required to have some decentralized covernance around the languages, platform, technology and tool which are used to implenting,
+	deploying or even monitoring the microservies.
+5. Automating the component:- it is also a big problem..
+
+
+The all problem's solution is SPRING BOOT....
+
+	Sproing boot provides:- 
+		Embedded servers wich are easy to deploy with the containers
+		It helps in monitoring the multiples components
+		It helps in configuring the components externally.
+
+		
+****************************************************TUTORIAL 11:-****************************************************
+TUTORIAL 11: Microservices Interview Questions and Answers | Microservices Architecture Training | Edureka	
+
+1. What is microservice ?
+
+Think of as an aproch as s/w adevelopement. what do I means.  what this approach does is , It aim does having small autonomous service, that focus toward common business goal.
+
+example for each functionality there would be each microservice. and this approch called microservice architecture
+
+---------------------------------------------------------------------
+2. What are advantages of michroservice architecture ?
+
+a) Independent development,
+b) Independent deployment,
+c) Fault Isolation,
+d) Mixed Technology,
+e) Granular Scaling, - Since you are having small service you can scal those independently
+---------------------------------------------------------------------
+3. What are  the feature of the michroservice ?
+	Decoupling - your applcation can be easily decoupled. that makes easy development, deployment, maintainess 
+	Componentization - every michroservice is treated as independent service. 
+	Business Capabilities
+	Autonomy
+	Continous Delivery
+	Responsibility
+	Decentralized Governance
+	Agility
+---------------------------------------------------------------------
+4. What are the characteristics of Microservices ?
+
+	Organised on Business Capabilities
+	Products not projects
+	Smart Endpoints and Dumb Pipes
+	Decentralized Governance
+	Decentralized Data Management
+	Infrastructure Automation
+	Design for Failure
+---------------------------------------------------------------------
+5. What are the best practices to design Microservices ?
+
+	Separate data store for each Microservice
+	Keep code at a similar level of maturity
+	Separate build for each Microservice
+	Deploy into Containers
+	Treat servers as stateless
+
+---------------------------------------------------------------------
+5.
+
+---------------------------------------------------------------------
+5.
+
+---------------------------------------------------------------------
+5.
+
+---------------------------------------------------------------------
+5.
+
+---------------------------------------------------------------------
+5.
+
+---------------------------------------------------------------------
+5.
+
+---------------------------------------------------------------------
+5.
+
+---------------------------------------------------------------------
+5.
+
+---------------------------------------------------------------------
+5.
+
+---------------------------------------------------------------------
+5.
+
+---------------------------------------------------------------------
+5.
+
+---------------------------------------------------------------------
+5.
+
+---------------------------------------------------------------------
+5.
+
+---------------------------------------------------------------------
+5.
+
+---------------------------------------------------------------------
+5.
+
+---------------------------------------------------------------------
+5.
+
+---------------------------------------------------------------------
+5.
+
+---------------------------------------------------------------------
+5.
+
+---------------------------------------------------------------------
+5.
+
+---------------------------------------------------------------------
+5.
+
+---------------------------------------------------------------------
+5.
+
+---------------------------------------------------------------------
+5.

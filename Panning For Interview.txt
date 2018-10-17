@@ -1,11 +1,12 @@
-::: Time Table:- from 10 Oct 2018 till Dec 31-2018
+::: Time Table:- from 17 Oct 2018 till Dec 31-2018
+	
+	GO FOR RUNNING EVERY ALTERNATE DAY, WHENEVER GO WALK UP AT 7:30
+	
+	STUDY DAILY:	10:00 to 01:00 
+	OFFICE : 	10:30 to 07:00 
 
-		01:30 to 8:30 Sliping
-
-		11:00 to 7:00 office 
-
-		10:00 to 01:00 study... 
-
+	WALK UP :- 	07:30 
+-----------------------------------------------------------------------
 OCTOBER:- 11,	12,	13,	S-14,(MicroService, Docker, JUnit, Git)
 
 	  15,	16,	17,	18,	19,	20,	  S-21,	
@@ -19,7 +20,7 @@ OCTOBER:- 11,	12,	13,	S-14,(MicroService, Docker, JUnit, Git)
 OD = Old Date, ND = New Date
 -1.	Docker Basic	---- NEW 		(OD : 11,12 Oct) -> (ND : 16 Oct)
 
--2.	JUnit	---- NEW 			(OD : 13 Oct)-> (ND : 16 Oct)
+-2.	JUnit	---- NEW 			(OD : 13 Oct)-> (ND : 16 Oct) Status: DONE, need to repeat again
 
 -3.	Git ---- NEW 				(14 Oct)
 

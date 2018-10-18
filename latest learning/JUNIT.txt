@@ -87,7 +87,7 @@ JUnit 4 has introduced a new feature called parameterized tests. Parameterized t
 
 Annotate test class with @RunWith(Parameterized.class).
 
-Create a public static method annotated with @Parameters that returns a Collection of Objects (as Array) as test data set.
+Create a public static method annotated with @Parameterized.Parameters that returns a Collection of Objects (as Array) as test data set.
 
 Create a public constructor that takes in what is equivalent to one "row" of test data.
 

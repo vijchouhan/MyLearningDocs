@@ -183,7 +183,9 @@ e) Granular Scaling, - Since you are having small service you can scal those ind
 	Treat servers as stateless
 
 ---------------------------------------------------------------------
-5.
+6. What is DDD (Domain Driven Design) ?
+	Aims to ease the creation of complex applcation
+	Connects the related pieces of the software into an ever evolving model.
 
 ---------------------------------------------------------------------
 5.

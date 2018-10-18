@@ -1,0 +1,485 @@
+Docker :- 1, 2, 3, 4, 5, 6, 12, 14 
+
+****************************************************TUTORIAL 1:-****************************************************
+TUTORIAL 1:- Docker Tutorial for Beginners - Part 1 | What is Docker? | Docker Training | DevOps Tools | Edureka
+
+Virtualization Vs Containerization
+
+Virtualization:- Advantages - Runs multiple Os on Same Host Machine
+							Reduce the cost of owenrship 
+							Maintenance  and recovery become easy 
+							
+				Disadvantages:- Long Boot-Up Process(Approx 1 min )
+							Hypevisors are not as efficient as Host OS
+							Multiple VMS lead to unstable performance
+							
+Containerization :- Advantages over Virtualization
+					Containers on same OS Kernel are ligher & Smaller
+					Better Resource Utilization Compared to VMs
+					Short Boot-Up Process (1/20th of second)
+							
+What is Docker ?
+
+Docker is a Containerization platform which packages your application and all it's dependencies together in the form of Co ntainers so as to ensure that
+	your application works seamlessly in any environment be it Development or Test or Production. 
+	
+Containerization:- It consists of an entinre runtime environment, an application, all it's dependencies, libraries, and other binaries, and configuration files
+need to run it, bundled into one package. 
+
+	
+****************************************************TUTORIAL 2:-****************************************************
+TUTORIAL 2:- What is Docker | Docker Tutorial for Beginners | Docker Container | DevOps Tools | Edureka
+
+Docker Registry:- 
+	Docker Registry is a storage component for docker images
+	We can store the images in either Public/private repositories
+	Docker Hub is docker's very own cloud repository..
+	
+	Why use Docker Registries ?
+		Control where your images are being stored
+		Integrate image storage with your in-house development workflow
+		
+Docker Images:- 
+	Read Only template used to create Containers
+	Built by docker Users
+	Stored in docker hub or Your local registry
+	
+Docker Container:- Run time intance of docker image 
+	Isolated Application Platform(Run time intance of docker image ),
+	Contains Everything Needed to Run the Application
+	Built from one or more Images(at the same time more that one container required to create one container)
+
+Example:- 	
+for Better understating of Docker image and Docker container, on my ubuntu box, I will pull a centos imange and run centos container in that.
+1. Install docker in ubuntu Box
+	1. Upodate package ($ sudo apt-get update )
+	Before install docker need to install recomented component
+	$ sudo apt-get install linux-image-exta-$(unage -r) linux-image-extra-virtual
+	
+	Done pre requisit, now instatll docker
+
+2. $ sudo apt-get install docker-engine
+Done docker installations...........
+
+3. Start docker service 
+	$ sudo service docker start
+	
+4. pull centos image from docker hub and run centos docker container
+	$ sudo docker pull centos
+		first look into local registry if doesn't find then go to the docker hub
+5. run the docker container
+	$	sudo docker run -it centos
+	
+	
+Docker Compose:- Docker Composer makes it easier to configute and run applications made up of mutliple containers. (YAML file), run in sinle command
+		Command:- dcker-compose up
+		
+		1. first need to install docker compose in ubuntu box, but before that need python pip
+		$ sudo apt-get install python-pip
+		
+		2. Intall docker compose
+		$ sudo pip install docker-compose
+		
+		$ mkdir wordpress
+		$ cd wordpress
+		
+		edit compose file usint gedit
+			$ sudo gedit docker-compose.yml;
+			
+		Copy downloaded yml content to above  created compose file docker-compose.yml
+		
+		file-------------docker-compose.yml--------start------
+		
+		wordpress:   // containr name defined here 
+		image: 
+			- workpress_db:mysql
+		port:
+			- 8080:80
+		
+		wordpress_db:
+			image: mariadb
+			environment:
+			MYSQL_ROOT_PASSWORD: edureka
+			
+		phpmyadmin:
+			image: conbinu/docker-phpmyadmin
+			link:
+				- wordpress_db:mysql
+			port:
+				- 8181:80
+			environment:
+				MYSQL_USERNAME: root
+				MYSQL_ROOT_PASSWORD: edureka
+				
+		file--------------docker-compose.yml--------end-------
+		
+		
+		3. Run the docker compose 
+		$ sudo docker-compose up -d
+		
+		this command pull all three images and build containes
+		
+		working urls for thise application
+		install wordpress:-	localhost:8080/
+		localhost:8181/ - phpMyAdmin is used for basicall use to access my sql database
+		
+		
+		
+		
+****************************************************TUTORIAL 3:-****************************************************
+TUTORIAL 3:- Docker Installation | Install Docker | Docker Installation In CentOS | DevOps Tools | Edureka
+
+same command run in above totorial to install docker
+
+
+****************************************************TUTORIAL 4:-****************************************************
+TUTORIAL 4:- Docker Commands With Examples | Docker Tutorial | DevOps Tutorial | Docker Training | Edureka
+
+Environment : linux virtual machine is ubunto machine here, is hosted on my vm
+Most Used Docker Commands
+	docker --version
+	docker --help --- list possible list of commands
+	docker pull  --- pull to images from docker hub
+	docker run  --- this command executes a docker images on your local repository and creates a runing container out of it. 
+	docker build ---($ docker build -t myUbuntoImage . ) this command is used to compile the Dockerfile, for building custom Docker images based on the, . 'dot' indicate it is present in current directory 
+	
+	cat dokcer file command is used to see file in read mode
+	gedit is used to edit the docker file
+	
+	docker login --- used to login docker hub --- want to share image with other , upload to image there have to login
+	docker push  ($ docker push <dockerId>/<iamgeName>)--- once logged in dcker hub you can push in your images there by this command
+		tag image with docker id
+		$ doker tag mycusto vardhars/mysuimage 
+		$ doker tag <imagename> <dockerid>/<imagename>
+		
+		
+	docker ps  ---	($ docker ps) - docker process this command indenfy which are corrently exectuing or active
+	
+		($ docker ps -a )-- all active or inactice add containers list out
+	docker images  --- see to available image on your local repository
+	docker stop -- $ docker < container id> --- shut down container -- gental stop
+	docker kill  --- force stop or kill
+	
+	docker rm  -- docker remove from repository, ($ docker rm <containeid>
+	
+	docker rmi ($ docker rmi <containeid>) docker remove image from repository
+	
+	docker exec ($ docker exec -it <containerid> bash) --- used to access an already running container and perform operations inside the container
+			here -i option is for interactive mode access container 
+			
+			once run above command you r inside container
+			let check out
+			$ ls
+			list all file here inside container, (example dependencies, src directory,  code, docker file, .js file .json file ets ), can make changes here
+			(start container :- $ docker run --rm -p 4200:4200 --name 'MyDemoApp' demoapp1)
+			
+		exit the base use command ($ exit)
+			
+	docker commit ( $ docker commit <containerId> <name of new image> )--- used to basicall create a new image of an edited container on the local repo
+	
+	docker import ---- 	($ docker import /home/edureka/download/demo.tgz)	import to any tar file  into your local repository					
+	
+	docker export  --- ($ docker export --output=<name of tar file > <containerId>) is used to export a Docker image into a tar file in your local system
+	
+	docker comtainer  ($ docker containe logs/kill/rm/run/start)--- this command is used to manage your container
+		$  docker containe  logs <container id> --- to see log for this container
+		$ docker ps -a  --- see all containe info for both runing and stoped 
+		$ docker containe rm <container id> --- remove container 
+		$ docker containe kill ---- used to kill container any perticular
+		$ docker containe run --- run container
+		$ docker containe stop --- to stop container 
+		
+	docker compose   --- this commad is used to power multi-container applications where various services will be hosted inside differrent containers
+		$ docker-compose build  -- used to build your yaml file (docker compose file) [yaml - yet another markup language]
+		$ docker-compose up --- start to docker compose 
+		
+		to stop docker compose --- use command Ctrl+C
+		
+		
+	docker swarm  --- this command is used to creates a network docker engines/hosts to execute containers in paraller(for scaling up & high availability)
+	
+	manager --- multipler worker
+	
+		$ docker swarm init -adverties-addr <id address of manager machine>
+		$ docker swarm join  --- to join as worker Note: copy and paste ane execute in another machine 
+		$ docker swarm join-token -- regenereate same token 
+		$ docker swarm  leave -- want to leave docker swarm cluster if you are woker 
+		$ docker swarm  leave -- force if your are swarm manager 
+	
+	docker service --- control existing docker service (Container/Compose/Swarm/ Others)
+		$ docker service ls
+		$ docker service logs --- find log
+		$ docker service rm --- remove
+		$ docker service stop -- want to stop any node 
+		$ docker service ps  -- what container are executing 
+		$ docker service scale  --- for scale 
+		
+		
+	
+****************************************************TUTORIAL 5:-****************************************************
+TUTORIAL 5:- Dockerfile Tutorial with Example | Creating your First Dockerfile | Docker Training | Edureka
+
+
+How to build docker image ?
+
+Docker File :- Dockerfile is a script, composed of various commands(instructions) and arguments listed successively to automatically perform action on a
+			base imange in order to create or form a new one. 
+
+	Docker syntax xonsists of two kind of main line clocks: comments and commands + arguments
+	
+	Contains below tag	
+		
+		FROM : it defines the base imange to use to start the build process. most crucial amongs all commands.
+		
+		RUN	: it is the central executing directive for dockerfiles. It takes a command as its argument and runs it to form the image. Unlike CMD, it actually is used to build the image. example if i want to install like java then it used for inside docker file. 
+		
+		CMD : The command CMD, similar to RUN, can be used for executing a specific command. However, it is not used for building docker image. I can not build my docker image by using CMD commands. if want to build docker imange then use RUN command.
+
+		ENTRYPOINT: it is basically used to override what CMD command does. When I execute the docker image,  This is the first command to be executed.
+		
+		ADD : The ADD commands gets tow arguments: a source and a destination. It basically copies the files from the source on the host into the container's own filesystem at the set destination.
+		
+		ENV : This command is used to set the environment variable one or more. it consist of key value pairs which can be executed within the comtainer.
+		
+		WORKDIR : The WORKDIR directive is used to set where the command defined with CMD is to be executed.
+		
+		EXPOSE: The EXPOSE command is used to associate a specified port to enable networking between the running process inside the container and the outside world(ie the host). for example a webapplication is active on xyz port no mentioned inside the container. 
+		
+		MAINTAINER: This non executing command declares the author, hence setting the author field of the images. It should come nonetheless after FROM. 	
+			Example :- if you want to tag your name along with image you are building, then use MAINTAINER command to specify who is the person who is maintaining this docker image.  before upload to docker hub. and in further any want to download this image know that is the person who upload this docker image. present only after FROM command.
+			
+		USER:  If  you want perticular user to execute or run container, use this command and specify the use id. whom you want to execute this container. 
+		
+		VOLUME: this command is used to set the custom path where your container will store all the files. This is the path where all the file related to your container present.can be possible to share by multiple container.
+		
+		
+some commands: 
+	$ cat Dockerfile
+	$ sudo docker build -t <name of image file> <path where docker file present>
+	$ sudo docker run -p <host port numger>:<contaier port number> --name=<name of container> <name of image>
+	$ sudo docker ps
+	$ sudo docker stop <container Id>
+
+****************************************************TUTORIAL 6:-****************************************************
+TUTORIAL 6:- Docker Compose | Containerizing MEAN Stack Application | DevOps Tutorial | Edureka
+	
+What is Docker ?
+	Docker is a Containerization platform whick packages your application & all it's dependencies together in the form of Containers, to ensure that your application works seamlessly in any environment be it Development/Test/Production.
+	
+	BNEFITS: 
+		RAM consumed by containers is << RAM consumed by VMs.
+		Easily run applications by packaging them into containers.
+		Containers are light-weight, can be easily shared via Docker Hub.
+		
+How do we create Docker Containers ?
+
+	Docker files are used to build a Docker image & that image will also contain all the project codes. The same Docker image can be used to spin 'n' no of containers, each with modifications to the underlying image. This final image can then be uploaded to Docker Hub & Shared with other collaborators for testing/deployment.
+	
+
+What is Docker Compose ?
+	Docker Compose is used to run multi-container applications.
+	Each container will run a stand-alone application and it can communicate with other containers present in the same host.
+	
+Docker Compose File :-
+	it is a YAML file.
+	
+docker-compose.yml file----------------start-----------------------
+
+version: '3.0' # docker compose version
+
+# define the services or containers to be run
+sevices:
+	angular: # name of container
+		build: angular-app # specify the directory of the dockerfile
+		port:
+		  - "4200:4200" # specify the port mapping
+	express: 
+		build: express-server
+		port:
+		 - "3000:3000"
+		links:
+		 - database # link this service to the database service
+	database:
+		image: mongo # specify image to build container from 
+		ports: 
+		 - "27017:27017"
+docker-compose.yml file-------------------end--------------------	
+	
+
+COMMANDS FOR DOCKER COMPOSE:
+
+$ 	docker-compse up
+
+Then test your applications.........
+	
+		
+	
+
+****************************************************TUTORIAL 14:-****************************************************
+TUTORIAL 14:- Docker vs VM | | Containerization or Virtualization - The Differences | DevOps Training | Edureka
+
+Virtual Machine:
+VM 1 			VM 2 				VM 3
+App A			App B 				App C
+Bins/Libs		Bins/Libs			Bins/Libs
+Guest OS		Guest OS			Guest OS
+	
+---------------Hypervisor    ---------------
+
+---------------Infrasturcture---------------
+
+Benefits:-
+	All OS resources available to appps
+	Established management tools
+	Established Security tools
+	Better known security controls
+	
+Popular Virtual machine providers
+	vmware
+	KVM
+	Virtual Box
+	Xen
+	Hyper-V
+
+Type of Container
+	Linux Containers(LXC)
+	Docker
+
+Benefits of Containrs
+	Quicker Spinning
+	Security Updates
+	Less code
+	Reduced Size of Spapshots
+	Reduced IT Management Resources
+
+Popular Container providers
+	Linux Containers
+	docker 
+	Windows Server
+	
+MAJOR DIFFERENCES B/W DOCKER CONTAINER AND VIRTUALIZATION
+1. Operating System
+
+	Containers:-
+		Hosted on a single physical server
+		Suitable for running multiple applicatons over a single OS kernel
+		
+	Virtual Machine:-
+		Have a host OS and individual guest OS inside each VM
+		Required for applications or services
+
+		If you have an application required need to run on different operating system flaviour then virtual machine are required. 
+
+2. Security
+	Docker: Has access to the kernel subsystems
+		ex- Single Vulnerable application can hack the entire host server, providing root access to the application, running them to super user privileges is there fore is not recomented in docker bcz this securiry issue.
+	
+	VM: Provides root access to applications
+		ex: virtal machines are unique intances of their own kernel and security features. They can therefore run application that need more privileges and securities.
+	Own kernel and Security freatures
+	
+3. Potability:- 
+
+	Docker: 
+		Containres are self-contained packages that can run the required application.
+		Light weight architecture
+		for Development purpose docker containres are the ideal choice
+		
+	VM: 
+		Are isolated server instances with their own OS. they cannot be ported across multiple platform without incuring compatibility issue.
+		
+4. Performance:
+		Docker: 
+			Light weight architecture and star up very fast compared to VM.
+			Resouce usage also varies among the two.
+			CPU, memory, I/O etc usage varies with load
+			
+		VM:
+			No need to allocate resources permanently containers
+			Has to load an entire OS to start.
+			
+
+General Rule of Thumb:
+	
+		Virtual Machine are better choce of running application that required all of the operating Syetem reources and functionalities where you need to run multiple application on servers or have white variery operating system to manage.
+		
+		Containe are better choice when your biggest privority is to maximum the number of applications running on minimal number of server.
+
+		but in many setuation the ideal setup is likely include both with the current state of virtual technologies, flexibility of virtal machine and minimal resouces requirement of containers work together to provide environment with maximum functionlaties.
+			
+		
+===========================
+VM:	Harware level process isolation
+DC: OS level process isolation
+
+VM: VM offers complete isolation of applicaton from host OS
+DC: docker containers can share some resources with host OS
+
+VM: each VM has separete OS
+DC: each docker dontainer can share OS resources
+
+VM: Boots in minutes
+DC: Boots in seconds
+
+VM: more resouces usage
+DC: less resouces usage
+
+VM: Pre-configured VMs are hard to find and manage
+DC: Pre-built docker containers for home server apps already available.
+
+VM: Customizing pre-configured VMs require work
+DC: building a custorm setup with containers is easy.
+
+VM: bigger in size as they contain whole Os underneath
+DC: small in size with only docker engine over the host OS
+
+VM: VMs can be easily moved to a new host OS
+DC: Container are destroyed and recreated rather that moving
+
+VM: Creating VMs take relatively long time
+DC: docker container cant be created in second
+
+VM: Virtualized Apps are harder to find and it takes more time to install and run them
+DC: Containerized apps such as Sonarr, CouckPotatoa etc, can be found and installed easily within minutes.
+
+	
+****************************************************TUTORIAL 12:-****************************************************
+TUTORIAL 12:- What is Continuous Integration? | Continuous Integration with Jenkins | DevOps Tutorial | Edureka
+	CI/CD
+	commit--- build---unit tests -- puppet -- 
+
+What is Continuous Integration :-
+		Accourding to Martin Fowler - Continuous Integration is a software development practice where members of team integrate their work frequently, usually each person interates at least daily - leading to multiple integrations per day. Each integraion in verified by an automated build including test to detect integration errors as quickly as possible. Many teams find that this approach leads to significantly reduced integration problems and allow a team to develop cohesive software more rapidly.
+
+Benefits of Continuous Integration
+	Reduced Integration Risk
+	Higher Code Quality
+	The code in version control works
+	Reduced Friction between team Members
+	Ease for QA Team
+	Less Deployment time
+	
+What are the requirements of CI Syetem ?
+	Version Control System
+	Spare Server of Workstation or Virtual Machine
+	Hosted CI Tool solutions  --- need if you don't wankt to mess with any other server or virtual machine 
+	Jenkins, TeamCity, Bamboo  --- if you optain self hosted varient then you need to install any of the available continuous integration tool like these.
+	
+Jenkins - The Ultimate CI Tool
+	Jenkins is an open source automation tool written in java with plugins build for continuous integration purpose. Plugins allows integration of various DevOps states.
+	
+Jenkins Plugins:- Jenkins achieves Continuos Integration with the help of plugins. Plugins allow the integration of Various DevOps stages.
+	
+Plugin Categorization:- Test, Reports, Notification, Deployment, Compile
+	
+	
+
+****************************************************TUTORIAL 14:-****************************************************
+TUTORIAL 14:-Docker Jenkins Pipeline Tutorial | Microservices Using Docker & Jenkins | DevOps Tools | Edureka
+
+
+	
+==========================================================================================================================================================
+	
+	
+	

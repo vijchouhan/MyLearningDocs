@@ -367,3 +367,8 @@ https://www.javacodegeeks.com/2013/05/agile-methodology.html
 
 https://docs.docker.com/get-started/part4/#prerequisites
 
+64. 	12 (Twelve) factor app (twelve-factor app)
+https://searchsoftwarequality.techtarget.com/definition/twelve-factor-app
+https://en.wikipedia.org/wiki/Twelve-Factor_App_methodology
+
+

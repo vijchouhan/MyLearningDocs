@@ -1,0 +1,2 @@
+Agile:-
+	Agile is a software development methodology to build a software incrementally using short iterations of 1 to 4 weeks so that the development is aligned with the changing business needs. 

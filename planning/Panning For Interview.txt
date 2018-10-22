@@ -18,14 +18,13 @@ OCTOBER:- 11,	12,	13,	S-14,(MicroService, Docker, JUnit, Git)
 =========================Before Interview===========================
 =========================================================================================================================
 OD = Old Date, ND = New Date
--1.	Docker Basic	---- NEW 		(OD : 11,12 Oct) -> (ND : 16 Oct)
+-1.	Docker Basic	---- NEW 		(OD : 11,12 Oct) -> (ND : 16 Oct) Status: DONE, need to repeat again
 
 -2.	JUnit	---- NEW 			(OD : 13 Oct)-> (ND : 16 Oct) Status: DONE, need to repeat again
 
--3.	Git ---- NEW 				(14 Oct)
+-3.	MicroService Basic	---- NEW 	(11,  12) Status: DONE, need to repeat again
 
--4.	MicroService Basic	---- NEW 	(11,  12)  Status: Almost done, need to repeat again
-
+-4.	Git ---- NEW 				(14 Oct)
 
 5.	Clout Basic	---- NEW 		(15 Oct)
 

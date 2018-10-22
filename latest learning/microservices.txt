@@ -183,10 +183,19 @@ e) Granular Scaling, - Since you are having small service you can scal those ind
 	Treat servers as stateless
 
 ---------------------------------------------------------------------
-6. What is DDD (Domain Driven Design) ?
+6. What is Domain Driven Design (DDD)?
 	Aims to ease the creation of complex applcation
 	Connects the related pieces of the software into an ever evolving model.
-
+	DDD focuses on 3 Principles below,
+		Focus on the core domain and domain logic,
+		Find complex designs on models of the domain.
+		Constantly collaborate with domain experts to improve the application model and to resolve nay domain-related issues.
+		
+		
+	
+	
+	
+	
 ---------------------------------------------------------------------
 5.
 

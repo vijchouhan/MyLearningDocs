@@ -1,4 +1,4 @@
-﻿Fixed :- 12:30 to 8:30.... sleeping time... 
+﻿
 ---------------------------------------------
 1.	java feature 8:- 
 ---------------------------------------------
@@ -13,30 +13,36 @@ http://toolsqa.com/selenium-webdriver/webelement-commands/
 https://docs.oracle.com/cd/E19776-01/820-4867/6nga7f5n6/index.html
 http://www.techferry.com/articles/RESTful-web-services-JAX-RS-annotations.html
 
-4.	microservices:-  
+4.	Micro Services:-  
 ---------------------------------------------
 https://stackify.com/what-are-microservices/
+https://stackify.com/what-are-microservices/
 
+---------------------------------------------
 5.	clould :- 
 
 https://en.wikipedia.org/wiki/Cloud_computing
+https://aws.amazon.com/what-is-cloud-computing/
 ---------------------------------------------
 
 6.	linked list:-
----------------------------------------------
+
 https://www.cs.cmu.edu/~adamchik/15-121/lectures/Linked%20Lists/linked%20lists.html
 
-
-7.	Bean Life Cycle:- 
 ---------------------------------------------
+7.	Bean Life Cycle:- 
+
 http://www.wideskills.com/spring/spring-bean-lifecycle
 
-8.	Hibernate Spring Integrations:-
 ---------------------------------------------
+
+8.	Hibernate Spring Integrations:-
+
 https://www.javatpoint.com/hibernate-and-spring-integration
 
-9.	Design Principle:- 
 ---------------------------------------------
+9.	Design Principle:- 
+
 
 https://en.wikipedia.org/wiki/Single_responsibility_principle
 https://en.wikipedia.org/wiki/Open/closed_principle
@@ -75,11 +81,11 @@ https://www.journaldev.com/2856/java-jvm-memory-model-memory-management-in-java
 
 ---------------------------------------------
 
-14.	Micro services:- 
-
-https://stackify.com/what-are-microservices/
-
+14. 	Twelve factor app (twelve-factor app)
+https://searchsoftwarequality.techtarget.com/definition/twelve-factor-app
+https://en.wikipedia.org/wiki/Twelve-Factor_App_methodology
 ---------------------------------------------
+
 15.	Memory Management:- 
 
 https://www.journaldev.com/4098/java-heap-space-vs-stack-memory
@@ -367,8 +373,45 @@ https://www.javacodegeeks.com/2013/05/agile-methodology.html
 
 https://docs.docker.com/get-started/part4/#prerequisites
 
-64. 	12 (Twelve) factor app (twelve-factor app)
-https://searchsoftwarequality.techtarget.com/definition/twelve-factor-app
-https://en.wikipedia.org/wiki/Twelve-Factor_App_methodology
+---------------------------------------------------
+
+
+---------------------------------------------------
+
+
+---------------------------------------------------
+
+
+---------------------------------------------------
+
+
+---------------------------------------------------
+
+
+---------------------------------------------------
+
+
+---------------------------------------------------
+
+
+---------------------------------------------------
+
+
+---------------------------------------------------
+
+
+---------------------------------------------------
+
+
+---------------------------------------------------
+
+
+---------------------------------------------------
+
+
+
+
+
+
 
 

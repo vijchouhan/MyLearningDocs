@@ -13,19 +13,25 @@ What is a User Story?
 	In order to <Business value> as a <User Role> I want <Functionality>
 
 	
-	Code base
-	dependency
-	process
-	build, run, release
-	backend services
-	config 
-	port binding
-	cuncurrency
-	desposibility
-	Admin Processes
-	logs
-	Dev/Prod parity
-		
+Twelve Principles of Agile Manifesto
+	Customer Satisfaction
+	Welcome Change
+	Deliver a working software	
+	Collaboration
+	Motivation
+	face-to-face corversation
+	mesure the progress as per working software
+	Maintain constant pace	
+	Monitoring
+	Simlicity
+	Self organized team
+	Review the work Regularily
+	
+	
+	
+	
+	
+
 	
 	
 	

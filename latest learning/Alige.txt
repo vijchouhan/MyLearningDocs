@@ -1,2 +1,35 @@
 Agile:-
-	Agile is a software development methodology to build a software incrementally using short iterations of 1 to 4 weeks so that the development is aligned with the changing business needs. 
+	Agile is a software development methodology to build a software incrementally using short iterations of 1 to 4 weeks so that the development process is aligned with the changing business needs. Instead of a single-pass development of 6 to 18 months where all the requirements and risks are predicted upfront, Agile adopts a process of frequent feedback where a workable product is delivered after 1 to 4 week iteration.
+	
+Roles in Agile:- 
+
+Scrum Master 
+	A Scrum Master is a team leader and facilitator who helps the team members to follow agile practices so that they can meet their commitments
+	
+What is a User Story?
+	A user story is a requirement which defines what is required by the user as functionality. A user story can be in two forms -
+
+	As a <User Role> I want <Functionality> so that <Business Value>
+	In order to <Business value> as a <User Role> I want <Functionality>
+
+	
+	Code base
+	dependency
+	process
+	build, run, release
+	backend services
+	config 
+	port binding
+	cuncurrency
+	desposibility
+	Admin Processes
+	logs
+	Dev/Prod parity
+		
+	
+	
+	
+	
+	
+
+

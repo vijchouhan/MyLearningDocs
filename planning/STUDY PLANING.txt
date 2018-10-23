@@ -1,0 +1,109 @@
+::: Time Table:- from 17 Oct 2018 till Dec 31-2018
+	
+	GO FOR RUNNING EVERY ALTERNATE DAY, WHENEVER GO WALK UP AT 7:30
+	
+	STUDY DAILY:	10:00 to 01:00 
+	OFFICE : 		10:30 to 07:00 
+
+	WALK UP :- 		07:30 
+-----------------------------------------------------------------------
+OCTOBER:- 11,	12,	13,	S-14,(MicroService, Docker, JUnit, Git)
+
+	  15,	16,	17,	18,	19,	20,	  S-21,		STATUS ON 23 OCT :-	***ONLY 50% SUCCEDED***
+	  -------------------------------------
+	  22,	23,	24,	25,	26,	27,	S-28,
+
+  	  29,	30, 	31.
+	  
+NOVEMBER:- 1,	2,	3,	4,	5,	6,	7,	8,	9,	10.
+		
+=========================Before Interview===========================
+--------------------------------------------------------------------
+
+1.	Docker Basic		---- NEW 		Status: DONE, need to repeat again
+
+2.	JUnit				---- NEW 		Status: DONE, need to repeat again
+
+3.	MicroService Basic	---- NEW 		Status: DONE, need to repeat again
+
+4.	Alige				---- NEW  		(23 Oct)
+
+5.	Clout Basic			---- NEW 		(24, 25 Oct)
+
+6.	Git 				---- NEW 		(26 Oct)
+
+--------------------------------------------------------------------
+7.	Memory Management	---- NEW 	( Oct)
+
+8.	Spring Data Rest:-	---- NEW 	(Oct)
+
+9.	Spring framework:- 				( Oct)
+
+10.	Spring Boot:-					( Oct)
+
+11.	Restful WebService				( Oct)
+
+12.	Design Principle 				( Oct)
+
+13.	Design Patterns					( Oct)
+
+14.	Oracle DataBase					( Oct)
+
+15.	Maven							( Oct)
+
+16.	Mongo DabaBase	---- NEW 		( Oct)
+
+17.	Hibernante 						( Oct)
+
+18.	Core Java:- 5, 7, 8, 9 ---		(Oct)
+
+19.	Java 8 newly added features - 	( Oct)
+		Lamda,
+		functional programing
+		Stream Api
+		Time and Date Api
+		Concurreny Collection
+
+20. Spring Security	---- NEW 		( Oct)
+
+21.	Jenkins		---- NEW			( Oct)
+
+22.	JIRA		---- NEW			( Oct)
+
+=========================After Interview start===========================
+
+Soap WebService
+Micro Service Architecture  
+Docker  
+Angular 
+Cloud
+AWS
+Spring Batch
+Spring Integration
+Spring Security
+Spring Cloud
+Spring AOP
+DevOps concept 
+DevOps advantages over agile
+
+Jenkins
+JIRA
+Docker
+Swagger
+RabbitMq
+performance improvement of existing application
+How to optimize code.
+Effort Estimation and Track progress-- any tool
+When you will choose Rest and when SOAP.
+CSRF
+ssl
+Caching/Load Balancer
+Technologies selection for new project
+Which cloud you will prefer and why ( Criteria )
+UML diagram
+technical design document
+Functional Document
+Perfromance Testing
+CICD
+
+

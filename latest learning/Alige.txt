@@ -12,6 +12,11 @@ What is a User Story?
 	As a <User Role> I want <Functionality> so that <Business Value>
 	In order to <Business value> as a <User Role> I want <Functionality>
 
+Agile Manifesto:- The values are
+	individual and iterations over Processes and tools.
+	customer collaboration over constant negotiation
+	working software over conprehensive documentation
+	Responsing changes over following a plan
 	
 Twelve Principles of Agile Manifesto
 	Customer Satisfaction

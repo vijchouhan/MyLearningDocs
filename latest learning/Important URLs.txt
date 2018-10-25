@@ -19,10 +19,11 @@ https://stackify.com/what-are-microservices/
 https://stackify.com/what-are-microservices/
 
 ---------------------------------------------
-5.	clould :- 
+5.	Clould Computing :- 
 
 https://en.wikipedia.org/wiki/Cloud_computing
 https://aws.amazon.com/what-is-cloud-computing/
+https://aws.amazon.com/types-of-cloud-computing/
 ---------------------------------------------
 
 6.	linked list:-
@@ -362,11 +363,11 @@ https://www.baeldung.com/jasypt
 
 ---------------------------------------------------
 62. Agile, 
+
+https://www.yodiz.com/blog/what-is-epic-in-agile-methodology-definition-and-template-of-epic/
 https://www.tutorialspoint.com/agile/agile_primer.htm
 https://www.javacodegeeks.com/2013/05/agile-methodology.html
-
- Agile Epic
-	https://www.yodiz.com/blog/what-is-epic-in-agile-methodology-definition-and-template-of-epic/
+https://www.smartsheet.com/comprehensive-guide-values-principles-agile-manifesto
 
 ---------------------------------------------------
 63. Docker

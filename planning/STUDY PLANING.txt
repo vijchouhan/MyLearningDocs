@@ -26,12 +26,11 @@ NOVEMBER:- 1,	2,	3,	4,	5,	6,	7,	8,	9,	10.
 
 3.	MicroService Basic	---- NEW 		Status: DONE, need to repeat again
 
-4.	Alige				---- NEW  		(23 Oct)
+4.	Alige				---- NEW  		(25 Oct)
 
-5.	Git 				---- NEW 		(23 Oct)
+5.	Git 				---- NEW 		(26 Oct)
 
-6.	Clout Basic			---- NEW 		(24, 25 Oct)
-
+6.	Cloud Computing		---- NEW 		(26 Oct)
 
 
 --------------------------------------------------------------------

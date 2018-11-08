@@ -1,0 +1,104 @@
+-----: MEMORY MANAGEMENT :----
+
+Memory devided into two part- 
+
+1. 	Heap Memory :- 
+		store class objects, JRE classeds, GC runs on heap memory only to free some memory by destroying some objects with do's have any references.
+		
+		Objects are getting shifes to Eden to surviour with the help of Minor GC garbage collector
+		
+		Yong Generation(further devided into Eden, Survior S0, Survior S1... ) -->> Minor GC carbage collector
+		
+		Whenever new object gets created it store in Eden memory .. 
+		
+		Old Genetaration
+			Major GC garbage collector, it take comparitively longer time for Minor GC
+			time out errors			
+			
+		Memory Pool :- this is part of heap memory
+			used to store immutable objects, like String class, string pool, 
+			this will be defined at run time by JVM memory management
+		
+		
+		
+	
+2. 	Java Stack Memory:- 
+		used to execution of the thread
+		it contains method specific values
+		all local variables are stored inside stack memory
+		inside the method havinvg object references which are refering some object present in heap memory also stored here
+		Test t1 = new Test();
+		t1 is stored here but actual object (new Test() ) will be stored in heap memory Eden area
+		store value on the basic of LIFO (last in first out)
+
+		stack memory size is less that heap memory
+
+		Permanent generation is part of Stack memory
+		
+	Permanent Generation (further divided into 'Method Area')
+		application metadata which is defined by JVM to describe the class and method will be stored
+		Metadata of classes/methods
+		Not part of Heap memory
+		Generated at run time
+		
+		Method Area :- onother area inside the  permanent generation  
+			class structure
+			static variables
+			constants
+			
+			Run Time Constant Pool: part of permanent generation
+				inside the method area we have run time constant pool
+				generated at run time, used to store static and constants variables
+		
+=========================================================================================
+
+						----: JVM ARCHITECTURE :----
+						
+----------------------------------------
+The mail function of JVM is to load and execute your application, 
+Load and execute 
+	create Test.java
+	javac Test.java
+	java Test  --->> JVM Instance (at the time you execute the java class, basically you are creating a JVM instance)
+
+															    (bytecode)		(native method call) 
+		.class file or .class files of java api -->> class loader -->> execution engine <--> Host Operation System
+
+Component 1.	Class loader subsystem,
+		
+Component 2.	Runtime data areas
+				(method area, Heap, Java Stacks,	PC Registers, Native Method Stacks)
+			
+Component 3. 	Execution Engine
+
+					Native Method Interface(JNI)
+						[it connect to execution enging and class loader through runtime data area]
+						[it further connect to native method interface]
+
+							Native method libraries(.dll, .so etc)
+
+-----------------------------------------------------------
+Class loading subsystem,
+
+LOAD
+LINK
+INITIALIZE 
+
+LOAD:- 
+
+	bootstrap class loader - rt.jar
+	extention class loader - jre/lib/ext
+	appliation class loader - class path, -cp command
+	
+LINK:- Verify :- valid java byte code verification
+		Prepare:- is the place memory allocated for class level variable not for intance variable, default value allocation
+			Resolve:- is the place where all symbolic references inside the current class are resolved
+
+INITIALIZE:-	this is the phase where static initializer of the class is run example static block inside class	
+				whatever values are set is getting set here in this phase
+
+------
+
+Method Area,
+Heap,
+PC Registers:- It contains program conters, which is the pointer to next instrunction to be executed per thread

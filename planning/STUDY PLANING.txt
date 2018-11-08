@@ -2,7 +2,7 @@
 	
 	GO FOR RUNNING EVERY ALTERNATE DAY, WHENEVER GO WALK UP AT 7:30
 	
-	STUDY DAILY:	10:00 to 01:00 
+	STUDY DAILY:	10:00 to 01:00 [no new concepts only repeat old one]
 	OFFICE : 		10:30 to 07:00 
 
 	WALK UP :- 		07:30 
@@ -32,44 +32,49 @@ NOVEMBER:- 1,	2,	3,	4,	5,	6,	7,	8,	9,	10.
 
 6.	Cloud Computing		---- NEW 		(26 Oct)
 
-
 --------------------------------------------------------------------
+20. Spring Security		---- NEW 	( Oct)
+
 7.	Memory Management	---- NEW 	( Oct)
 
 8.	Spring Data Rest:-	---- NEW 	(Oct)
 
-9.	Spring framework:- 				( Oct)
+21.	Jenkins				---- NEW	( Oct)
 
-10.	Spring Boot:-					( Oct)
+22.	JIRA				---- NEW	( Oct)
 
-11.	Restful WebService				( Oct)
+23. LDAP 				---- NEW	( Oct)
 
-12.	Design Principle 				( Oct)
+16.	Mongo DabaBase		---- NEW 	( Oct)  
 
-13.	Design Patterns					( Oct)
+--------------------------------------------------------------------
 
-14.	Oracle DataBase					( Oct)
+9.	Spring framework:- 				( Oct) repeat	
 
-15.	Maven							( Oct)
+10.	Spring Boot:-					( Oct) repeat
 
-16.	Mongo DabaBase	---- NEW 		( Oct)
+11.	Restful WebService				( Oct)  repeat
 
-17.	Hibernante 						( Oct)
+12.	Design Principle 				( Oct)  repeat
 
-18.	Core Java:- 5, 7, 8, 9 ---		(Oct)
+13.	Design Patterns					( Oct)  repeat and also new one
 
-19.	Java 8 newly added features - 	( Oct)
+17.	Hibernante 						( Oct)	 repeat
+
+18.	Core Java:- 5, 7, 8, 9 ---		(Oct)	 repeat
+
+19.	Java 8 newly added features - 	( Oct)	 repeat
 		Lamda,
 		functional programing
 		Stream Api
 		Time and Date Api
 		Concurreny Collection
 
-20. Spring Security	---- NEW 		( Oct)
+14.	Oracle DataBase					( Oct)	 repeat		
 
-21.	Jenkins		---- NEW			( Oct)
+15.	Maven							( Oct)	 repeat
 
-22.	JIRA		---- NEW			( Oct)
+
 
 =========================After Interview start===========================
 
@@ -86,7 +91,6 @@ Spring Cloud
 Spring AOP
 DevOps concept 
 DevOps advantages over agile
-
 Jenkins
 JIRA
 Docker

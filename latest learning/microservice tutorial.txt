@@ -1,0 +1,364 @@
+MicroService Spring boot
+--------------
+
+Type of application
+
+	Local application : desktop app
+	remote application : 
+	web Services
+	
+MicroService :- is the natural extension and the most latest architectural style to build distributed application
+
+very similar to we serivice, micro services are also functionilities that communicate with each other over the newetwork in order to accomplish a specified goal.
+
+Microservices architectural style is becoming the standard for building contunuously deploye system.
+
+it is small, specific, lightweight, a functionility that uses standard the protocols
+
+Attribute of MicroService
+1. Organized around concerns
+2. Easy to replace
+3. Changes are isolated
+4. Belong to one application only
+5. Horizontal than vertical
+6. Scalling indindual finctionality possible
+
+
+Disadvanges
+	Complexity --- migration from monolethik to micro service, create ms from monolethik is complex
+	Higher cost due to inter-service calls over a network
+	Nanoservies - An antipattern
+	
+MicroService frameworks
+	Dropwizard
+	Vertx
+	Spring Boot
+	Others:	jersey, Ninja Web framework, Play Framework, Restexpress, Restlet, Spark Framework
+	
+	Monolith challenges
+		traditional monolithic design patters are not appropriate for the cloud
+		can't be scalled indepently
+		too many developers in one code base
+		developers truggle to understatnd a large code base
+		long term commitment to technololy selecion for the application 
+
+circuit braker dashboard ==>> Hystrix...
+service registry :- eureka netflix 
+================================================================================
+
+NetFlix OSS
+spring cloud
+Service discovery with  spring cloud netflix Eureka 
+client site load balancing with spring cloud netflix Ribbon
+
+ NetFlix OSS 
+	Netflix OSS (Operation Support System )is a set of framework and libraries that NetFlix wrote solve some interesting distributed-systems problems at scale.
+	
+	Today for java developers, it's pretty synonymous with developing microservices in a cloud environment.
+	
+	Patterns for service discovery, load balancing, fault-tolerance etc. these are imp concepts for scalable distributed systems and Netflix brings nice solution for these.
+	
+	Netflix decided to contribute these solution to open souce, alalable with libraries and frameworks.
+	
+Spring Cloud:
+		Spring Cloud provides tools for developers to quickly build some of the common patters in distirbuted systems
+
+Spring cloud provides wrappers around various NetFlix OSS componets and spring cloud user spring boot application
+
+
+----------------to make ereka server required dependencies are below need to add into pom file-----------------
+<dependencies>
+<dependency>
+	<groupid>org.springframework.cloud</groupid>
+	<artifactId>spring-cloud-starter-eureka-server</artifactId>
+	</dependency>
+</dependencies>
+
+
+
+<dependencyManagement>
+<dependencies>
+<dependency>
+	<groupid>org.springframework.cloud</groupid>
+	<artifactId>spring-cloud-starter-dependencies</artifactId>
+	<version>Camden.SR4</version>
+	<type>pom</type>
+	<scope>import</scope>
+	</dependency>
+</dependencies>
+</dependencyManagement>
+		
+---------------------------
+
+@SpringBootApplication
+@EnableEurekaServer ===>> registered it with ureka server use this annotation
+pubic calss Eureka{
+
+PSVM(String[] args){
+SpringApplication.run(Eureka.class, args)
+}
+}		
+
+annotation.yml
+---
+for only one eureka server setting, there is no sibling server 
+
+---------------start---------
+server:
+	port: 5001
+eureka:
+	instance:
+		hostname: localhost
+	client:
+		fetch-registry: false
+		register-with-eureka:false
+---------------end---------	
+
+---------------------------first intance of eureka server-------
+spring:
+	profiles: eurekaone
+server:
+	port: 5002
+eureka:
+	instance:
+		hostname: eureka-primary
+		appname: eone
+	client:
+		fetch-registry: true
+		register-with-eureka:false
+		serviceUrl:
+			defaultZone:
+			http://erureka-secondary:5003/eureka,http://erureka-tertiary:5004/eureka,
+----------------------------------
+---------------------------second intance of eureka server-------
+spring:
+	profiles: eurekatow
+server:
+	port: 5003
+eureka:
+	instance:
+		hostname: eureka-secondary
+		appname: etwo
+	client:
+		fetch-registry: true
+		register-with-eureka:false
+		serviceUrl:
+			defaultZone:
+			http://erureka-primary:5002/eureka,http://erureka-tertiary:5004/eureka,
+------------------------
+
+---------------------------third intance of eureka server-------
+spring:
+	profiles: eurekathree
+server:
+	port: 5004
+eureka:
+	instance:
+		hostname: eureka-tertiary
+		appname: etwo
+	client:
+		fetch-registry: true
+		register-with-eureka:false
+		serviceUrl:
+			defaultZone:
+			http://erureka-primary:5002/eureka,http://erureka-secondary:5003/eureka,
+
+------------------------------------------------------------------------
+run as springbootapplication... at 5002
+run configuraion and select profile one under argument 
+
+run as springbootapplication... at 5003
+run configuraion and select profile two
+ 
+ run as springbootapplication... at 5004
+run configuraion and select profile three
+
+-----------------------------------
+for server we are using application.yml where we provide multiple server configuraion as mentioned above
+for client we are using bootstrap.yml where we registed to server
+------------------------------------------------------------------------
+
+working with netflix ribbon
+
+@Autowired
+private DiscoveryClient discoveryClient;
+public URI getServiceURI(String serviceName){
+List<ServiceInstance> instances = discoveryClient.getInstances(serviceName);
+URI uri = instances.get(0).getUri();
+}
+
+serviceName = the value of Spring.application.name defined in yml file
+
+getting first intance of this service like trade client sevice runing on multiple intances
+
+-----
+
+what us a load balancer ?
+	Traditional load balancers are server-side component
+	they distribute the incoming traffic among several servers
+	they can be software(Apache, Nginx, HA proxy) or hardware (F5, NSX, binIP)
+	
+Clint-Side Load Balancer
+	this is selects which server to call
+	Based on some criteria
+	Its part of client software
+	Server can still use it's own load balancer.
+	
+Why we need Clint-Side Load Balancer
+		Not all the servers are the same
+		some may be unavalilable
+		some may be slower that others
+		Some may be furthere away that others(regions/zones)
+		
+Spring Cloud Netflix Ribbon
+	Ribbon - is part of the Netflix OSS family
+	Features -
+		Clint-Side load balancer
+		Automatically integrates with server discovery(Eureka)
+		built-in failure resiliency(Hystrix)
+		Caching
+		Multiple protocols(HTTP, TCP, UDP)
+		Spring cloud provides an easy API wrapper for using Ribbon
+		
+Key Concept of Ribbon
+	List of servers
+	Filtered list of Servers
+	Load balancer
+	Ping
+
+-----
+List of servers
+	Ditermine the list of server for given service client
+	Static: via configuraion
+	Dynamic: via Sevice Discovery(Eureka)
+	Spring Cloud default - use eureka when present on the class path
+	
+filter list of server	
+	Criteria by which you wish to limit the total list
+	Spring Cloud default - filter setvers in the same zone
+	
+Ping: 
+	Used to test if the server is up or down
+	Spring Cloud default - delegate to Eureka to determine if server is up or down
+		
+Load Balancer:
+		The load balancer is the actual component that routes the calls to the servers in the filter list
+		Severlar strategies available but they usually refer to a Rule component to make the actual decisions
+		Spring Cloud default : ZoneAwareLoadBanancer
+		
+		<dependencies>
+		<dependency>
+		<groupid>org.springframework.cloud</groupid>
+		<artifactId>spring-cloud-starter-ribbon</artifactId>
+		</dependency>
+		</dependencies>
+	
+	User below code while using Ribbon
+	
+	public class MyClass{
+	@Autowired LoadBalancerClent loadBalacer;
+	
+	public void doStuff(){
+	ServiceInstance ins = loadBalancer.chosse("client id")
+	URI subjectUri = URI.create(String.format("http://%s,%s"),
+	instance.getHost(),instance.getPort()));
+	
+	}
+	}
+	
+-----BootStrap file ---------
+
+spring:
+	application:
+	name: register-service
+	
+	eureka:
+		intance:
+		  instance-id: ${spring-application.name}:${random.value}
+	clint:
+		serviceUrl:
+			defaultZone: http://localhost:5001/eureka
+			
+    server:
+		port: 0
+	logging:
+		level:
+			httpclient.wire: DBUG
+			
+    pivotal:
+		registerservice;
+			name: register-service
+		tradeservice;
+			name: trade-service
+----------------------------------------------------
+
+Client Side Circuit Breakup:
+
+Cascading Failure:
+
+Software Circuit Breaker - Hystrix
+	Hystrix- Part of the Netflix OSS
+	Light, ea to use wrapper provided by Spring Cloud
+	detected failure conditions and opens to disallows further calls
+	Hystrix default - 20 failures in 5 seconds
+	identify 'fallback' what to do in case of service dependency failure
+	Think catch block, fallbacks can be chained
+	Automatically closes itself after interval
+	Hystrix default - 5 seconds
+	
+	
+	-------------
+		<dependencies>
+		<dependency>
+		<groupid>org.springframework.cloud</groupid>
+		<artifactId>spring-cloud-starter-hystrix</artifactId>
+		</dependency>
+		</dependencies>
+--------
+		@SpringApplication
+		@EnableHystrix
+		public class Application{
+		}
+------------
+
+@HystrixCommand(fallbackMethod="defaultStores")  // actual method
+public Object getStores(Map<str, obj> par){
+}
+
+public Object defaultStores(Map<str, obj> parametres){ // callback method
+}
+
+------------
+@HystrixComman(
+fallbackMethod="defaultStores",
+commandProperties={
+@HystrixProperties(name="circuitBreaker.errorThresholdPercentage", value="20")
+@HystrixProperties(name="circuitBreaker.sleepWindowInMilliseconds", value="1000")
+})
+
+for enable dashboard for Hystrix use below annotation
+@EnableHystrixDashboard
+and add dependency below
+
+<dependencies>
+	<dependency>
+		<groupid>org.springframework.cloud</groupid>
+		<artifactId>spring-cloud-starter-hystrix-dashboard</artifactId>
+	</dependency>
+	
+		<dependency>
+		<groupid>org.springframework.boot</groupid>
+		<artifactId>spring-boot-starter-actuator</artifactId>
+	</dependency>
+	
+</dependencies>
+
+@EnableHystrix
+@EnableHystrixDashboard
+---------------- 
+
+Summary of Hystrix
+	Software circuit breakers protect against cascade faulure
+	spring cloud Netflix Hystrix provides an easy way to add circuit breakers to your application
+	you can use Hystrix dashboard and Turbine to monitor your circuit breakers.
+

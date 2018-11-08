@@ -1,0 +1,19 @@
+
+main config class
+@EnableConfigurationProperties(class name example AppSetting.class)
+
+class AppSetting{
+@ConfigurationProperties(name of properties file like application.properties)
+
+// here some getter / setter method for properties defined in properties file.
+
+example getUserId()/setUserId()
+}
+
+then use wherever you want by create intance of this class and 
+
+AppSetting appSetting;
+
+appSetting.getUserId();
+
+

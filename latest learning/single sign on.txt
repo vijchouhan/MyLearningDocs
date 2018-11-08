@@ -1,0 +1,82 @@
+2:00 - 3:00
+
+3:00 - 4:00
+
+4:00 - 5:00
+
+5:00 - 6:00
+
+6:00 - 7:00
+
+
+Single Sign on
+Authentication to several related but independent software systems by logging in with a single user ID and password is called single sign-on. It is an access control property, whereby the user can seamlessly gain access to multiple connected systems without separately signing in with different user names and passwords.
+
+Earlier phase....
+--- bypass login
+--- web service call
+
+In short, single sign-on is a facility to skip or use the login information used in the first Web app for all subsequent Web apps without popping out the login screen for each one. There are many standard technologies and techniques used for SSO in the industry, and many of them are open source or freeware. We will discuss some of the most popular and robust technologies here.
+
+But before delving further into the topic, let me share the terms that are going to be used hereafter, along with their meaning and usage.
+
+	LDAP – Lightweight Directory Access Protocol: This is a protocol used commonly in Web apps for looking up certain information from the servers; it is widely used in mail servers.
+
+	Datastore: This is the store in LDAP that keeps authentication and other access related data.
+
+	Directory server: This provides the datastore for LDAP and supports many protocols internally.
+
+	Authentication: This is a piece of information that is verified to certify or deny access, like the user name/password.
+
+	Realms: This is a kind of group or system to provide facilities for authentication. It offers a lot of features for configuration like policy setting, access control, privileges for realms, etc, which can be easily configured for role based access for different groups and logins. There are two configurations in OpenSSO — Default and New Config. The Default configuration is easy. The advantage is that it can be customised later and hence is meant for basic or first-time users. New Config, however, is meant for advanced users, and there may be some problems with getting the directory service port or cookie domain if the user doesn’t know each configuration setting and doesn’t provide them
+	
+Technologies are for single sign on:-
+
+OAuth
+
+One of the most popular and commonly used single sign-on solutions for Java Web apps is OAuth or OAuth 2.0, as the API library provided has a comprehensive facility for easy configuration, and it can be used with different application servers and a complex Web component architecture. But there are many other open source SSO frameworks available, too, which are listed below.
+
+OpenSSO
+
+This is more flexible in configuration as it has its own Web app and comes with a GUI based sophisticated configuration screen, which can be used to configure settings for a Web container using different Web apps for a single sign-on.
+
+It also needs an LDAP (we will discuss this later) and a directory service for handling SSO authentication and a data store. It has a default configuration, which uses generic LDAPv3. We can configure it using the Sun Java System Directory Server for the data store.
+
+JOSSO
+
+JOSSO is another facility for SSO which is purely Java based and is also called Java Open SSO. The new version of JOSSO (1.6) supports all the latest Web servers like JBoss 4.2. This is a widely used solution, and the configuration is comparatively easier than OpenSSO.
+
+There are some problems that can arise in JOSSO (as discussed a lot in JOSSO forums), particularly in relation to JaasSecurityManager in JBoss 4.x, which was not the case with JBoss 3.x. Also, with some proxy settings, JOSSO can be difficult to configure.
+
+JOSSO can also be configured with LDAP, and it uses internal JAAS from JBoss for authentication.
+
+Open LDAP
+
+OpenLDAP is an open source provider of the SSO facility. It is complex to use but has a lot of features for authentication and configuration. OpenLDAP cannot be used alone, as it also requires an SSO application (like OpenSSO) for handling logins. We can use a combination of OpenSSO with OpenLDAP configuration. The main drawback in this open source application is that there is no good documentation for configuring and setting it up.
+
+Apache Directory Studio
+
+This is sophisticated technology which can be used as a custom authentication facility to the level that the user wants. The drawback, if any, is that Apache Directory server is supported only in Mac OS X, Linux and Windows.
+
+SpringLDAP
+
+SpringLDAP is a comprehensive LDAP feature from the Spring framework but it doesn’t work for SSO. It is meant for LDAP provisioning for directory services. Hence, it can be used with an SSO application for handling directory services.
+
+There is a sub-module in the Spring framework called Acegi security, which can be used for SSO with LDAP. It has an easy-to-use approach called ‘persistent login cookie’ to bypass login. This is also called RememberMe.
+
+The RememberMe facility has two types of approaches:
+
+It stores login information (base64 encrypted) in a cookie.
+It stores login information (base64 encrypted) in a database.
+For the second approach, we need a table called ‘persistent logins’ with user details (which needs migration if your current Web app uses a different table/database for user information). The first approach can be simple and easy-to-use, but depends on the client facility to enable cookies.
+
+Liferay
+
+Liferay is a ready-to-use portal service provider that has a lot of technologies embedded in it to address the various requirements of a Web solution. Liferay supports SSO using CAS (Central Authentication Service) from Yale. This is an open source SSO solution. Please note that CAS requires certificate authentication created using a key tool. Also, CAS supports the RememberMe feature like the one explained above (Spring Acegi RememberMe).
+
+Liferay supports many other SSO applications like NTLM (not freeware) and OpenSSO; it also supports LDAP and JAAS. The technical specifications of Liferay are given at https://www.liferay.com/product/tech-specs.
+
+The Liferay admin guide (liferay-administration-guide-5.1.pdf) gives details on CAS, OpenID and other SSO solutions supported by Liferay, as well as on using Liferay with different application servers. [It has details on configuring JAAS and configuring SSO in all the latest Web servers for Liferay.]
+
+This article just helps in giving readers a feel of the different technologies that can be used and doesn’t intend to be a user guide. It is up to the architect and designer to evaluate and analyse these technologies based on their actual requirements and bandwidth of usage.
+

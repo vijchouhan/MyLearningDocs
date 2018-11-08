@@ -1,3 +1,5 @@
+2:00 to 4:00 
+
 Agile:-
 	Agile is a software development methodology to build a software incrementally using short iterations of 1 to 4 weeks so that the development process is aligned with the changing business needs. Instead of a single-pass development of 6 to 18 months where all the requirements and risks are predicted upfront, Agile adopts a process of frequent feedback where a workable product is delivered after 1 to 4 week iteration.
 	
@@ -13,10 +15,10 @@ What is a User Story?
 	In order to <Business value> as a <User Role> I want <Functionality>
 
 Agile Manifesto:- The values are
-	individual and iterations over Processes and tools.
-	customer collaboration over constant negotiation
-	working software over conprehensive documentation
-	Responsing changes over following a plan
+	Individuals and interactions over Processes and tools
+	Working software over Comprehensive documentation
+	Customer collaboration over Contract negotiation
+	Responding to change over Following a plan
 	
 Twelve Principles of Agile Manifesto
 	Customer Satisfaction
@@ -32,7 +34,46 @@ Twelve Principles of Agile Manifesto
 	Self organized team
 	Review the work Regularily
 	
+Agile Characteristics
+	Iterative/Incremental and Ready to Evolve
+	Face to Face Communication
+	Feedback loop
 	
+Agile - Daily Stand-up
+	What is Daily Stand-up
+	Why Stand-up is Important?
+	Who Attends a Stand-up?
+	Geographically Dispersed Teams
+
+Agile - Definition of Done for below,
+	User Story
+		A user story is a requirement which is formulated in a few sentences in everyday language of an user and it should be completed within an iteration. 
+	Iteration
+		An iteration is a time boxed collection of user stories / defects to be worked upon and accepted within the release of a product.
+	Release
+		A release is a major milestone that represents an internal or external delivery of working, tested version of the product/system. 
+	
+----
+Point
+A Point defines how much a team can commit. A point usually refers to 8 hours. Each story is estimated in points.
+
+Capacity
+Capacity defines how much an individual can commit. Capacity is estimated in hours.
+	
+----------------------
+
+Agile - Useful Terms
+	Acceptance Criteria
+	Backlog Grooming
+	
+----------------------------
+Agile - Product Backlog
+		A product backlog is a list of items to be done. Items are ranked with feature descriptions. In an ideal scenario, items should be broken down into user stories.
+		
+-------------------------
+Agile - Iteration Planning
+
+		
 	
 	
 	

@@ -375,10 +375,14 @@ https://www.smartsheet.com/comprehensive-guide-values-principles-agile-manifesto
 https://docs.docker.com/get-started/part4/#prerequisites
 
 ---------------------------------------------------
-
+64. Single Sign-on java based web application
+https://opensourceforu.com/2018/03/using-single-sign-java-based-web-applications/
 
 ---------------------------------------------------
-
+65. Spring Security...
+https://www.linkedin.com/learning/spring-boot-essential-training/spring-security-in-spring-boot-applications 
+  
+https://www.linkedin.com/learning/extending-securing-and-dockerizing-spring-boot-microservices  
 
 ---------------------------------------------------
 

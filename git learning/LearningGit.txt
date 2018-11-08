@@ -399,4 +399,13 @@ Commit contents options
     -u, --untracked-files[=<mode>]
                           show untracked files, optional modes: all, normal, no. (Default: all)
 
+********************************************************************************************************************
+COMMANDS:
+
+1. single command for create folder and git clone developer repository branch into that folder
+
+Syntax: $ git clone <--branch> <branch name> <repository> <name of folder that you want to create>
+
+$ git clone -b developer http://<server-ip>/contract-intelligence/lease-extraction/commonusermanagement.git CommonUserManagement
+
 

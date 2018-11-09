@@ -385,6 +385,9 @@ https://www.linkedin.com/learning/spring-boot-essential-training/spring-security
 https://www.linkedin.com/learning/extending-securing-and-dockerizing-spring-boot-microservices  
 
 ---------------------------------------------------
+66. Introduction to Spring Data REST
+
+https://www.baeldung.com/spring-data-rest-intro
 
 
 ---------------------------------------------------

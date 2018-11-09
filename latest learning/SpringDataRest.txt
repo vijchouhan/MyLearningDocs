@@ -1,0 +1,236 @@
+------------------------------------------:SPRING DATA :----------------------------------------
+https://spring.io/projects/spring-data
+------------------------------------------------------------------------------------------------
+
+
+Spting Data:- 
+	Spring Data’s mission is to provide a familiar and consistent, Spring-based programming model for data access while still retaining the special traits of the underlying data store.
+
+	It makes it easy to use data access technologies, relational and non-relational databases, map-reduce frameworks, and cloud-based data services. This is an umbrella project which contains many subprojects that are specific to a given database. The projects are developed by working together with many of the companies and developers that are behind these exciting technologies.
+
+Features:- 	
+	1)	Powerful repository and custom object-mapping abstractions
+	2)	Dynamic query derivation from repository method names
+	3)	Implementation domain base classes providing basic properties
+	4)	Support for transparent auditing (created, last changed)
+	5)	Possibility to integrate custom repository code
+	6)	Easy Spring integration via JavaConfig and custom XML namespaces
+	7)	Advanced integration with Spring MVC controllers
+	8)	Experimental support for cross-store persistence
+
+Main modules:- 
+		1.	Spring Data Commons - Core Spring concepts underpinning every Spring Data module.
+
+		2.	Spring Data JDBC - Spring Data repository support for JDBC.
+
+		3.	Spring Data JDBC Ext - Support for database specific extensions to standard JDBC including support for Oracle RAC fast connection failover, AQ JMS support and support for using advanced data types.
+
+		4.	Spring Data JPA - Spring Data repository support for JPA.
+
+		5.	Spring Data KeyValue - Map based repositories and SPIs to easily build a Spring Data module for key-value stores.
+
+		6.	Spring Data LDAP - Spring Data repository support for Spring LDAP.
+
+		7.	Spring Data MongoDB - Spring based, object-document support and repositories for MongoDB.
+
+		8.	Spring Data Redis - Easy configuration and access to Redis from Spring applications.
+
+		9.	Spring Data REST - Exports Spring Data repositories as hypermedia-driven RESTful resources.
+
+		10.	Spring Data for Apache Cassandra - Easy configuration and access to Apache Cassandra or large scale, highly available, data oriented Spring applications.
+
+		11.	Spring Data for Apace Geode - Easy configuration and access to Apache Geode for highly consistent, low latency, data oriented Spring applications.
+
+		12.	Spring Data for Apache Solr - Easy configuration and access to Apache Solr for your search oriented Spring applications.
+
+		13.	Spring Data for Pivotal GemFire - Easy configuration and access to Pivotal GemFire for your highly consistent, low latency/high through-put, data oriented Spring applications.
+		
+----------------------------------------:SPRING DATA REST:-------------------------------------- 
+		https://spring.io/projects/spring-data-rest
+------------------------------------------------------------------------------------------------
+		Spring Data REST is part of the umbrella Spring Data project and makes it easy to build hypermedia-driven REST web services on top of Spring Data repositories.
+
+		Spring Data REST builds on top of Spring Data repositories, analyzes your application’s domain model and exposes hypermedia-driven HTTP resources for aggregates contained in the model.
+		
+		Features:-		
+		1.	Exposes a discoverable REST API for your domain model using HAL as media type.
+		2.	Exposes 'collection, item and association resources' representing your model.	[5 point, 5.2, 5.3]
+		3.	Supports pagination via 'navigational links'.	[6 point]
+		4.	Allows to dynamically filter collection resources.
+		5.	Exposes dedicated 'search resources for query methods' defined in your repositories.	[5.6 point]
+		6.	Allows to 'hook into the handling of REST requests' by handling Spring ApplicationEvents.	[11 point]
+		7.	'Exposes metadata' about the model discovered as ALPS and JSON Schema.	[13 point]
+		8.	Allows to define client specific representations through 'projections'.	[8 point]
+		9.	Ships a customized variant of the 'HAL Browser' to leverage the exposed metadata. 	[15.1 point]
+		10.	Currently supports JPA, MongoDB, Neo4j, Solr, Cassandra, Gemfire.
+		11.	Allows 'advanced customizations' of the default resources exposed.		[16 point]
+		
+		please look into below link for further details as per mentioned point number. 
+-----------------------:Spring Data REST Reference Guide:--------------------------------
+		https://docs.spring.io/spring-data/rest/docs/current/reference/html/	
+------------------------------------------------------------------------------------------------
+
+
+
+		
+----------------------------------------:SPRING DATA REST EXample Project :-------------------------------------- 
+https://www.baeldung.com/spring-data-rest-intro
+------------------------------------------------------------------------------------------------
+
+1. Overview
+	This article will explain the basics of Spring Data REST and show how to use it to build a simple REST API.
+	In general, Spring Data REST is built on top of the Spring Data project and makes it easy to build hypermedia-driven REST web services that connect to Spring Data repositories – all using HAL (HyperMedia Application Language) as the driving hypermedia type. 
+	It takes away a lot of the manual work usually associated with such tasks and makes implementing basic CRUD functionality for web applications quite simple.
+	
+2. Maven Dependencies
+	The following Maven dependencies are required for our simple application:
+
+		<dependency> // spring boot application dependency
+		    <groupId>org.springframework.boot</groupId>
+		    <artifactId>spring-boot-starter</artifactId>
+		</dependency>
+		
+		------------------***this is required dependency ***-------------
+		<dependency>  
+		    <groupId>org.springframework.boot</groupId
+		    <artifactId>spring-boot-starter-data-rest</artifactId>
+		</dependency>
+		-----------------------------------------------------------------
+		<dependency>  //---- jps dependency 
+		    <groupId>org.springframework.boot</groupId>
+		    <artifactId>spring-boot-starter-data-jpa</artifactId>
+		</dependency>
+		
+		<dependency> //---- he db dependency 
+		    <groupId>com.h2database</groupId>
+		    <artifactId>h2</artifactId>
+		</dependency>
+	
+	We decided to use Spring Boot for this example, but classic Spring will also work fine. We also chose to use the H2 embedded database in order to avoid any extra setup, but the example can be applied to any database.
+
+	
+3. Writing the Application
+	
+		a) We will start by writing a domain object to represent a user of our website:
+
+		@Entity
+		public class WebsiteUser {
+		 
+			@Id
+			@GeneratedValue(strategy = GenerationType.AUTO)
+			private long id;
+		 
+			private String name;
+			private String email;
+		 
+			// standard getters and setters
+		}
+		
+	Every user has a name and an email, as well as an automatically-generated id. 
+	
+	b) Now we can write a simple repository:
+		@RepositoryRestResource(collectionResourceRel = "users", path = "users")
+		public interface UserRepository extends PagingAndSortingRepository<WebsiteUser, Long> {
+			List<WebsiteUser> findByName(@Param("name") String name);
+		}
+		This is an interface that allows you to perform various operations with WebsiteUser objects. We also defined a custom query that will provide a list of users based on a given name.
+
+		The @RepositoryRestResource annotation is optional and is used to customize the REST endpoint. If we decided to omit it, Spring would automatically create an endpoint at “/websiteUsers” instead of “/users“.
+
+	c) Finally, we will write a standard Spring Boot main class to initialize the application:
+
+		@SpringBootApplication
+		public class SpringDataRestApplication {
+			public static void main(String[] args) {
+				SpringApplication.run(SpringDataRestApplication.class, args);
+			}
+		}
+		That’s it! We now have a fully-functional REST API. Let’s take a look at it in action.
+
+	d) Accessing the REST API
+	If we run the application and go to http://localhost:8080/ in a browser, we will receive the following JSON:
+
+		{
+		  "_links" : {
+			"users" : {
+			  "href" : "http://localhost:8080/users{?page,size,sort}",
+			  "templated" : true
+			},
+			"profile" : {
+			  "href" : "http://localhost:8080/profile"
+			}
+		  }
+		}
+		As you can see, there is a “/users” endpoint available, and it already has the “?page“, “?size” and “?sort” options.
+
+		There is also a standard “/profile” endpoint, which provides application metadata. It is important to note that the response is structured in a way that follows the constraints of the REST architecture style. Specifically, it provides a uniform interface and self-descriptive messages. This means that each message contains enough information to describe how to process the message.
+
+		There are no users in our application yet, so going to http://localhost:8080/users would just show an empty list of users. Let’s use curl to add a user.
+
+
+			$ curl -i -X POST -H "Content-Type:application/json" -d '{  "name" : "Test", \ 
+			"email" : "test@test.com" }' http://localhost:8080/users
+			{
+			  "name" : "test",
+			  "email" : "test@test.com",
+			  "_links" : {
+				"self" : {
+				  "href" : "http://localhost:8080/users/1"
+				},
+				"websiteUser" : {
+				  "href" : "http://localhost:8080/users/1"
+				}
+			  }
+			}
+		Lets take a look at the response headers as well:
+
+			HTTP/1.1 201 Created
+			Server: Apache-Coyote/1.1
+			Location: http://localhost:8080/users/1
+			Content-Type: application/hal+json;charset=UTF-8
+			Transfer-Encoding: chunked
+
+			You will notice that the returned content type is “application/hal+json“. HAL is a simple format that gives a consistent and easy way to hyperlink between resources in your API. The header also automatically contains the Location header, which is the address we can use to access the newly created user.
+
+		We can now access this user at http://localhost:8080/users/1
+
+
+			{
+			  "name" : "test",
+			  "email" : "test@test.com",
+			  "_links" : {
+				"self" : {
+				  "href" : "http://localhost:8080/users/1"
+				},
+				"websiteUser" : {
+				  "href" : "http://localhost:8080/users/1"
+				}
+			  }
+			}
+
+			You can also use curl or any other REST client to issue PUT, PATCH, and DELETE requests. It also is important to note that Spring Data REST automatically follows the principles of HATEOAS. HATEOAS is one of the constraints of the REST architecture style, and it means that hypertext should be used to find your way through the API.
+
+		Finally, lets try to access the custom query that we wrote earlier and find all users with the name “test”. This is done by going to http://localhost:8080/users/search/findByName?name=test
+
+
+			{
+			  "_embedded" : {
+				"users" : [ {
+				  "name" : "test",
+				  "email" : "test@test.com",
+				  "_links" : {
+					"self" : {
+					  "href" : "http://localhost:8080/users/1"
+					},
+					"websiteUser" : {
+					  "href" : "http://localhost:8080/users/1"
+					}
+				  }
+				} ]
+			  },
+			  "_links" : {
+				"self" : {
+				  "href" : "http://localhost:8080/users/search/findByName?name=test"
+				}
+			  }
+			} 

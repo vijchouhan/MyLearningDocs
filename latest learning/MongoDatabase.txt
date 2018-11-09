@@ -1,0 +1,25 @@
+-: Mongo Database :- 
+https://www.youtube.com/watch?v=pWbMrx5rVBE
+-------------
+
+No SQL Database/ Document Database
+
+There is no any schema, no pre defined structure 
+
+much faster
+
+download from mondodb.com and
+install mongodb for window (for example --> Window Server 2008 for 64 bit)
+
+====
+after intallation mongodb folder is created and under this data, log and data\db also created mannualy 
+sets various flag:---- below commands
+
+1)	c:\mongodb\bin>mongod --directoryperdb --dbpath c:\mongodb\data\db -- logpath c:'mongodb\log\mongo.log --logapped -- rest --install
+
+2) c:\mongodb\bin>net start MongoDB
+
+
+
+
+	

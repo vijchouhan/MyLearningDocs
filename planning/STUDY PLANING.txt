@@ -1,99 +1,87 @@
-::: Time Table:- from 17 Oct 2018 till Dec 31-2018
+::: Time Table:- from 17 OCT 2018 till Dec 31-2018
 	
 	GO FOR RUNNING EVERY ALTERNATE DAY, WHENEVER GO WALK UP AT 7:30
 	
 	STUDY DAILY:	10:00 to 01:00 [no new concepts only repeat old one]
 	OFFICE : 		10:30 to 07:00 
 
-	WALK UP :- 		07:30 
+	WALK UP :- 		08:00 
 -----------------------------------------------------------------------
-OCTOBER:- 11,	12,	13,	S-14,(MicroService, Docker, JUnit, Git)
-
-	  15,	16,	17,	18,	19,	20,	  S-21,		STATUS ON 23 OCT :-	***ONLY 50% SUCCEDED***
-	  -------------------------------------
-	  22,	23,	24,	25,	26,	27,	S-28,
-
-  	  29,	30, 	31.
 	  
-NOVEMBER:- 1,	2,	3,	4,	5,	6,	7,	8,	9,	10.
+NOVEMBER:- 11,	12,	13,	14,	15,	16,	17,	18,	19,	20......
 		
 =========================Before Interview===========================
 --------------------------------------------------------------------
 
-1.	Docker Basic		---- NEW 		Status: DONE, need to repeat again
+1.	Docker Basic		---- repeat 		Status: DONE, need to repeat again
 
-2.	JUnit				---- NEW 		Status: DONE, need to repeat again
+2.	JUnit				---- repeat 		Status: DONE, need to repeat again
 
-3.	MicroService Basic	---- NEW 		Status: DONE, need to repeat again
+3.	MicroService Basic Architecture	---- repeat 		Status: DONE, need to repeat again
 
-4.	Alige				---- NEW  		(25 Oct)
+4.	Alige				---- repeat  		Status: DONE, need to repeat again
 
-5.	Git 				---- NEW 		(26 Oct)
+5.	Git 				---- repeat 		Status: DONE, need to repeat again
 
-6.	Cloud Computing		---- NEW 		(26 Oct)
+6.	Cloud Computing		---- repeat 		Status: DONE, need to repeat again
 
---------------------------------------------------------------------
-20. Spring Security		---- NEW 	( Oct)
+16.	Mongo DabaBase		---- repeat			Status: DONE, need to repeat again
 
-7.	Memory Management	---- NEW 	( Oct)
+20. Spring Security		---- repeat 		Status: DONE, need to repeat again
 
-8.	Spring Data Rest:-	---- NEW 	(Oct)
+7.	Memory Management	---- repeat 		Status: DONE, need to repeat again
 
-21.	Jenkins				---- NEW	( Oct)
-
-22.	JIRA				---- NEW	( Oct)
-
-23. LDAP 				---- NEW	( Oct)
-
-16.	Mongo DabaBase		---- NEW 	( Oct)  
+24. JVM Architecture 	---- repeat 		Status: DONE, need to repeat again
 
 --------------------------------------------------------------------
 
-9.	Spring framework:- 				( Oct) repeat	
+8.	Spring Data Rest:-	---- NEW 	(Nov)
 
-10.	Spring Boot:-					( Oct) repeat
+--------------------------------------------------------------------
 
-11.	Restful WebService				( Oct)  repeat
+9.	Spring framework:- 				( Nov)  repeat	
 
-12.	Design Principle 				( Oct)  repeat
+10.	Spring Boot:-					( Nov)  repeat
 
-13.	Design Patterns					( Oct)  repeat and also new one
+11.	Restful WebService				( Nov)  repeat
 
-17.	Hibernante 						( Oct)	 repeat
+12.	Design Principle 				( Nov)  repeat
 
-18.	Core Java:- 5, 7, 8, 9 ---		(Oct)	 repeat
+13.	Design Patterns					( Nov)  repeat and also new one
 
-19.	Java 8 newly added features - 	( Oct)	 repeat
+17.	Hibernante 						( Nov)	repeat
+
+18.	Core Java:- 5, 7, 8, 9 ---		(Nov)	repeat
+
+19.	Java 8 newly added features - 	( Nov)	repeat
 		Lamda,
 		functional programing
 		Stream Api
 		Time and Date Api
 		Concurreny Collection
 
-14.	Oracle DataBase					( Oct)	 repeat		
+14.	Oracle DataBase					( Nov)	 repeat		
 
-15.	Maven							( Oct)	 repeat
+15.	Maven							( Nov)	 repeat
 
+23. LDAP 				---- NEW	( Nov)
 
+21.	Jenkins				---- NEW	( Nov)
+
+22.	JIRA				---- NEW	( Nov)
 
 =========================After Interview start===========================
 
 Soap WebService
-Micro Service Architecture  
-Docker  
 Angular 
-Cloud
 AWS
+CICD
 Spring Batch
 Spring Integration
-Spring Security
 Spring Cloud
 Spring AOP
 DevOps concept 
 DevOps advantages over agile
-Jenkins
-JIRA
-Docker
 Swagger
 RabbitMq
 performance improvement of existing application
@@ -109,6 +97,6 @@ UML diagram
 technical design document
 Functional Document
 Perfromance Testing
-CICD
+
 
 

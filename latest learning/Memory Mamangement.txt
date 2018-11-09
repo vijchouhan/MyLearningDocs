@@ -67,7 +67,7 @@ Load and execute
 Component 1.	Class loader subsystem,
 		
 Component 2.	Runtime data areas
-				(method area, Heap, Java Stacks,	PC Registers, Native Method Stacks)
+				(method area, 	Heap, Java Stacks,	PC Registers, 	Native Method Stacks)
 			
 Component 3. 	Execution Engine
 
@@ -96,9 +96,29 @@ LINK:- Verify :- valid java byte code verification
 
 INITIALIZE:-	this is the phase where static initializer of the class is run example static block inside class	
 				whatever values are set is getting set here in this phase
-
+ 
+------
+Class Loader Subsystem:- this consist of following parts
+	---Run-time Data Areas--- Memory of jvm, it again having 5 data area defined as below
+		1.	Method Area, :- it the are where meta data of class stored, like static variable, byte code, constant poops
+				Method area called Perm Gen Space is called. by default 64 MB allowcated. (-XX:MaxPermSize). Since java 8 there is Metaspace, moved to perm gen into separate memory in the navite os. no limit in java 8. grows as automatically. can be limited as well. 
+		2.	Heap,(-Xms, -Xmx) :- is the plcace where object data stored. intance variables, any objects. by default it is 1/4th of physical memory.
+		
+		3. PC Registers:- Program counter register. It contains program conters, which is the pointer to next instrunction to be executed per thread.
+			Suppose you are runing three threads here T1, T2, T3.. so there will be program counter created for T1 pointing to the next instrunction for thread T1, and there will be program counter created for T2 pointing to the next instrunction for thread T2, and so on.... 
+		
+		4. Java Stacks:- contains stack frame coresponnding to the current method execution per thread. suppose we have a thread t1 having three method execution, have stack with respect to each method, then they are pushing into the stack for execution. it will pe poped based on returning.
+		Per thread java stacks are created. Suppose any one method in any thread stack calling any native method then 'Native Method stack' come into pictures.  (5. Native Method Stacks) for example you r loading dll and  runing something from dll from  java application. that time native method stack is created. that you r calling. (-Xss can be set...). Every stack with copersponed to thread are individual they not shared. that's why they are thread safe.
+		
+		5. Native Method Stacks :- refere above 4th point.
 ------
 
-Method Area,
-Heap,
-PC Registers:- It contains program conters, which is the pointer to next instrunction to be executed per thread
+EXECUTION ENGINE:- below are it's componts
+			Interpreter, - takes bytes code instrunction, looks on at, find out what native operation has to be done  and execute that native operation. that is done by using native method interface, which interfaces the native method libraries that are present in jvm(.dll, .so(unxi os) etc). under jre/bin folder lots of .dll file those are platform specific  
+			
+			JIT Compiler:- just in time Compiler, compile and keep,... suppose we have set of instruction gets executed all the time repeately., those will bot ne interpreted again and again, what happpen is JIT compiler on the fly compile set of instruction and keep the targer machine code ready for execution. there is no more interpreter involved here, its only machine code execution 
+			
+			Hotspot profiler: role of hotspot compoler keep eyes on byte code that are runing. it help JIT compiler  to compile frequently used instrunctions.
+			
+			GC:- responsible to clean unused objects. 
+			

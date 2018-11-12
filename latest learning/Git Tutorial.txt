@@ -47,14 +47,66 @@ GIT:- git is an open source distributed Version control System which records cha
 
 Git work flow:- 
 	Remote repository - server wher all collaborator upload made changes to the file. 
-	local repository - user copy of remote repository 
+	Local repository - user copy of remote repository 
 	Woking Copy - user active director, modify, create few file in this area. can be compare with local repository. this is the are wher user makes changes.  
 	Staging Area - This is the place where all modified files marked to be commited a place, basically before push to remote repository it is the place where you commit your changes. This is place between 'working copy' and 'local repository'
 	
 	Fetch command:- get all changes from remote repository to local repository but doesn't effect wour working copy. 
 	
+	staging area is a part of local repository... 
 	
+Diff  between pull and fetch:-
+
+	https://www.git-tower.com/learn/git/faq/difference-between-git-fetch-git-pull
+	https://stackoverflow.com/questions/292357/what-is-the-difference-between-git-pull-and-git-fetch
 	
-	Working directory ----(Git Add)---->Staging Area------(git commit)-->Local Repository---(git push)---->Remote Repository
+	When you use pull, Git tries to automatically do your work for you. It is context sensitive, so Git will merge any pulled commits into the branch you are currently working in.  pull automatically merges the commits without letting you review them first. If you don’t closely manage your branches, you may run into frequent conflicts.
+
+	When you fetch, Git gathers any commits from the target branch that do not exist in your current branch and stores them in your local repository. However, it does not merge them with your current branch. This is particularly useful if you need to keep your repository up to date, but are working on something that might break if you update your files. To integrate the commits into your master branch, you use merge.
+
+---------------	
+Parallel Development or non Linear:- 
+
+	Branching:- Branchin is an integral part of any Version Control(VC) System. Unlike other VC's Git does not create a copy of existing files for new branch. It points to snapshot of the changes you have made in the system.
 	
+	Merging:- Merging integrates the changes made in differe nt branches into one single branch.
+	
+	Rebasing:- Used when changes made in one brach needs to be reflected in another branch. This is another kind of merging. 
+		you have a new brach from master branch by branching. when you rebasing it insteed of creating similar commit which will have two parent commit, what rebasing does it places entire commit history of your branch on tif of master.
+		benefits:- have much clear history
+				   Used when changes made in one brach needs to be reflected in another branch.
+---------------
+Stashing:- 		Used when changes made in one branch needs to be reflected in another branch.
+		Git Staging is the way of creating a check point for non commited changes, it saves all changes to a temporary location so that user can perform other task such as swirching branch, reverting etc. This changes can be reapplyed any where.
 		
+   
+			local repository --	new branch for new feature -- merger back with master --- create remote repository 
+		
+							---rebasing and stashing --- final push local to remore repository... 
+	
+$ git log command to see all commit made
+$ git checkout master command to switch to master branch 	
+$ gedit command to edit the file
+Ctrl+X to exit from edit mode
+
+$ git diff to show the difference of the changes made 
+
+--------------------
+stashing and rebasing operaton :- 
+
+creating new branch and named it feature2, -b is automatically create new branch and automatically change to head branch 
+
+$git checkout -b feature2
+
+
+
+
+	first swith to master then merge branch1 to it. command is below
+$ git merge <branch1> 
+---------------------
+
+to deel with remote repository...
+
+$git remote add origin <git url>
+
+here origin is varaiable name 

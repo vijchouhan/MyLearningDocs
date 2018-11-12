@@ -21,7 +21,7 @@ NOVEMBER:- 9,	10,	11,	12,	13,	14,	15,	16,	17,	18,	19,	20....
 
 4.	Alige				---- repeat  		Status: DONE, need to repeat again	[tutorial points]
 
-5.	Git 				---- repeat 		Status: DONE, need to repeat again  [tutorial points]  ---->> 9 Nov
+5.	Git 				---- repeat 		Status: DONE, need to repeat again  [tutorial points]  ---->> 12 Nov
 
 6.	Cloud Computing		---- repeat 		Status: DONE, need to repeat again  [imp urs pint no 5 links]
 
@@ -39,15 +39,15 @@ NOVEMBER:- 9,	10,	11,	12,	13,	14,	15,	16,	17,	18,	19,	20....
 
 -----------------------------------planning for saturday and sunday------------------------------start---
 
-9.	Spring framework:- 				( Nov)  repeat	[tutorial points and java brain video] 	--->> [ 10 11 Nov]
+9.	Spring framework:- 				( Nov)  repeat	[tutorial points and java brain video] 	--->> [  Nov]
 
-10.	Spring Boot:-					( Nov)  repeat 	[java brain video]						--->> [ 10 11 Nov]
+10.	Spring Boot:-					( Nov)  repeat 	[java brain video]						--->> [  Nov]
 
-11.	Restful WebService				( Nov)  repeat	[tutorial points and java brain video] 	--->> [ 10 11 Nov]
+11.	Restful WebService				( Nov)  repeat	[tutorial points and java brain video] 	--->> [  Nov]
 
-12.	Design Principle 				( Nov)  repeat	[my notes ]								--->> [ 10 11 Nov]
+12.	Design Principle 				( Nov)  repeat	[my notes ]								--->> [ Nov]
 
-13.	Design Patterns					( Nov)  repeat and also new one [tutorial points] 		--->> [ 10 11 Nov]
+13.	Design Patterns					( Nov)  repeat and also new one [tutorial points] 		--->> [  Nov]
 
 -----------------------------------planning for saturday and sunday-------------------------------end---
 

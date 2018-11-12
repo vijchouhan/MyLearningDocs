@@ -1,2 +1,60 @@
+https://www.youtube.com/watch?v=41tsyReTloA&list=PL9ooVrP1hQOGwtQOt8ZBlVjFlI-9Vr5hx&index=2
+
 Version control is the management of changes to documents, computer programs, large web sites and other collections of information.
 These changes are usually termed as 'versions'
+
+Version Control System Types:
+1. Local Version Control System
+2. Centralized Version Control System
+
+	PC#1/Workstation --->> Working Copy ---> Server Repository
+	PC#2/Workstation --->> Working Copy ---> Server Repository
+	....
+	
+	
+	Disadvantages:- 1. it is not locally available, that means always need to connect to network to perform any action
+					2. here everything is centralized hence if server crashed result of all dato loss happen. this is main reason not to use centralized versions control system.
+3. Distributed Version Version Control System
+		it is not nessrelay relay on central server to stor all the version of project file, here every contributor has the local copy of clone of the main repository. that is means everyone maintain the local repository of their own and contain the file and matadata present in the main repository. in simple term everybody has the copy of remote repository. 
+										commit/update		  pull/push				
+		PC#1/Workstation --->> Working Copy ---> local Repository ---->> Remote/Server Repository
+		PC#2/Workstation --->> Working Copy ---> local Repository ---->> Remote/Server Repository
+		PC#3/Workstation --->> Working Copy ---> local Repository ---->> Remote/Server Repository
+		....
+		Advanges over Centralized version Control System ...
+			Basically act of clone gives the main advantages. how is given below
+			for push/pull operation you need n/w connection to access remote repository.
+			all pperation apart from pull/push are very fast, because tools need to access  hardrive not the remote server
+			don't neet internate connection always.
+			
+			commiting changes can be done locally without manipulating data on remote repository, if you want to make any changes you can take feebback from any developer, after change, get review of your changes. then you can push to remote repository.
+			
+			if any point of time certral servet gets crashed, then the lost data can be recovered  from any of the local repository.
+			 
+Git Features:- 
+	Economical -- released under the gpl liences, open source,  free
+	Non-Linear -- Supprts not linear development of software, record your current status of the project by creating tree graph from the index, three is not linear datastructure.
+	Snapshots -- Records Changes made to a file rather than file itself. 
+	Distributed --  Every user has his own copy of the repository data stored lacally. 
+	Speed -- speed offered by git is lightening fast compared to other VCS's. 
+	Robust -- Nearly every task in Git is undo-able
+	Integrity -- No changes can be made without git recording it
+	Branching -- Every collaborator's working directory is in itself is branch. 
+
+	
+WHat is GIT ?	
+GIT:- git is an open source distributed Version control System which records changes made to the files laying emphasis on speed, data integriti nad distributed, non-linear workflows.
+
+Git work flow:- 
+	Remote repository - server wher all collaborator upload made changes to the file. 
+	local repository - user copy of remote repository 
+	Woking Copy - user active director, modify, create few file in this area. can be compare with local repository. this is the are wher user makes changes.  
+	Staging Area - This is the place where all modified files marked to be commited a place, basically before push to remote repository it is the place where you commit your changes. This is place between 'working copy' and 'local repository'
+	
+	Fetch command:- get all changes from remote repository to local repository but doesn't effect wour working copy. 
+	
+	
+	
+	Working directory ----(Git Add)---->Staging Area------(git commit)-->Local Repository---(git push)---->Remote Repository
+	
+		

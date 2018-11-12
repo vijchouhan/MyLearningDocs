@@ -8,67 +8,69 @@
 	WALK UP :- 		08:00 
 -----------------------------------------------------------------------
 	  
-NOVEMBER:- 11,	12,	13,	14,	15,	16,	17,	18,	19,	20......
+NOVEMBER:- 9,	10,	11,	12,	13,	14,	15,	16,	17,	18,	19,	20....
 		
 =========================Before Interview===========================
 --------------------------------------------------------------------
 
-1.	Docker Basic		---- repeat 		Status: DONE, need to repeat again
+1.	Docker Basic		---- repeat 		Status: DONE, need to repeat again [video tutorial edureka]
 
-2.	JUnit				---- repeat 		Status: DONE, need to repeat again
+2.	JUnit				---- repeat 		Status: DONE, need to repeat again [tutorial points]
 
-3.	MicroService Basic Architecture	---- repeat 		Status: DONE, need to repeat again
+3.	MicroService Basic Architecture	---- repeat 		Status: DONE, need to repeat again  [video tutorial edureka]
 
-4.	Alige				---- repeat  		Status: DONE, need to repeat again
+4.	Alige				---- repeat  		Status: DONE, need to repeat again	[tutorial points]
 
-5.	Git 				---- repeat 		Status: DONE, need to repeat again
+5.	Git 				---- repeat 		Status: DONE, need to repeat again  [tutorial points]  ---->> 9 Nov
 
-6.	Cloud Computing		---- repeat 		Status: DONE, need to repeat again
+6.	Cloud Computing		---- repeat 		Status: DONE, need to repeat again  [imp urs pint no 5 links]
 
-16.	Mongo DabaBase		---- repeat			Status: DONE, need to repeat again
+20. Spring Security		---- repeat 		Status: DONE, need to repeat again	  [video tutorial ]
 
-20. Spring Security		---- repeat 		Status: DONE, need to repeat again
+7.	Memory Management	---- repeat 		Status: DONE, need to repeat again	 [video tutorial ]
 
-7.	Memory Management	---- repeat 		Status: DONE, need to repeat again
-
-24. JVM Architecture 	---- repeat 		Status: DONE, need to repeat again
+24. JVM Architecture 	---- repeat 		Status: DONE, need to repeat again	 [video tutorial ]
 
 --------------------------------------------------------------------
 
-8.	Spring Data Rest:-	---- NEW 	(Nov)
+8.	Spring Data Rest:-	---- NEW 	(Next Week.....) 
 
---------------------------------------------------------------------
+16.	Mongo DabaBase		---- NEW	(Next Week.....) 
 
-9.	Spring framework:- 				( Nov)  repeat	
+-----------------------------------planning for saturday and sunday------------------------------start---
 
-10.	Spring Boot:-					( Nov)  repeat
+9.	Spring framework:- 				( Nov)  repeat	[tutorial points and java brain video] 	--->> [ 10 11 Nov]
 
-11.	Restful WebService				( Nov)  repeat
+10.	Spring Boot:-					( Nov)  repeat 	[java brain video]						--->> [ 10 11 Nov]
 
-12.	Design Principle 				( Nov)  repeat
+11.	Restful WebService				( Nov)  repeat	[tutorial points and java brain video] 	--->> [ 10 11 Nov]
 
-13.	Design Patterns					( Nov)  repeat and also new one
+12.	Design Principle 				( Nov)  repeat	[my notes ]								--->> [ 10 11 Nov]
 
-17.	Hibernante 						( Nov)	repeat
+13.	Design Patterns					( Nov)  repeat and also new one [tutorial points] 		--->> [ 10 11 Nov]
 
-18.	Core Java:- 5, 7, 8, 9 ---		(Nov)	repeat
+-----------------------------------planning for saturday and sunday-------------------------------end---
+
+17.	Hibernante 						( Nov)	repeat [tutorial pounts and video]
+
+18.	Core Java:- 5, 7, 8, 9 ---		(Nov)	repeat [my notes and tutorial points]
 
 19.	Java 8 newly added features - 	( Nov)	repeat
-		Lamda,
-		functional programing
-		Stream Api
-		Time and Date Api
-		Concurreny Collection
+		Lamda,				----->> [java brain video]
+		functional programing ----->> [java brain video]
+		Stream Api ---->> [some imp urls]
+		Time and Date Api ---->> [some imp urls]
+		Concurreny Collection ---->> [some imp urls]
 
-14.	Oracle DataBase					( Nov)	 repeat		
+14.	Oracle DataBase					( Nov)	 repeat		====>> [SOME URLs]
 
-15.	Maven							( Nov)	 repeat
+15.	Maven							( Nov)	 repeat [java brain video]
 
-23. LDAP 				---- NEW	( Nov)
+21.	Jenkins				---- NEW	( Nov) 	 ====>> [SOME URLs]
 
-21.	Jenkins				---- NEW	( Nov)
+22.	JIRA				---- NEW	( Nov)	 ====>> [SOME URLs]
 
-22.	JIRA				---- NEW	( Nov)
+23. LDAP 				---- NEW	( Nov)	 ====>> [SOME URLs]
 
 =========================After Interview start===========================
 

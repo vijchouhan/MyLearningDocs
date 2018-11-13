@@ -1,0 +1,74 @@
+		
+----------------------------------------:SPRING DATA REST EXample Project :-------------------------------------- 
+https://www.baeldung.com/spring-data-rest-intro
+------------------------------------------------------------------------------------------------
+
+1. Overview
+	This article will explain the basics of Spring Data REST and show how to use it to build a simple REST API.
+	In general, Spring Data REST is built on top of the Spring Data project and makes it easy to build hypermedia-driven REST web services that connect to Spring Data repositories – all using HAL (HyperMedia Application Language) as the driving hypermedia type. 
+	It takes away a lot of the manual work usually associated with such tasks and makes implementing basic CRUD functionality for web applications quite simple.
+	
+2. Maven Dependencies
+	The following Maven dependencies are required for our simple application:
+
+		<dependency> // spring boot application dependency
+		    <groupId>org.springframework.boot</groupId>
+		    <artifactId>spring-boot-starter</artifactId>
+		</dependency>
+		
+		------------------***this is required dependency ***-------------
+		<dependency>  
+		    <groupId>org.springframework.boot</groupId
+		    <artifactId>spring-boot-starter-data-rest</artifactId>
+		</dependency>
+		-----------------------------------------------------------------
+		<dependency>  //---- jps dependency 
+		    <groupId>org.springframework.boot</groupId>
+		    <artifactId>spring-boot-starter-data-jpa</artifactId>
+		</dependency>
+		
+		<dependency> //---- he db dependency 
+		    <groupId>com.h2database</groupId>
+		    <artifactId>h2</artifactId>
+		</dependency>
+	
+	We decided to use Spring Boot for this example, but classic Spring will also work fine. We also chose to use the H2 embedded database in order to avoid any extra setup, but the example can be applied to any database.
+
+	
+3. Writing the Application
+	
+		a) We will start by writing a domain object to represent a user of our website:
+
+		@Entity
+		public class WebsiteUser {
+		 
+			@Id
+			@GeneratedValue(strategy = GenerationType.AUTO)
+			private long id;
+		 
+			private String name;
+			private String email;
+		 
+			// standard getters and setters
+		}
+		
+	Every user has a name and an email, as well as an automatically-generated id. 
+	
+	b) Now we can write a simple repository:
+		@RepositoryRestResource(collectionResourceRel = "users", path = "users")
+		public interface UserRepository extends PagingAndSortingRepository<WebsiteUser, Long> {
+			List<WebsiteUser> findByName(@Param("name") String name);
+		}
+		This is an interface that allows you to perform various operations with WebsiteUser objects. We also defined a custom query that will provide a list of users based on a given name.
+
+		The @RepositoryRestResource annotation is optional and is used to customize the REST endpoint. If we decided to omit it, Spring would automatically create an endpoint at “/websiteUsers” instead of “/users“.
+
+	c) Finally, we will write a standard Spring Boot main class to initialize the application:
+
+		@SpringBootApplication
+		public class SpringDataRestApplication {
+			public static void main(String[] args) {
+				SpringApplication.run(SpringDataRestApplication.class, args);
+			}
+		}
+------------------------------------------------------------------------------------------------

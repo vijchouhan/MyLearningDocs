@@ -17,13 +17,13 @@ NOVEMBER:- 9,	10,	11,	12,	13,	14,	15,	16,	17,	18,	19,	20....
 
 2.	JUnit				---- repeat 		Status: DONE, need to repeat again [tutorial points]
 
-3.	MicroService Basic Architecture	---- repeat 		Status: DONE, need to repeat again  [video tutorial edureka]
+3.	MicroService Basic Architecture			Status: DONE, need to repeat again  [video tutorial edureka]
 
 4.	Alige				---- repeat  		Status: DONE, need to repeat again	[tutorial points]
 
-5.	Git 				---- repeat 		Status: DONE, need to repeat again  [tutorial points]  ---->> 12 Nov
+5.	Git 				---- repeat 		Status: DONE, need to repeat again  [video tutorial edureka]
 
-6.	Cloud Computing		---- repeat 		Status: DONE, need to repeat again  [imp urs pint no 5 links]
+6.	Cloud Computing		---- repeat 		Status: DONE, need to repeat again  [Important URLs.txt use point no 5 links]
 
 20. Spring Security		---- repeat 		Status: DONE, need to repeat again	  [video tutorial ]
 
@@ -33,9 +33,8 @@ NOVEMBER:- 9,	10,	11,	12,	13,	14,	15,	16,	17,	18,	19,	20....
 
 --------------------------------------------------------------------
 
-8.	Spring Data Rest:-	---- NEW 	(Next Week.....) 
-
-16.	Mongo DabaBase		---- NEW	(Next Week.....) 
+8.	Spring Data Rest:-	---- for DOCS 
+	https://docs.spring.io/spring-data/rest/docs/current/reference/html/
 
 -----------------------------------planning for saturday and sunday------------------------------start---
 
@@ -71,6 +70,8 @@ NOVEMBER:- 9,	10,	11,	12,	13,	14,	15,	16,	17,	18,	19,	20....
 22.	JIRA				---- NEW	( Nov)	 ====>> [SOME URLs]
 
 23. LDAP 				---- NEW	( Nov)	 ====>> [SOME URLs]
+
+16.	Mongo DabaBase		---- NEW	 		====>> [SOME URLs]
 
 =========================After Interview start===========================
 

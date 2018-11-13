@@ -388,6 +388,9 @@ https://www.linkedin.com/learning/extending-securing-and-dockerizing-spring-boot
 66. Introduction to Spring Data REST
 
 https://www.baeldung.com/spring-data-rest-intro
+Spring Data REST Reference Guide
+https://docs.spring.io/spring-data/rest/docs/current/reference/html/
+
 
 
 ---------------------------------------------------

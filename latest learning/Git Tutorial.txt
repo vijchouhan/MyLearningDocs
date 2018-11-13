@@ -1,5 +1,11 @@
-https://www.youtube.com/watch?v=41tsyReTloA&list=PL9ooVrP1hQOGwtQOt8ZBlVjFlI-9Vr5hx&index=2
+---------------------------------------------GIT TUTORIAL by EDUREKA----------------------------------------------------
+https://www.youtube.com/watch?v=xuB1Id2Wxak&list=PL9ooVrP1hQOGwtQOt8ZBlVjFlI-9Vr5hx
+-------------------------------------------------------------------------------------------------
 
+***************************************************************************************************
+Tutorial 2: GIT and GITHUB Tutorial Videos
+https://www.youtube.com/watch?v=41tsyReTloA&index=2&list=PL9ooVrP1hQOGwtQOt8ZBlVjFlI-9Vr5hx
+***************************************************************************************************
 Version control is the management of changes to documents, computer programs, large web sites and other collections of information.
 These changes are usually termed as 'versions'
 
@@ -89,17 +95,15 @@ $ git checkout master command to switch to master branch
 $ gedit command to edit the file
 Ctrl+X to exit from edit mode
 
-$ git diff to show the difference of the changes made 
+$ git diff to show the difference of the changes made in the file present in  working directory and local repository 
 
 --------------------
 stashing and rebasing operaton :- 
 
+stashing:- 
 creating new branch and named it feature2, -b is automatically create new branch and automatically change to head branch 
 
 $git checkout -b feature2
-
-
-
 
 	first swith to master then merge branch1 to it. command is below
 $ git merge <branch1> 
@@ -110,3 +114,211 @@ to deel with remote repository...
 $git remote add origin <git url>
 
 here origin is varaiable name 
+------------
+to stash the file before add or commit... use below command
+$ git stash save 'feature2 changed'
+
+To show the list of all stashed in this branch use below command
+$git stash list
+
+To apply this to on feature1 branch use below command, firt go to feature1 branch
+$ git checkout feature1
+$ git stash apply <stash Id>
+$ git stash apply stash@{0}  ///press tab automatically stash id comes up
+verify by seeing this file by below command
+$ gedit fileName
+
+Now commit this 
+
+$ git commit -m "message"
+------------------------------------------------
+rebasing:- 
+
+for that create new branch 
+
+$ git checkout -b feature3 
+
+$ gedit index.html  // open file and make some changes
+
+$ git add index.html 
+$ git commit -m "chagges done"
+
+Now go to master branch... 
+
+$ git checkout master 
+make some changes here
+$ gedit index.html
+$ git add inded.html
+$ git commit -m "message"
+
+make some more changes here... repeat above command
+
+command to add and commit in one go use below command
+$ git commit -a -m 'messame ' // -a is for add and -m for messame
+
+Not to rebash go to the feature3 again and rebase with the master where only one file index.html is changed but in master two file have changed including index.html 
+$ git checkout freature3
+$ git rebase master 
+
+// to verify this go to feature3 and check that all changes done with master is applied on feature3 or not ....
+
+===============================
+:	GIT COMMANDS	:
+
+sudo apt-get install git  ---------- used to install git 
+git config --global user.name "username"  --- configure user name and password
+git rm <filename> ---- remove any file 
+git add <filename>
+git status
+git commit
+git log --- see all commits
+git diff --- 
+git rm -f <filename> ---- remove file from staging area
+git show <tag-name> --- use the tag you r using
+git rm --cached <filename> --- remove from cached area
+git tag --- is creat tag
+git push origin master ---->> push your local to repository to remote repository 
+git pull origin ----->> pull data from remote repository to local repository
+git add remore origin <remote link> ----- to link local repository to remote repository 
+git fetch origin --------- fetch from remote  to local repository 
+git push origin --tags ======== push tags to remote repository
+
+BRANCHING COMMAND:
+
+git branch <branchname> ==== create branch
+git checkout <branchname> ==== switch to mentioned branch, checkout working head  
+git merge <branchname>  === merge into this branch from metntioned branch
+git branch --- all branch show
+git branch -d <branchname> === delete branch 
+git branch -D <branchname> === deleter branch from unstashed area 
+
+STASHING COMMANDDS
+
+git stash save 'messame'  ==== save the stash 
+git stash list  ==== gives list of stash
+git stash apply <stash id>  === for apply this percular stash on that perticular commit 
+git stash pop ==== for apply mostly stashed and remove from stash list 
+git stash drop <stash id> === delete from the stashlist 
+git stash clear === clear the complete list of stash
+
+************************************************************************************************************
+Tutorial 6: Git Merge and Rebase | Git Merge vs Rebase | Which One to Choose? | Devops Training | Edureka
+https://www.youtube.com/watch?v=tjVsGOGExh4&list=PL9ooVrP1hQOGwtQOt8ZBlVjFlI-9Vr5hx&index=6
+************************************************************************************************************
+
+			-:	GIT MERGE & REBASE	:- 
+			
+Scenariao :- supose one developer checkout master branch and pushed some changes on it
+			ealier feature branch is created from master branch is little backward, bcz now the master is the ahead of that feature branch.
+
+			Now solution is first merge master into feature or rebase feature with master.
+			
+Merge :- 
+command;	
+		git checkout feature // to head into feature branch
+		git merge master
+		 or one command helow
+		git merger master feature // here feature is the name of branch  this is to merge master into feature
+		
+Rebase :- Rebasing is Re-write the project history by creating brand new commit for each commit in the original branch. benefits 		is you now get much clean history.
+	it  iliminate the unneccessary merge commits required by the git merge. rebasing result in perfect linear project history. 
+	git checkout feature // to head with feature branch then
+	git rebase master // now master gets merge into feature branch
+	
+	Rebase - Rebaing the feature branch onto Master 
+	
+	Rebasing move the entire feature branch to begen on top of master branch effectively in co-operating all of the new commits in the master
+------------------------------------------------------------------------------------------------	
+
+----------------:Interactive Rebasing :---------
+	It gives the opportunities to alter the commit as their moves to the new branch. This is even more powerful than the automate rebase, it offer complete control over the branch commit history.  
+	Basically it is used to clean up the messay history before merging a feature branch into master. 
+
+Rebasing - When NOT to do it.
+	The basic rule of rebasing is never use it on buplic branch. 
+
+-----------------------------git workflow for rebase-----------------------------------	
+------:	Locl Clean-up:--------
+git checkout feature
+git rebase -i HEAD~3
+----------------------------------------------------------------
+
+------:	UpStream Changes:-------
+------------------------------------------------------------------------------
+
+Tutorial 5 :- Git Merge Conflict Tutorial | Resolving Merge Conflicts In Git | DevOps Training | Edureka
+
+Creating repositories
+	$ git init  // to create local repository
+
+Making  changes 
+	$ git status
+	$ git add
+	$ git commit
+	
+Parallel Development
+	$ git branch
+	$ git merge
+	$ git rebase
+	
+Syncing repositories
+	$ git add origin  // to add on origin means remote repository
+	$ git push
+	$ git pull
+	
+===================
+initialize git
+$ git init // .git folder gets created 
+add origin 
+$ git add origin  <link of remote/central repository>
+pull all file 
+$ git pull origin master 
+
+after some changes:- 
+	git add
+	git commit
+	git push origin master
+	
+both developer after some changes want to push at same master branch ... then at first developer gets allowed but second got rejected due to conflict
+Solution :- insteed to pull directly,  use rebase command what it does it will always has the initial commit that will come from central repository. it will just add my commit on top of that workflow or my working tree that shows all my comments. 
+	
+	$ git pull --rebase origin master
+******************command promt messame******************satrt
+CONFLICT : merge conflict in edureka.txt
+Patch failed at 00001 alice
+The copy of the patch that failded is found in .git/rebase-apply/patch
+
+When you have resolveed this problem, run "git rebase --continue"
+
+if you prefer to skip thi patch. run "git rebase --skip" insteed.
+
+to check out the original branch add stop rebasing. run "git rebase --abort"
+******************command promt messame******************end
+ in order to solve this conflict 
+	$ git mergetool 
+	Now open in editor which show original, change 1 and change 2 all ...
+	save file
+	:wq 
+	
+	$ git rebase --continue
+			.. applyed last changes while you done when you resolving the conflict 
+	$ git push origin master
+	
+.............NOW CONFLICT RESOLVER......for centralized branch that is master........
+
+NOW three developer working of same branch suppose 'feature' 
+
+Here developer who pushed first can initial new pull request for other developer 
+
+Commands: 
+this is for first developer........
+	$ git branch feature1
+	$ git checkout feature1
+	$ vim additional.txt // add file 
+	$ git add additional.txt
+	$ git commit -m "message "
+	$ git push origin feature1
+	
+Then request for pull request for other one to gets updated.
+
+this is for second developer........	

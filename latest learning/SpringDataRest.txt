@@ -66,171 +66,96 @@ Main modules:-
 		11.	Allows 'advanced customizations' of the default resources exposed.		[16 point]
 		
 		please look into below link for further details as per mentioned point number. 
+
+		
 -----------------------:Spring Data REST Reference Guide:--------------------------------
 		https://docs.spring.io/spring-data/rest/docs/current/reference/html/	
 ------------------------------------------------------------------------------------------------
 
+Reference Documentation
 
+	3. Introduction
+	REST web services have become the number one means for application integration on the web. In its core, REST defines that a system that consists of resources with which clients interact. These resources are implemented in a hypermedia-driven way. Spring MVC and Spring WebFlux each offer a solid foundation to build theses kinds of services. However, implementing even the simplest tenet of REST web services for a multi-domain object system can be quite tedious and result in a lot of boilerplate code.
 
-		
-----------------------------------------:SPRING DATA REST EXample Project :-------------------------------------- 
-https://www.baeldung.com/spring-data-rest-intro
-------------------------------------------------------------------------------------------------
+	Spring Data REST builds on top of the Spring Data repositories and automatically exports those as REST resources. It leverages hypermedia to let clients automatically find functionality exposed by the repositories and integrate these resources into related hypermedia-based functionality.
 
-1. Overview
-	This article will explain the basics of Spring Data REST and show how to use it to build a simple REST API.
-	In general, Spring Data REST is built on top of the Spring Data project and makes it easy to build hypermedia-driven REST web services that connect to Spring Data repositories – all using HAL (HyperMedia Application Language) as the driving hypermedia type. 
-	It takes away a lot of the manual work usually associated with such tasks and makes implementing basic CRUD functionality for web applications quite simple.
+	4. Getting started
+	Spring Data REST is itself a Spring MVC application and is designed in such a way that it should integrate with your existing Spring MVC applications with little effort. An existing (or future) layer of services can run alongside Spring Data REST with only minor additional work.
 	
-2. Maven Dependencies
-	The following Maven dependencies are required for our simple application:
-
-		<dependency> // spring boot application dependency
-		    <groupId>org.springframework.boot</groupId>
-		    <artifactId>spring-boot-starter</artifactId>
+	4.1. Adding Spring Data REST to a Spring Boot Project
+		<dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-rest</artifactId>
+        </dependency>
+		
+	4.3. Adding Spring Data REST to a Maven project
+	To add Spring Data REST to a Maven-based project, add the spring-data-rest-webmvc artifact to your compile-time dependencies, as follows:
+		<dependency>
+		  <groupId>org.springframework.data</groupId>
+		  <artifactId>spring-data-rest-webmvc</artifactId>
+		  <version>3.1.2.RELEASE</version>
 		</dependency>
 		
-		------------------***this is required dependency ***-------------
-		<dependency>  
-		    <groupId>org.springframework.boot</groupId
-		    <artifactId>spring-boot-starter-data-rest</artifactId>
-		</dependency>
-		-----------------------------------------------------------------
-		<dependency>  //---- jps dependency 
-		    <groupId>org.springframework.boot</groupId>
-		    <artifactId>spring-boot-starter-data-jpa</artifactId>
-		</dependency>
+	4.4. Configuring Spring Data REST
+	To install Spring Data REST alongside your existing Spring MVC application, you need to include the appropriate MVC configuration. Spring Data REST configuration is defined in a class called RepositoryRestMvcConfiguration and you can import that class into your application’s configuration.
+
+	This step is unnecessary if you use Spring Boot’s auto-configuration. Spring Boot automatically enables Spring Data REST when you include spring-boot-starter-data-rest and, in your list of dependencies, your app is flagged with either @SpringBootApplication or @EnableAutoConfiguration.
+	To customize the configuration, register a RepositoryRestConfigurer (or extend RepositoryRestConfigurerAdapter) and implement or override the configure…-methods relevant to your use case.
+
+	4.5. Basic Settings for Spring Data REST
+		Setting the Repository Detection Strategy
+		Changing the Base URI
+		Changing Other Spring Data REST Properties
 		
-		<dependency> //---- he db dependency 
-		    <groupId>com.h2database</groupId>
-		    <artifactId>h2</artifactId>
-		</dependency>
-	
-	We decided to use Spring Boot for this example, but classic Spring will also work fine. We also chose to use the H2 embedded database in order to avoid any extra setup, but the example can be applied to any database.
+		4.5.1. Setting the Repository Detection Strategy:-
+		Spring Data REST uses a RepositoryDetectionStrategy to determine whether a repository is exported as a REST resource. The RepositoryDiscoveryStrategies enumeration includes the following values:
+			
+			spring.data.rest.detection-strategy=annotated
+			
+			DEFAULT: Exposes all public repository interfaces but considers the exported flag of @(Repository)RestResource.
+			ALL: Exposes all repositories independently of type visibility and annotations.
+			ANNOTATION:	Only repositories annotated with @RestResource are exposed, unless their exported flag is set to false.
+			VISIBILITY:	Only public repositories annotated are exposed.
+			
+		4.5.2. Changing the Base URI:- 	
+		By default, Spring Data REST serves up REST resources at the root URI, '/'. There are multiple ways to change the base path.
+		With Spring Boot 1.2 and later versions, you can do change the base URI by setting a single property in application.properties, as follows:
+			spring.data.rest.basePath=/api
+		With Spring Boot 1.1 or earlier, or if you are not using Spring Boot, you can do the following:
 
-	
-3. Writing the Application
-	
-		a) We will start by writing a domain object to represent a user of our website:
+		Alternatively, you can register a custom implementation of RepositoryRestConfigurer as a Spring bean and make sure it gets picked up by component scanning, as follows:
+		-----
+		@Component
+		public class CustomizedRestMvcConfiguration extends RepositoryRestConfigurerAdapter {
 
-		@Entity
-		public class WebsiteUser {
-		 
-			@Id
-			@GeneratedValue(strategy = GenerationType.AUTO)
-			private long id;
-		 
-			private String name;
-			private String email;
-		 
-			// standard getters and setters
-		}
-		
-	Every user has a name and an email, as well as an automatically-generated id. 
-	
-	b) Now we can write a simple repository:
-		@RepositoryRestResource(collectionResourceRel = "users", path = "users")
-		public interface UserRepository extends PagingAndSortingRepository<WebsiteUser, Long> {
-			List<WebsiteUser> findByName(@Param("name") String name);
-		}
-		This is an interface that allows you to perform various operations with WebsiteUser objects. We also defined a custom query that will provide a list of users based on a given name.
-
-		The @RepositoryRestResource annotation is optional and is used to customize the REST endpoint. If we decided to omit it, Spring would automatically create an endpoint at “/websiteUsers” instead of “/users“.
-
-	c) Finally, we will write a standard Spring Boot main class to initialize the application:
-
-		@SpringBootApplication
-		public class SpringDataRestApplication {
-			public static void main(String[] args) {
-				SpringApplication.run(SpringDataRestApplication.class, args);
-			}
-		}
-		That’s it! We now have a fully-functional REST API. Let’s take a look at it in action.
-
-	d) Accessing the REST API
-	If we run the application and go to http://localhost:8080/ in a browser, we will receive the following JSON:
-
-		{
-		  "_links" : {
-			"users" : {
-			  "href" : "http://localhost:8080/users{?page,size,sort}",
-			  "templated" : true
-			},
-			"profile" : {
-			  "href" : "http://localhost:8080/profile"
-			}
+		  @Override
+		  public void configureRepositoryRestConfiguration(RepositoryRestConfiguration config) {
+			config.setBasePath("/api");
 		  }
 		}
-		As you can see, there is a “/users” endpoint available, and it already has the “?page“, “?size” and “?sort” options.
+		------
+		
+		4.5.3. Changing Other Spring Data REST Properties
+		
+		basePath:			the root URI for Spring Data REST
+		defaultPageSize:	change the default for the number of items served in a single page
+		maxPageSize:		change the maximum number of items in a single page
+		pageParamName:		change the name of the query parameter for selecting pages
+		limitParamName:		change the name of the query parameter for the number of items to show in a page
+		sortParamName:		change the name of the query parameter for sorting
+		defaultMediaType:	change the default media type to use when none is specified
+		returnBodyOnCreate:	change whether a body should be returned when creating a new entity
+		returnBodyOnUpdate:	change whether a body should be returned when updating an entity
 
-		There is also a standard “/profile” endpoint, which provides application metadata. It is important to note that the response is structured in a way that follows the constraints of the REST architecture style. Specifically, it provides a uniform interface and self-descriptive messages. This means that each message contains enough information to describe how to process the message.
-
-		There are no users in our application yet, so going to http://localhost:8080/users would just show an empty list of users. Let’s use curl to add a user.
-
-
-			$ curl -i -X POST -H "Content-Type:application/json" -d '{  "name" : "Test", \ 
-			"email" : "test@test.com" }' http://localhost:8080/users
-			{
-			  "name" : "test",
-			  "email" : "test@test.com",
-			  "_links" : {
-				"self" : {
-				  "href" : "http://localhost:8080/users/1"
-				},
-				"websiteUser" : {
-				  "href" : "http://localhost:8080/users/1"
-				}
-			  }
-			}
-		Lets take a look at the response headers as well:
-
-			HTTP/1.1 201 Created
-			Server: Apache-Coyote/1.1
-			Location: http://localhost:8080/users/1
-			Content-Type: application/hal+json;charset=UTF-8
-			Transfer-Encoding: chunked
-
-			You will notice that the returned content type is “application/hal+json“. HAL is a simple format that gives a consistent and easy way to hyperlink between resources in your API. The header also automatically contains the Location header, which is the address we can use to access the newly created user.
-
-		We can now access this user at http://localhost:8080/users/1
-
-
-			{
-			  "name" : "test",
-			  "email" : "test@test.com",
-			  "_links" : {
-				"self" : {
-				  "href" : "http://localhost:8080/users/1"
-				},
-				"websiteUser" : {
-				  "href" : "http://localhost:8080/users/1"
-				}
-			  }
-			}
-
-			You can also use curl or any other REST client to issue PUT, PATCH, and DELETE requests. It also is important to note that Spring Data REST automatically follows the principles of HATEOAS. HATEOAS is one of the constraints of the REST architecture style, and it means that hypertext should be used to find your way through the API.
-
-		Finally, lets try to access the custom query that we wrote earlier and find all users with the name “test”. This is done by going to http://localhost:8080/users/search/findByName?name=test
-
-
-			{
-			  "_embedded" : {
-				"users" : [ {
-				  "name" : "test",
-				  "email" : "test@test.com",
-				  "_links" : {
-					"self" : {
-					  "href" : "http://localhost:8080/users/1"
-					},
-					"websiteUser" : {
-					  "href" : "http://localhost:8080/users/1"
-					}
-				  }
-				} ]
-			  },
-			  "_links" : {
-				"self" : {
-				  "href" : "http://localhost:8080/users/search/findByName?name=test"
-				}
-			  }
-			} 
+	4.6. Starting the Application		
+		At this point, you must also configure your key data store. Spring Data REST officially supports:
+			Spring Data JPA
+			Spring Data MongoDB
+			Spring Data Neo4j
+			Spring Data GemFire
+			Spring Data Cassandra
+			
+NOTE : for furthe details refer 
+		https://docs.spring.io/spring-data/rest/docs/current/reference/html/
+		
+		--------------------

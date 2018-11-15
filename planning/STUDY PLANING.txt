@@ -1,4 +1,4 @@
-::: Time Table:- from 17 OCT 2018 till Dec 31-2018
+::: Time Table:- from 14 NOV 2018 till Dec 31-2018
 	
 	GO FOR RUNNING EVERY ALTERNATE DAY, WHENEVER GO WALK UP AT 7:30
 	
@@ -8,7 +8,7 @@
 	WALK UP :- 		08:00 
 -----------------------------------------------------------------------
 	  
-NOVEMBER:- 9,	10,	11,	12,	13,	14,	15,	16,	17,	18,	19,	20....
+NOVEMBER:- 14,	15,	16,	17,	18,	19,	20....
 		
 =========================Before Interview===========================
 --------------------------------------------------------------------
@@ -33,35 +33,37 @@ NOVEMBER:- 9,	10,	11,	12,	13,	14,	15,	16,	17,	18,	19,	20....
 
 --------------------------------------------------------------------
 
-8.	Spring Data Rest:-	---- for DOCS 
+8.	Spring Data Rest:-	---- for DOCS --------------- 										--->> [ 14  Nov]
 	https://docs.spring.io/spring-data/rest/docs/current/reference/html/
 
------------------------------------planning for saturday and sunday------------------------------start---
+-----------------------------------till Sunday 18 Nov------------------------------start---
 
-9.	Spring framework:- 				( Nov)  repeat	[tutorial points and java brain video] 	--->> [  Nov]
+9.	Spring framework:- 				( Nov)  repeat	[tutorial points and java brain video] 	--->> [ 14  Nov]
 
-10.	Spring Boot:-					( Nov)  repeat 	[java brain video]						--->> [  Nov]
+10.	Spring Boot:-					( Nov)  repeat 	[java brain video]						--->> [ 14 Nov]
 
-11.	Restful WebService				( Nov)  repeat	[tutorial points and java brain video] 	--->> [  Nov]
+11.	Restful WebService				( Nov)  repeat	[tutorial points and java brain video] 	--->> [ 15 Nov]
 
-12.	Design Principle 				( Nov)  repeat	[my notes ]								--->> [ Nov]
+12.	Design Principle 				( Nov)  repeat	[my notes ]								--->> [ 16 Nov]
 
-13.	Design Patterns					( Nov)  repeat and also new one [tutorial points] 		--->> [  Nov]
+13.	Design Patterns					( Nov)  repeat and also new one [tutorial points] 		--->> [ 16  Nov]
 
------------------------------------planning for saturday and sunday-------------------------------end---
+18.	Core Java:- 5, 7, 8, 9 ---		(Nov)	repeat [my notes and tutorial points]			--->> [ 16  Nov]
 
-17.	Hibernante 						( Nov)	repeat [tutorial pounts and video]
-
-18.	Core Java:- 5, 7, 8, 9 ---		(Nov)	repeat [my notes and tutorial points]
-
-19.	Java 8 newly added features - 	( Nov)	repeat
-		Lamda,				----->> [java brain video]
+19.	Java 8 newly added features - 	( Nov)	repeat											--->> [ 17, 18  Nov]
+		Lamda,				----->>   [java brain video]
 		functional programing ----->> [java brain video]
-		Stream Api ---->> [some imp urls]
-		Time and Date Api ---->> [some imp urls]
-		Concurreny Collection ---->> [some imp urls]
+		Stream Api ---->>             [some imp urls]
+		Time and Date Api ---->>      [some imp urls]
+		Concurreny Collection ---->>  [some imp urls]
+
+-----------------------------------till Sunday 18 Nov-------------------------------end---
+
+
 
 14.	Oracle DataBase					( Nov)	 repeat		====>> [SOME URLs]
+
+17.	Hibernante 						( Nov)	repeat [tutorial pounts and video]
 
 15.	Maven							( Nov)	 repeat [java brain video]
 
@@ -72,6 +74,8 @@ NOVEMBER:- 9,	10,	11,	12,	13,	14,	15,	16,	17,	18,	19,	20....
 23. LDAP 				---- NEW	( Nov)	 ====>> [SOME URLs]
 
 16.	Mongo DabaBase		---- NEW	 		====>> [SOME URLs]
+
+25. Spring MVC 						( Nov)	 repeat		====>>
 
 =========================After Interview start===========================
 

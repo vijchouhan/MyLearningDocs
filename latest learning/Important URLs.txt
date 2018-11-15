@@ -17,6 +17,8 @@ http://www.techferry.com/articles/RESTful-web-services-JAX-RS-annotations.html
 ---------------------------------------------
 https://stackify.com/what-are-microservices/
 https://stackify.com/what-are-microservices/
+https://docs.microsoft.com/en-us/azure/architecture/guide/architecture-styles/microservices
+
 
 ---------------------------------------------
 5.	Clould Computing :- 
@@ -385,11 +387,13 @@ https://www.linkedin.com/learning/spring-boot-essential-training/spring-security
 https://www.linkedin.com/learning/extending-securing-and-dockerizing-spring-boot-microservices  
 
 ---------------------------------------------------
-66. Introduction to Spring Data REST
+66. Spring Data REST Reference Guide
 
 https://www.baeldung.com/spring-data-rest-intro
-Spring Data REST Reference Guide
+
+http://spring.io/projects/spring-data-rest
 https://docs.spring.io/spring-data/rest/docs/current/reference/html/
+
 
 
 

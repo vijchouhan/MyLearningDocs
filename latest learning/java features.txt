@@ -1,0 +1,14 @@
+-------:JAVA NEW FEATURES:---------------
+-----------------------------------------
+JAVA 8
+	forEach method in Iterable interface
+	default and static method in Interface
+	Functionald Interface and Lambda Expression
+	Java Stream API for bulk operations on collections
+	Java Time API
+	Collection API improvements
+	Concurrency API improvements
+	Java 
+JAVA 7
+
+JAVA 5

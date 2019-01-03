@@ -76,9 +76,11 @@ This is a micro service architecture based application where development started
 2. Implemented their business logic and developed various micro services for this application as follow,
 	a) Orcheshtrator Scheduler, b) Orcheshtrator consumer, c) Analsyst and Qc Dashboard Service,
 3. Created the database schema document for this application for all modules
-4. Implemented Log4j2, Git, Swagger, RabbitMq, Spring Data Rest, MongoDb, Restful web service, Maven, Micro service, Spring boot for this application.
+4. Implemented java 8, Log4j2, Git, Swagger, RabbitMq, Spring Data Rest, MongoDb, Restful web service, Maven, Micro service, Spring boot, docker for this application.
 5. Guided to team member on using new technologies, while creating the different service and reviewed their source code. 
 6. Created and managed git repository for this application.
+7. Developed web service for operational manager Dashboard for Lease Extraction application, where filter also implemented for today, weekly, monthly and user. For this Stream and Date Time used in Spring boot application. 
+
 
 
 

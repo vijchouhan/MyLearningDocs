@@ -2,8 +2,9 @@
 ---------------------------------------------
 1.	java feature 8:- 
 ---------------------------------------------
-http://www.journaldev.com/2389/java-8-features-with-examples#java-stream-api
+https://www.journaldev.com/2389/java-8-features-with-examples
 
+---------------------------------------------
 2.	selenium:- 
 ---------------------------------------------
 http://toolsqa.com/selenium-webdriver/webelement-commands/
@@ -79,7 +80,7 @@ http://javarevisited.blogspot.in/2014/05/double-checked-locking-on-singleton-in-
 ---------------------------------------------
 
 13.	Memory Management:- 
-
+https://www.journaldev.com/4098/java-heap-space-vs-stack-memory
 https://www.journaldev.com/2856/java-jvm-memory-model-memory-management-in-java
 
 ---------------------------------------------
@@ -89,9 +90,9 @@ https://searchsoftwarequality.techtarget.com/definition/twelve-factor-app
 https://en.wikipedia.org/wiki/Twelve-Factor_App_methodology
 ---------------------------------------------
 
-15.	Memory Management:- 
+15.	Java feature 7
+https://javarevisited.blogspot.com/2014/04/10-jdk-7-features-to-revisit-before-you.html
 
-https://www.journaldev.com/4098/java-heap-space-vs-stack-memory
 ---------------------------------------------
 
 16.	List of Controller class in Spring
@@ -393,39 +394,65 @@ https://www.baeldung.com/spring-data-rest-intro
 
 http://spring.io/projects/spring-data-rest
 https://docs.spring.io/spring-data/rest/docs/current/reference/html/
-
-
-
+https://spring.io/understanding/HATEOAS
 
 ---------------------------------------------------
 
+67. Applying HATEOAS on springbootapplcation,
+
+https://dzone.com/articles/applying-hateoas-to-a-rest-api-with-spring-boot
+---------------------------------------------------
+68.	java feature 5 
+https://www.javatpoint.com/New-features-in-java
 
 ---------------------------------------------------
+69. Command to terminate port already runing
 
+https://stackoverflow.com/questions/39632667/how-to-kill-the-process-currently-using-a-port-on-localhost-in-windows
 
----------------------------------------------------
+netstat -ano | findstr :8080  	=>> 8080 is port number already runing 
+taskkill /PID 5048 /F			=>> 5048 is the PID for 8080
+--------------------------------------------------
 
+70. Java Heap Space vs Stack – Memory Allocation in Java
+https://www.journaldev.com/4098/java-heap-space-vs-stack-memory
 
----------------------------------------------------
+--------------------------------------------------
 
+71. pass by value and pass by reference/html/mongo
 
----------------------------------------------------
+https://www.geeksforgeeks.org/passing-and-returning-objects-in-java/
+https://www.journaldev.com/3884/java-is-pass-by-value-and-not-pass-by-reference
 
+--------------------------------------------------
 
----------------------------------------------------
+72. Spring Boot + WebSocket Simple Example
 
+https://www.javainuse.com/spring/boot-websocket
+https://www.baeldung.com/websockets-spring
 
----------------------------------------------------
+--------------------------------------------------
+73. public static void main(String... args)
 
+https://www.journaldev.com/12552/public-static-void-main-string-args-java-main-method
 
----------------------------------------------------
+--------------------------------------------------
+74. difference between put and post
+https://www.keycdn.com/support/put-vs-post
+https://stackoverflow.com/questions/107390/whats-the-difference-between-a-post-and-a-put-http-request
 
+--------------------------------------------------
 
----------------------------------------------------
+75. Java POJO, Spring Bean, Modle Class:
 
+https://stackoverflow.com/questions/21866571/difference-between-javabean-and-spring-bean
+https://www.journaldev.com/21577/spring-bean-annotation
+https://howtodoinjava.com/spring-core/spring-configuration-annotation/
+https://www.baeldung.com/spring-bean-annotations
+https://docs.spring.io/spring-javaconfig/docs/1.0.0.M4/reference/html/ch02s02.html
+https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/context/annotation/Bean.html
 
-
-
+		
 
 
 

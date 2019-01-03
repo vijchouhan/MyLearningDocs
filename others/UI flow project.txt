@@ -1,0 +1,185 @@
+Flow of the UI
+=====================================================================================================
+1. Index.html  --->>> this is the first page to load 
+
+<body>
+
+  <div ui-view></div> -->>> uiView is defined in below file... 
+
+  
+2. viewDirective.js
+  -->>         $element.data('$uiView', { name: name, state: locals.$$state });
+        $element.html(locals.$template ? locals.$template : initial);
+		
+Based on the vaue of state, it first load the page login.html below.... 	below code defined in app.module.js file.... 
+
+        .state('login', {
+          url: '/login',
+          templateUrl: '/app/authentication/login/login.html',
+          controller: 'LoginController as vm'
+ 	
+
+3. Loging.html
+
+       <form name="loginform" class="loginform" role="form" ng-submit="vm.validate(loginform.$valid)" novalidate>
+	   .
+	   .
+	   .
+	   <div class="col-sm-12 margin"><button type="submit" class="bluebtn btn-default pull-right" ng-disabled="loginform.$invalid">Login</button></div>	   
+	   
+it call the 'validate' method on submit of the form, on click of the login button.... this method define inside login.js file
+
+4. Login.js
+ vm.validate = function (isValid) { --->>> this method call below method of loginService.js
+ 
+5. loginservice.js
+ 
+  loginservice.login(vm.userName, vm.password, function (response) {
+  
+  inside this metho.... it redirc
+  
+     $http.post('/userAuth',$httpParamSerializerJQLike(data), {
+
+6. UserAuth.js
+
+after successfully authentication it redirect to the path '/' which is defined in the file 'app.module.js' ... which further open basicChecks.html
+
+7. app.module.js
+
+ $stateProvider
+        .state('home', {
+          url: '/',
+          templateUrl: 'app/basicChecks/basicChecks.html',
+          controller: 'BasicChecks as vm',
+          redirectTo: 'home.initials'
+
+8. basicChecks.html 
+
+This form further redirect to initials.html.... 
+
+9. initials.html
+
+<div class="text-right">
+        <button type="submit" id = "basicchecks-btn" class="btn btn-md btn-success" ng-click="vm.formSubmit(userForm.$valid)">Basic Checks</button>
+      </div>
+here on submit click.... it call the method 'formSubmit(' from basicChecks.js
+
+10. basicChecks.js
+
+  function BasicChecks($scope, $rootScope, basicCheckService, $location, $uibModal, alertService, $interval, $timeout) {
+    var vm = this;
+
+
+	vm.formSubmit = function(isValid) {
+      if(isValid) {
+        if(vm.company.split(';').length > 2){
+          notifyUser(7, function(){});
+          return;
+        }
+        var flag = true;
+        for(var i=0; i<vm.entities.length; i++) {
+          if(vm.entities[i].entityName === vm.company && vm.entities[i].basic && (vm.entities[i].basic.status === "Waiting" || vm.entities[i].basic.status === "Running")) {
+            flag = false;
+            break;
+          }
+        }
+        if(!flag) {
+          notifyUser(2, triggerBasicChecks);
+        } else {
+          triggerBasicChecks();
+        }
+      }
+here it call the method triggerBasicChecks() from same file basichecks.js which uses basicCheckService.... 
+
+    function triggerBasicChecks() {
+      basicCheckService.insertRequest(vm.company.trim(), vm.domicile, vm.country, $rootScope.globals.currentUser.username, "3").then(function(results) {
+        var data = results.data;
+        notifyUser(1, function() {});
+      });
+    }
+
+11. basicCheckService.js
+
+here it forwarding to the url pattern '/insert' .... which is defined inside app.js.... 
+
+function basicCheckService($http) {
+    return {
+      insertRequest: function(company, domicile, country, username, phase) {
+        var parameters = {
+          company: company,
+          domicile: domicile,
+          country: country,
+          username: username,
+          phase: phase
+        };
+        return $http.get('/insert', {params: parameters});
+      },
+
+12. app.js
+
+app.use('/insert', insertBC);
+
+13. insertBC.js
+
+below method get called... with respect to '/insert' url pattern
+
+router.get('/', function(req, res, next) {
+.
+.
+insertRequest(req,requestObject,'insertBC',coi,domicile, function(err, results) {
+    console.log(err);
+    console.log(typeof err.success);
+    console.log(results);
+    if(!err.success) {
+      logger.log('error', path.basename(__filename), 'Error connecting to database', req.decoded.username, err);
+      res.json(err);
+      return;
+    }
+    res.send(results);
+  });
+
+  insertRequest() this method is getting called... which is defined in insertRequest.js file... 
+  
+  var insertRequest = require('../common/insertRequest'); -->> this line is respect to import 
+  
+  
+14. insertRequest.js
+
+below method gets called... 
+
+  logger.log('debug', path.basename(__filename), 'Inside insertRequest common file', req.decoded.username);
+
+  var company = requestObject.companyName
+  var phase = requestObject.processPhase;
+  var combinedUserName = requestObject.user_name;
+  var requestString = JSON.stringify(requestObject);
+  console.log("combinedUserName " +combinedUserName);
+
+  if(task == "downloadAR"){
+    phase = 2;
+  }
+
+  var date = new Date();
+  var timestamp = dateformat(date, "mmddyyyyHHMMss");
+
+  var sql = "INSERT holmes_kyc_config.request_queue (??,??,??,??,??,??,??,??) values(?,?,?,?,?,?,?,?)";
+  var inserts = ['request','processed','source','timestamp','role','company_name__given','analysis_phase','market',requestString,'false','web_server',timestamp,combinedUserName,company,phase,coi];
+  sql = mysql.format(sql, inserts);
+  db.executeQuery(sql, function(err, results) {
+    if(err) {
+      logger.log('error', path.basename(__filename), 'Error connecting to database', req.decoded.username, err);
+      var obj = {'message':errfile.ERR003.errorDesc,
+                'success': false
+                };
+      callback(obj,results);
+    }else {
+      var obj = {'message':"Inserted successfully into the request queue",
+                'success': true
+                };
+      callback(obj,results);
+    }
+  });
+
+this method is inserted the request to the table 'request_queue' from where orchestrator pich this and start executing the plugin phasewise... 
+  
+====================================================================================================================================================

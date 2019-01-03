@@ -1,0 +1,107 @@
+Java LAMDA :- 
+tutorial 1 to 
+Why Lamdas ?
+	Enables functional programming
+	Readable and concise code :- reduce some boilar plat code
+	Easier-to-use APIs and libraries :- enable us to write better apis and libraries which are easier to use
+	Enables support for paraller processing 
+	
+Setup: IDE, JDK 8 
+
+Code wit OOP:
+	everything is an object
+	All code blocks are associated with classes and objects.
+
+	
+Why we need functional progamming ?
+	better code and maintainable code
+	
+----------
+function is treated as value
+
+Rule :-	Functional Interface should have only one method....
+
+Type Inference:- 
+	Type inference is important in order to figure out what the type of lambda, what are the type the data we deal with ... 
+
+	Functional Interface:- one abstract method.
+		@funtionalInterface - to make sure it is as functional interface that does not allow more than one method.
+		
+-----------------
+18.	Functional Interface:- 
+	java.util.function ==> in java 8 this is the package wich contains the functional interface 
+-------------------
+19.	Closer:- If you able to pass function from one place to another in the code  as a value you will have to deal with closer. 
+
+	package com.lambda.test;
+
+public class CloserExample {
+public static void main(String args[]){
+	int a = 10;
+	int b = 20;
+	/*doProcess(a,new Process(){
+		
+	@Override
+	public void process(int a){
+		System.out.println(a+b);
+	}	
+	});*/
+	
+	doProcess(a, i->System.out.println(i+b));
+}
+
+public static void doProcess(int a, Process b){
+	b.process(a);
+}
+
+interface Process{
+	void process(int a);
+}
+}
+
+here b can be treated as final and not allow to change inside method process()... this is closer
+
+------------------------
+
+20.	this referece .... 	
+		this reference can be treated as differently in case of lambda . here this is same as out side of the lambda expression. it doesnot override this reference.  
+		
+		here this reference is always refer to outer class where lambda expression is written
+		
+------------------------
+
+21.	Method References and Collections		
+class printMessage{
+	psvm{
+	Thread t = new Thread(()->printMessage());
+	Thread t = new Thread(printMessage :: printMessage); // this is method reference is exacltly equal to above lambda expression
+		
+	}
+	p s v printMessage(){
+	System.out.println("hello");
+	}
+}
+
+more example :=>>  System.out::prinln  is equal to this code[ p->method(p)] 
+---------------------------
+
+22. forEach iteration 	in java 8
+	
+	<list of collection>.forEach(consumer<t>)
+	list.forEach(consumer<t>)
+	
+	people.forEach(p->System.out.println(p));
+	people.forEach(System.out::println); 
+		this can be perfomed in wll under multicore processor environment. supose one processor1 perform half and another processor2 perform the iteration operation make process faster. and control is compler over to compiler .
+		
+		but not in below code 
+		
+		for(int i= 0; i<people.length; i++) or for(Person o:people) // these are sequential 
+---------------------------
+23.	Streams
+	A sequence of elements supporting sequential and parallel aggregate operations
+	
+
+
+	
+	

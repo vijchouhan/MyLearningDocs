@@ -1,0 +1,73 @@
+Steam suppprt functional programming to java, and are supported starting in java 8.
+
+Advantages of Streams:
+	Will make you more efficient java programmer.
+	Make heavy use of Lambda expressions.
+	ParallelStreams make it very easy to multi-thread operations
+A stream pipeline consists of a source, followed by zero or more intermediate operations; and one terminal operation.	
+
+
+Source --->>Filter --->> Sort --->>Map --->> Collect -->>
+	
+Stream Source:- 
+		stream can be created from collections, list , set, ints , array, doubles, line of files.
+		-Intermediate Operation:- filter, sort , map retur a stream so we can chain multiple intermediate operations.
+			zero or more intermediate operations are allowed.
+			oreder matterns for large datasets, filter first, then sort or map
+			for very large datasets use ParallelStreams to enable multiple threads
+			operations include:
+				anyMatch();	flatMap(); distict();map(); filter(); skip(); findFirst(); sorted().
+		
+		-Terminal Operation:- such as forEach, collect or reduce are either return void or non stream result.
+			one terminal operation is allowed.
+			forEach applies the same function to each element.
+			collect saves the elements into a collection.
+			other options reduce the stream to a single summary element.
+				count(); min(); max(); reduce(); summaryStatics().
+				
+Examples:- 
+1.		IntStream.range(1,10).forEach(System.out::print);
+2.		IntStream.range(1,10).skip(5).forEach(x->System.out.println(x));
+3.		IntStream.range(1,5).sum();
+4.		Stream.of("Aval", "Aneri","Alberto").sorted().findFirst().ifPresent(System.out::print);
+5.		String[] names = {"Aval", "Sneri","Slberto"};
+		Arrays.stream(names).filter(x->x.startWith("S")).sorted().forEach(System.out::print);
+6.		Arrays.stream(new int[]{2,4,6,8,10}).map(x->x*x).averate().ifPresent(System.out::print);
+7.		List<String> people = Arrays.asList("Al","Anlit","Brak","Ang");
+			people.stream().map(String::toLowerCase).filter(x->x.startWith("a")).forEach(System.out::print);
+
+8.		Stream<String> bands = Files.lines(Paths.get("bands.txt"));
+			bands.sorted().filter(x->x.length()>13).forEach(System.out::println);
+			bands.close();
+				
+			
+9.		Stream<String> bands2 = Files.lines(Paths.get("bands.txt"))
+			.filter(x->x.contains("jit")).collect(Collectors.toList());
+			bands2.forEach(System.out::println);
+
+10.		FILE :- A,12,3.7
+				B,16,2.4
+		Stream<String> bands3 = Files.lines(Paths.get("bands.csv"))
+				.filter(x->x.length==3)
+				.map(x->x.split(","))
+				.filter(x->Interger.parseInt(x[1]))>15)
+				.forEach(x->System.out.println(x[0]+"	"+x[1]+"	"+x[2]));
+				
+				bands3.close();
+				
+11.		Stream<String> row3 = Files.lines(Paths.get("data.txt")
+		Map<String, String>	map = new HashMap<>();
+		map = row3.filter(x->x.length==3)
+				.map(x->x.split(","))
+				.filter(x->Interger.parseInt(x[1]))>15)
+				.collect(Collectors.toMap(x->x[0]),x->Interger.parseInt(x[1]));
+		row3.close();		
+
+13. double total = Stream.of(7.3,1.5,4.8).reduce(0.0, (Double a, Double b)->a+b); /// this return the sum 
+
+14. IntSummaryStatics summary = IntStream.of(7,2,19,88,73,4,10).summarStatics();
+		System.out.println(summary);
+				// this gives output as 
+				intSummaryStatics[count=7, sum, 203, min=2, average=29.000000, max:88]
+		
+		=======================00======================

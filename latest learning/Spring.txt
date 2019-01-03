@@ -1,0 +1,12 @@
+Data access/ Integration
+	ORM, JDBC, OXM ,JMS, Transaction
+Web(MVC/Remoting)
+	Web-Socket, Web-Servlet, Web-Portlet, Web-MVC
+core Container
+	Bean, Core, Context, SpEL
+Test
+
+Miscellaneous
+	AOP,Instrumentation,Aspects,Messaging
+	
+	

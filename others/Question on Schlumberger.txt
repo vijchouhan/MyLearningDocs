@@ -1,0 +1,18 @@
+Regarding project... 
+
+deff between list and set
+
+it's implementation classes
+
+internal working of linklist
+
+how to create mutable class 
+
+internal working of HashSet 
+
+Map put and get method.... 
+
+Angular Js.... 
+
+
+

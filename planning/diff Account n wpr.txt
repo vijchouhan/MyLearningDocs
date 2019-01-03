@@ -1,0 +1,48 @@
+A1
+----
+spring 
+hibernate
+more tomcat
+vm
+client interaction
+communication domain
+
+------
+tmpl:-
+	systrain
+	sequqantial diagram
+	lld and hld
+	knoledge transfer session
+	client interaction
+	communication domain
+	
+-----------afer from tmpl
+banking domain
+rest webservice
+spring boot
+mongodb
+rabitmq
+springdatarest
+mysql
+java 8 
+lambda
+Spring
+design pattern
+design principle
+docker
+microservice
+aws
+cloud
+java 7
+spring mvc
+git
+spring securiry
+junit
+jvm architecture
+stream api
+date api
+swagger
+log4j
+spring jdbc
+Agile more...
+----------

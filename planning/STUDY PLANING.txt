@@ -2,13 +2,13 @@
 	
 	GO FOR RUNNING EVERY ALTERNATE DAY, WHENEVER GO WALK UP AT 7:30
 	
-	STUDY DAILY:	10:00 to 01:00 [no new concepts only repeat old one]
+	STUDY DAILY:	09:30 to 12:30 [no new concepts only repeat old one]
 	OFFICE : 		10:30 to 07:00 
 
 	WALK UP :- 		08:00 
 -----------------------------------------------------------------------
 	  
-NOVEMBER:- 14,	15,	16,	17,	18,	19,	20....
+DECEMBER:- 10,	11,	12,	13,	14,	15,	16,	17,	18,	19,	20,	21....
 		
 =========================Before Interview===========================
 --------------------------------------------------------------------
@@ -23,59 +23,61 @@ NOVEMBER:- 14,	15,	16,	17,	18,	19,	20....
 
 5.	Git 				---- repeat 		Status: DONE, need to repeat again  [video tutorial edureka]
 
-6.	Cloud Computing		---- repeat 		Status: DONE, need to repeat again  [Important URLs.txt use point no 5 links]
-
-20. Spring Security		---- repeat 		Status: DONE, need to repeat again	  [video tutorial ]
-
 7.	Memory Management	---- repeat 		Status: DONE, need to repeat again	 [video tutorial ]
 
 24. JVM Architecture 	---- repeat 		Status: DONE, need to repeat again	 [video tutorial ]
 
---------------------------------------------------------------------
+Basic Adia:- 
+------------
+	6.	Cloud Computing		---- repeat 		Status: DONE, need to repeat again  [Important URLs.txt use point no 5 links]
 
-8.	Spring Data Rest:-	---- for DOCS --------------- 										--->> [ 14  Nov]
+	20. Spring Security		---- repeat 		Status: DONE, need to repeat again	  [video tutorial ]
+
+--------------------------------------------------------------------REPEAT TOPIC-------------------------------start---
+
+18.	Core Java:- 5, 7, 8, 9 ---			repeat [my notes and tutorial points]			------>>> 11 DEC			
+	
+19.	Java 8 newly added features - 		repeat											------>>> 11 DEC			
+		Lamda,				----->>   [java brain video]  --- Status: DONE, need to repeat again
+		Functional Programing ----->> [java brain video]  --- Status: DONE, need to repeat again
+		Stream Api ---->>             [some imp urls] 	  --- Status: DONE, need to repeat again
+		Time and Date Api ---->>      [some imp urls] 	  --- Status: DONE, need to repeat again	
+		Concurreny Collection ---->>  [some imp urls]
+		Collection API
+		MultiThreading
+		Basic Concepts (Exceptions, io, OOPS, Overloading, Overriding, Serializations, Generics )		
+		
+		
+9.	Spring framework:- 				  repeat	[tutorial points and java brain video] 	------>>> 10 DEC, 11 DEC
+
+10.	Spring Boot:-					  repeat 	[java brain video]						------>>> 12 DEC			
+
+11.	Restful WebService				  repeat	[tutorial points and java brain video] 	------>>> 13 DEC		
+
+12.	Design Principle 				  repeat	[my notes ]								------>>> 13 DEC		
+
+13.	Design Patterns					  repeat and also new one [tutorial points] 		------>>> 13 DEC		
+
+--------------------------------------------------------------------REPEAT TOPIC-------------------------------end----
+
+8.	Spring Data Rest:-	---- for DOCS --------------- 										
 	https://docs.spring.io/spring-data/rest/docs/current/reference/html/
 
------------------------------------till Sunday 18 Nov------------------------------start---
+25. Spring MVC 							 repeat		====>>
 
-9.	Spring framework:- 				( Nov)  repeat	[tutorial points and java brain video] 	--->> [ 14  Nov]
+14.	Oracle DataBase						 repeat		====>> [SOME URLs]
 
-10.	Spring Boot:-					( Nov)  repeat 	[java brain video]						--->> [ 14 Nov]
+17.	Hibernante 							repeat [tutorial pounts and video]
 
-11.	Restful WebService				( Nov)  repeat	[tutorial points and java brain video] 	--->> [ 15 Nov]
+15.	Maven								 repeat [java brain video]
 
-12.	Design Principle 				( Nov)  repeat	[my notes ]								--->> [ 16 Nov]
+21.	Jenkins				---- NEW	 	 ====>> [SOME URLs]
 
-13.	Design Patterns					( Nov)  repeat and also new one [tutorial points] 		--->> [ 16  Nov]
+22.	JIRA				---- NEW		 ====>> [SOME URLs]
 
-18.	Core Java:- 5, 7, 8, 9 ---		(Nov)	repeat [my notes and tutorial points]			--->> [ 16  Nov]
-
-19.	Java 8 newly added features - 	( Nov)	repeat											--->> [ 17, 18  Nov]
-		Lamda,				----->>   [java brain video]
-		functional programing ----->> [java brain video]
-		Stream Api ---->>             [some imp urls]
-		Time and Date Api ---->>      [some imp urls]
-		Concurreny Collection ---->>  [some imp urls]
-
------------------------------------till Sunday 18 Nov-------------------------------end---
-
-
-
-14.	Oracle DataBase					( Nov)	 repeat		====>> [SOME URLs]
-
-17.	Hibernante 						( Nov)	repeat [tutorial pounts and video]
-
-15.	Maven							( Nov)	 repeat [java brain video]
-
-21.	Jenkins				---- NEW	( Nov) 	 ====>> [SOME URLs]
-
-22.	JIRA				---- NEW	( Nov)	 ====>> [SOME URLs]
-
-23. LDAP 				---- NEW	( Nov)	 ====>> [SOME URLs]
+23. LDAP 				---- NEW		 ====>> [SOME URLs]
 
 16.	Mongo DabaBase		---- NEW	 		====>> [SOME URLs]
-
-25. Spring MVC 						( Nov)	 repeat		====>>
 
 =========================After Interview start===========================
 

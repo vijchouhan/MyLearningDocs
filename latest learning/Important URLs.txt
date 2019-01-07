@@ -436,24 +436,23 @@ https://www.baeldung.com/websockets-spring
 
 https://www.journaldev.com/12552/public-static-void-main-string-args-java-main-method
 
---------------------------------------------------
 74. difference between put and post
 https://www.keycdn.com/support/put-vs-post
 https://stackoverflow.com/questions/107390/whats-the-difference-between-a-post-and-a-put-http-request
 
---------------------------------------------------
 
 75. Java POJO, Spring Bean, Modle Class:
 
 https://stackoverflow.com/questions/21866571/difference-between-javabean-and-spring-bean
+
 https://www.journaldev.com/21577/spring-bean-annotation
+
 https://howtodoinjava.com/spring-core/spring-configuration-annotation/
+
 https://www.baeldung.com/spring-bean-annotations
+
 https://docs.spring.io/spring-javaconfig/docs/1.0.0.M4/reference/html/ch02s02.html
+
 https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/context/annotation/Bean.html
 
 		
-
-
-
-

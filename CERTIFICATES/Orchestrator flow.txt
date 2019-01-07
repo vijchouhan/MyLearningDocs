@@ -1,0 +1,33 @@
+Producer (Project name:- OrchestratorScheduler,
+git url:- http://10.210.16.204/form-processing/CHC/OrchestratorScheduler.git )
+	
+	Get input file location from database collection ‘System Configuration’ (method name returnInputPath()) and read the files for every 10 second fixed interval,
+	
+	Move the files to (D:\Orchestrator\Processing) folder, from here splitter service gets called and put splitted file into output 
+	location(D:\Orchestrator\OutputLocation)
+	
+	Read the output path from response retured by Splitter service, and for each splitted page our producer set the information and send it into queue (queue name 'chc.queue')  
+	
+Consumer:- (Project Name:- OrchestratorSchedulerConsumer,
+git url:- http://10.210.16.204/form-processing/CHC/OrchestratorSchedulerConsumer.git )
+
+	Consumer listen the queue (name :- chc.queue) and consume the messame, once consumed message gets deleted from queue. 
+	
+	Consumer call the classfier service based on the ouput loation (ie D:\Orchestrator\OutputLocation\HCFA_tif )of splitter service and store the response json in dababase 'hcfa_data' or 'ub_data' based on form type.
+	
+
+Splitter:- (Project Name:- tiff-splitter, 
+git url:- http://10.210.16.204/form-processing/CHC/tiff-splitter.git)	
+
+	Takes the the files from  processing location (D:\Orchestrator\Processing) and split into single pages and store into location (D:\Orchestrator\OutputLocation\HCFA_tif) or (D:\Orchestrator\OutputLocation\HCFA_jpg) 
+
+	
+How to run the Appliction:-
+
+		1. start the rabbit mq server
+		2. start the splitter service
+		3. start the classifier service
+		4. connect to mongodb server
+		5. start the producer project and put the sample file into location return from System Configuration 
+		6. verify the database for calssifire related data 
+		

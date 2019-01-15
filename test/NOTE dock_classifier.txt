@@ -1,0 +1,7 @@
+NOTE:-
+
+	Docket collection having inputdatasourceid field is = same as id field in InputDataSource collection
+	
+	For getAll docket fetch the only the active input data source. the value sould be true for field 'activated' in inputDataSource collection.
+	
+	

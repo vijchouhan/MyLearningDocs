@@ -1,0 +1,25 @@
+{5bffdeb67bb260000196d885=InputDataSource{id='5bffdeb67bb260000196d885', sourceName='Source 2', customerId='1001', customerName='AT&T', solutionGroupId='10002', solutionGroupName='Form', solutionId='100003', solutionName='Certificate For Liability', lobId='5bffd8e37bb260000196d880', sourceType='SFTP', directoryPath='upload', activated=true, modifiedBy='null', modifiedTime=Thu Nov 29 18:12:30 IST 2018, createdBy='SO388552', createdTime=Thu Nov 29 18:12:29 IST 2018}, 
+5bffdeb67bb260000196d875=InputDataSource{id='5bffdeb67bb260000196d875', sourceName='Source 3', customerId='1003', customerName='AT&T', solutionGroupId='10003', solutionGroupName='Form', solutionId='100004', solutionName='Certificate For Liability', lobId='5bffd8e37bb260000196d882', sourceType='SFTP', directoryPath='upload', activated=true, modifiedBy='null', modifiedTime=Wed Dec 19 18:12:30 IST 2018, createdBy='SO388552', createdTime=Wed Dec 19 18:12:29 IST 2018}}
+
+
+.117)
+
+
+2019-01-10 09:54:59.568  INFO 1 --- [    container-1] com.docket.consumer.Consumer             : Inside consumer method : recievedMessageForm()
+
+
+2019-01-10 09:54:59.568  INFO 1 --- [    container-1] com.docket.consumer.Consumer             : 
+
+docketFileInputData is : 5c371673e4332f0001a91dc6;CASE0000000147;upload/5c35d052b9d82100018e3d22/upload/1538681283280_ISSI02419070.pdf
+
+
+2019-01-10 09:54:59.611  INFO 1 --- [    container-1] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:2, serverValue:194}] to mongodb-2:27017
+
+
+2019-01-10 09:54:59.647  INFO 1 --- [    container-1] com.docket.consumer.Consumer             : docketFileId	:	5c371673e4332f0001a91dc6
+
+
+2019-01-10 09:54:59.648  INFO 1 --- [    container-1] com.docket.consumer.Consumer             : docketCaseId	:	CASE0000000147
+
+
+2019-01-10 09:54:59.648  INFO 1 --- [    container-1] com.docket.consumer.Consumer             : filePath	:	upload/5c35d052b9d82100018e3d22/upload/1538681283280_ISS

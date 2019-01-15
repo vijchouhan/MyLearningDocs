@@ -1,0 +1,100 @@
+Spring Boot:- 
+
+	Spring boot makes it easy to create stand-alone, production grade, Spring based application, that you can "just run".
+
+What is spring :-
+		Application framework
+		Programming and configuration model
+		Infrastructure support
+		
+
+Problems
+	Huge framework
+	Multiple setup steps
+	Multiple configuration steps
+	Multiple build and deploy steps
+	
+Spring Boot 
+	Opinionated
+		this is good starting points, make certains configuration choices, make certain dision for you. at least start from this. 
+	convention over configuration
+		it features convention over configuration concepts
+		around 80% configuration are already provided no configuration neccessary... if you something realy different then reuired configuration, that is only 20%
+	Stand Alone
+		not required to configure servlet container for deployment. provided inbuilt tomcat. you can just run application. it run stand alone.
+	Prodution Ready
+		not required any extra effect to deploy on production. /it is ready to just run
+	
+Maven : is a dependency management tools. it downloaded all dependency jar file mentioned in pom.xml file into class path from mentioned repository	
+		it  also created starter project based on passed arctype ... 
+
+spring-boot-starter-parent : 
+	 <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.0.4.RELEASE</version>
+        <relativePath/> <!-- lookup parent from repository -->
+    </parent>
+	
+	
+	here parent means we are creating our application as child project of this 
+	it contains all maven configuration into the project 
+	
+	we application:- have web related all dependency or jar gets downloaded
+	<dependency>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-web</artifactId>
+	</dependency>
+	
+	build maven plugin:- 
+	
+	  <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
+
+	
+properties
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+        <swagger.version>3.0.0-SNAPSHOT</swagger.version>
+    </properties>
+	
+	<java.version>1.8<java.version>
+
+------------
+
+@SpringBootApplication :- 	This annotation tells spring boot that this is starting point for this spring boot application.
+	main method :- you need to tell spring boot that create the servlet container and host this application inside servlet container and make it available.
+	and this is done by below line of code inside main method
+	SpringApplication.run(MainClassName.class, args) --.. static class [SpringApplication] and static method [run]
+	here args is the parameter for main method....
+	
+------------
+SpringApplication.run(MainClass.class, args) -->>>
+	Set up the default configuration : spring boot favoure convention over configuration. it favoure 80% use cases. 
+	Starts Sprimg applcation context also called container 
+	Performs class path scan :- it actually identify based on the maked class I means may it @Service or @Componet of @Controller so on by scaning the class path ... 
+	Start the tomcat server --- you create servlet containier and host this appliation and run it... no need to download tomcat. it is inbuilt provided by spring boot
+	
+------------
+	@RestController
+	@RequestMapping
+-----------------
+parent section tells what version of those jar need to download...... 	
+and dependencies section tell what jar need to download
+
+this preset list of possible combination of jar that work well gets downloaded is call bills of materials 
+you only need to know the version of parent and no worry on individual jar ... it gets automatically downloaded based on parent version
+	
+	
+
+	

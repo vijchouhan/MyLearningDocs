@@ -1,0 +1,46 @@
+Workspace Setup:-
+1	maven download
+		set system variable MAVEN_HOME
+		set system path for %MAVEN_HOME%\bin
+2	https://www.mkyong.com/maven/how-to-install-maven-in-windows/
+	
+3	java jdk 8
+		set system variable JAVA_HOME
+		set system path for %JAVA_HOME%\bin
+	https://www.mkyong.com/maven/how-to-install-maven-in-windows/
+	
+4	download eclipse neon from eclipse site
+	
+	
+5	install maven plugin in eclipse
+	https://download.eclipse.org/technology/m2e/releases/
+	
+6	create settings.xml under  (usually ${user.home}/.m2/settings.xml)
+	https://maven.apache.org/guides/mini/guide-proxies.html
+	
+	
+7	install git base
+	https://git-scm.com/download/win
+	
+8	download notepad
+	https://notepad-plus-plus.org/download/v7.6.2.html
+	
+	
+9	download RObo3t binary from
+	https://robomongo.org/download
+	
+10.	add plugin for postman and launch 
+	https://chrome.google.com/webstore/detail/postman/fhbjgbiflinjbdggehcddcbncdddomop?hl=en
+	
+11.	file-server project
+	right click on project -->> configure -->> add gradle nature
+	right click on project -->> gradle -->> Refresh Gradle Project 
+
+
+	
+	
+	
+	
+	
+		
+	

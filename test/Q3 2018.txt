@@ -1,0 +1,22 @@
+------------------Q3------------
+
+Project 1. Lease Attribute Extraction
+
+	1. Developed Operational Manager Dashboard service and implemented various suggesion during integration with UI.
+
+	2. Developed service to get all users details to show it on the Operational Manager dashboard.               
+
+Project 2. Document Classification
+
+	1. Developed docket queue service which creates the queue in RabbitMQ server and pass the required information with respect to each docket file. 
+       
+	2. Developed docket queue consumer service that gets the required information from the queue and call the cognitive services with respect to each docket file  
+	   and updates the database based on classification response returned from classifier.
+
+	3. Developed the docket review service for review screen, which updates the docket file based on the classification type.
+
+	4. Developed the service for upload the file and folder together in sftp service with respect to different docket file.
+
+	5. Help to UI team while integrating above mentioned all services.
+
+	6. Implemented various suggestion and resolved issues found during the integration with UI.

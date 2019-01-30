@@ -1,33 +1,40 @@
-::: Time Table:- from 14 NOV 2018 till Dec 31-2018
+*********************************************************************************************
+*********************************************************************************************
+					STUDY TIME @ HOME 10:30 PM TO 12:30 PM DAILY
 	
-	GO FOR RUNNING EVERY ALTERNATE DAY, WHENEVER GO WALK UP AT 7:30
-	
-	STUDY DAILY:	09:30 to 12:30 [no new concepts only repeat old one]
-	OFFICE : 		10:30 to 07:00 
-
-	WALK UP :- 		08:00 
------------------------------------------------------------------------
+					WALK UP AT 8:30 AM DAILY
+*********************************************************************************************
+*********************************************************************************************
 	  
-JANUARY:- 11,	12,	13,	14,	15,	16,	17,	18,	19,	20,	21....
+INTERVIEW WILL START FROM 09-FEB-2019
+
+JANUANRY : 30,	31,	
+FEBRUARY : 1,	2,	3,	4,	5,	6,	7,	8
 		
 =========================Before Interview===========================
 --------------------------------------------------------------------
 
-1.	Docker Basic		---- repeat 		Status: DONE, need to repeat again [video tutorial edureka]
+1.	Docker Basic		---- repeat 		Status: DONE, repeat again [video tutorial edureka]
 
-2.	JUnit				---- repeat 		Status: DONE, need to repeat again [tutorial points]
+2.	JUnit				---- repeat 		Status: DONE, repeat again [tutorial points]
 
-3.	MicroService Basic Architecture			Status: DONE, need to repeat again  [video tutorial edureka]
+3.	MicroService Basic Architecture			Status: DONE, epeat again  [video tutorial edureka]
 
-4.	Alige				---- repeat  		Status: DONE, need to repeat again	[tutorial points]
+4.	Alige				---- repeat  		Status: DONE, repeat again	[tutorial points]
 
-5.	Git 				---- repeat 		Status: DONE, need to repeat again  [video tutorial edureka]
+5.	Git 				---- repeat 		Status: DONE, repeat again  [video tutorial edureka]
 
-7.	Memory Management	---- repeat 		Status: DONE, need to repeat again	 [video tutorial ]
+7.	Memory Management	---- repeat 		Status: DONE, repeat again	 [video tutorial ]
 
-24. JVM Architecture 	---- repeat 		Status: DONE, need to repeat again	 [video tutorial ]
+24. JVM Architecture 	---- repeat 		Status: DONE, repeat again	 [video tutorial ]
 		
-9.	Spring framework:- 		----- repeat		Status: DONE, need to repeat again	 [video tutorial ]
+9.	Spring framework:- 	----- repeat		Status: DONE, repeat again	 [video tutorial ]
+
+10.	Spring Boot:-		----- repeat		Status: DONE, repeat again	 [video tutorial ]		
+
+12.	Design Principle 	----- repeat		Status: DONE, repeat again   [my PPT file]
+
+13.	Design Patterns		----- repeat		Status: DONE, repeat again also read new one  [my PPT file, tutorial points]
 
 Basic idia:- 
 ------------
@@ -37,9 +44,9 @@ Basic idia:-
 	
 --------------------------------------------------------------------REPEAT TOPIC-------------------------------start---
 
-18.	Core Java:- 5, 7, 8, 9 ---			repeat [my notes and tutorial points]			------>>> 		12 JAN	
+18.	Core Java:- 5, 7, 8, 9 ---			repeat [my notes and tutorial points]			------>>> 		
 	
-19.	Java 8 newly added features - 		repeat											------>>> 		12 JAN		
+19.	Java 8 newly added features - 		repeat											------>>> 				
 		Lamda,				----->>   [java brain video]  --- Status: DONE, need to repeat again
 		Functional Programing ----->> [java brain video]  --- Status: DONE, need to repeat again
 		Stream Api ---->>             [some imp urls] 	  --- Status: DONE, need to repeat again
@@ -47,17 +54,9 @@ Basic idia:-
 		Concurreny Collection ---->>  [some imp urls]
 		Collection API
 		MultiThreading
-		Basic Concepts (Exceptions, io, OOPS, Overloading, Overriding, Serializations, Generics )		
-		
+		Basic Concepts (Exceptions, io, OOPS, Overloading, Overriding, Serializations, Generics )	
 
-
-10.	Spring Boot:-					  repeat 	[java brain video]						------>>> 		11 JAN			
-
-11.	Restful WebService				  repeat	[tutorial points and java brain video] 	------>>> 		
-
-12.	Design Principle 				  repeat	[my notes ]								------>>> 		13 JAN
-
-13.	Design Patterns					  repeat and also new one [tutorial points] 		------>>> 		13 JAN
+11.	Restful WebService				  repeat	[tutorial points and java brain video] 	------>>> 	
 
 --------------------------------------------------------------------REPEAT TOPIC-------------------------------end----
 
@@ -78,7 +77,7 @@ Basic idia:-
 
 23. LDAP 				---- NEW		 ====>> [SOME URLs]
 
-16.	Mongo DabaBase		---- NEW	 		====>> [SOME URLs]
+16.	Mongo DabaBase		---- NEW	 	 ====>> [SOME URLs]
 
 =========================After Interview start===========================
 

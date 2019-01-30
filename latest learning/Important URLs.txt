@@ -5,6 +5,15 @@
 https://www.journaldev.com/2389/java-8-features-with-examples
 
 ---------------------------------------------
+15.	Java feature 7
+https://javarevisited.blogspot.com/2014/04/10-jdk-7-features-to-revisit-before-you.html
+
+---------------------------------------------------
+68.	java feature 5 
+https://www.javatpoint.com/New-features-in-java
+
+
+---------------------------------------------
 2.	selenium:- 
 ---------------------------------------------
 http://toolsqa.com/selenium-webdriver/webelement-commands/
@@ -89,9 +98,6 @@ https://www.journaldev.com/2856/java-jvm-memory-model-memory-management-in-java
 https://searchsoftwarequality.techtarget.com/definition/twelve-factor-app
 https://en.wikipedia.org/wiki/Twelve-Factor_App_methodology
 ---------------------------------------------
-
-15.	Java feature 7
-https://javarevisited.blogspot.com/2014/04/10-jdk-7-features-to-revisit-before-you.html
 
 ---------------------------------------------
 
@@ -401,11 +407,8 @@ https://spring.io/understanding/HATEOAS
 67. Applying HATEOAS on springbootapplcation,
 
 https://dzone.com/articles/applying-hateoas-to-a-rest-api-with-spring-boot
----------------------------------------------------
-68.	java feature 5 
-https://www.javatpoint.com/New-features-in-java
 
----------------------------------------------------
+--------------------------------------------------
 69. Command to terminate port already runing
 
 https://stackoverflow.com/questions/39632667/how-to-kill-the-process-currently-using-a-port-on-localhost-in-windows

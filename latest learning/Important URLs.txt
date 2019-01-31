@@ -443,6 +443,7 @@ https://www.journaldev.com/12552/public-static-void-main-string-args-java-main-m
 https://www.keycdn.com/support/put-vs-post
 https://stackoverflow.com/questions/107390/whats-the-difference-between-a-post-and-a-put-http-request
 
+--------------------------------------------------
 
 75. Java POJO, Spring Bean, Modle Class:
 
@@ -458,4 +459,12 @@ https://docs.spring.io/spring-javaconfig/docs/1.0.0.M4/reference/html/ch02s02.ht
 
 https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/context/annotation/Bean.html
 
+--------------------------------------------------
+
+76 . Gradle
+
+https://www.journaldev.com/7971/gradle
+https://www.journaldev.com/8118/gradle-eclipse-plugin-tutorial
+https://www.journaldev.com/8179/gradle-tutorial
+--------------------------------------------------
 		

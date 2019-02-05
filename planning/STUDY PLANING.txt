@@ -1,8 +1,10 @@
 *********************************************************************************************
 *********************************************************************************************
+					STRICTLY TO BE FOLLOWED :- SLEEPING TIME 12:30 PM TO 8:30 AM 
+											:- WALK UP AT 8:30 AM DAILY
 					STUDY TIME @ HOME 10:30 PM TO 12:30 PM DAILY
 	
-					WALK UP AT 8:30 AM DAILY
+					
 *********************************************************************************************
 *********************************************************************************************
 	  
@@ -42,6 +44,7 @@ Basic idia:-
 
 	20. Spring Security		---- repeat 		Status: DONE, need to repeat again	  [video tutorial ]
 	
+	26. Gradle Basic		---- repeat 		Status: DONE, need to repeat again	[some urls]
 --------------------------------------------------------------------REPEAT TOPIC-------------------------------start---
 
 18.	Core Java:- 5, 7, 8, 9 ---			repeat [my notes and tutorial points]			------>>> 		

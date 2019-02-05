@@ -467,4 +467,7 @@ https://www.journaldev.com/7971/gradle
 https://www.journaldev.com/8118/gradle-eclipse-plugin-tutorial
 https://www.journaldev.com/8179/gradle-tutorial
 --------------------------------------------------
-		
+77. Difference between abstract class and interface in java
+
+http://www.java67.com/2017/08/difference-between-abstract-class-and-interface-in-java8.html	
+https://www.journaldev.com/2752/java-8-interface-changes-static-method-default-method

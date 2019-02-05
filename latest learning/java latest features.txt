@@ -1,0 +1,14 @@
+java 8 added new features
+----------------------------------
+1)	forEach() added in Iterable interface
+2)	defualt and astatic method in interface
+4)	java stream api for bulk operation on collection
+5)	functional interface  and lambda expression
+6)	java improved concurrecy api
+7)	improved java io api
+8)	Miscellaneous Core API improvements
+9)	java time api
+
+
+
+

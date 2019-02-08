@@ -8,8 +8,20 @@ java 8 added new features
 7)	improved java io api
 8)	Miscellaneous Core API improvements
 9)	java time api
-----------------------------------
+********************************************
+
 
 java 7 added new features
 ----------------------------------
+1) Type inference
+2) String in Switch
+3) Automatic Resource Management
+		===>>> try-with-resource feature, resource such as files, stream, database connection, docket handles implements AutoClosable and Closable interface, close() method 
+4) Fork Join Framework
+5) Underscore in Numeric literals
+6) Catching Multiple Exception Type in Single Catch Block
+7) Binary Literals with prefix "0b"
+8) Java NIO 2.0
+9) G1 Garbage Collector
+10) More Precise Rethrowing of Exception
 

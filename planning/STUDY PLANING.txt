@@ -16,63 +16,65 @@ FEBRUARY : 1,	2,	3,	4,	5,	6,	7,	8
 =========================Before Interview===========================
 --------------------------------------------------------------------
 
-1.	Docker Basic		---- repeat 		Status: DONE, repeat again [video tutorial edureka]
+1.	Docker Basic		-  		Status: DONE, repeat again [video tutorial edureka]
 
-2.	JUnit				---- repeat 		Status: DONE, repeat again [tutorial points]
+2.	JUnit				- 		Status: DONE, repeat again [tutorial points]
 
 3.	MicroService Basic Architecture			Status: DONE, epeat again  [video tutorial edureka]
 
-4.	Alige				---- repeat  		Status: DONE, repeat again	[tutorial points]
+4.	Alige				-   		Status: DONE, repeat again	[tutorial points]
 
-5.	Git 				---- repeat 		Status: DONE, repeat again  [video tutorial edureka]
+5.	Git 				- 		Status: DONE, repeat again  [video tutorial edureka]
 
-7.	Memory Management	---- repeat 		Status: DONE, repeat again	 [video tutorial ]
+7.	Memory Management	-  		Status: DONE, repeat again	 [video tutorial ]
 
-24. JVM Architecture 	---- repeat 		Status: DONE, repeat again	 [video tutorial ]
+24. JVM Architecture 	-  		Status: DONE, repeat again	 [video tutorial ]
 		
-9.	Spring framework:- 	----- repeat		Status: DONE, repeat again	 [video tutorial ]
+9.	Spring framework:- 	- 		Status: DONE, repeat again	 [video tutorial ]
 
-10.	Spring Boot:-		----- repeat		Status: DONE, repeat again	 [video tutorial ]		
+10.	Spring Boot:-		- 		Status: DONE, repeat again	 [video tutorial ]		
 
-12.	Design Principle 	----- repeat		Status: DONE, repeat again   [my PPT file]
+12.	Design Principle 	- 		Status: DONE, repeat again   [my PPT file]
 
-13.	Design Patterns		----- repeat		Status: DONE, repeat again also read new one  [my PPT file, tutorial points]
+13.	Design Patterns		- 		Status: DONE, repeat again also read new one  [my PPT file, tutorial points]
+
+15.	Maven				- 		Status: DONE, repeat again	 [video tutorial java brain]
+
+8.	Spring Data Rest	-		Status: DONE, repeat again (https://docs.spring.io/spring-data/rest/docs/current/reference/html/)
 
 Basic idia:- 
 ------------
-	6.	Cloud Computing		---- repeat 		Status: DONE, need to repeat again  [Important URLs.txt use point no 5 links]
+	6.	Cloud Computing		  		Status: DONE, need to repeat again  [Important URLs.txt use point no 5 links]
 
-	20. Spring Security		---- repeat 		Status: DONE, need to repeat again	  [video tutorial ]
+	20. Spring Security		  		Status: DONE, need to repeat again	  [video tutorial ]
 	
-	26. Gradle Basic		---- repeat 		Status: DONE, need to repeat again	[some urls]
+	26. Gradle Basic		  		Status: DONE, need to repeat again	[some urls]
 --------------------------------------------------------------------REPEAT TOPIC-------------------------------start---
 
-18.	Core Java:- 5, 7, 8, 9 ---			repeat [my notes and tutorial points]			------>>> 		
+18.	Core Java:- 5, 7, 8, ---		Status: DONE, need to repeat again [urls from 'importantURls' file]			
 	
 19.	Java 8 newly added features - 		repeat											------>>> 				
 		Lamda,				----->>   [java brain video]  --- Status: DONE, need to repeat again
 		Functional Programing ----->> [java brain video]  --- Status: DONE, need to repeat again
 		Stream Api ---->>             [some imp urls] 	  --- Status: DONE, need to repeat again
 		Time and Date Api ---->>      [some imp urls] 	  --- Status: DONE, need to repeat again	
+		
 		Concurreny Collection ---->>  [some imp urls]
 		Collection API
 		MultiThreading
 		Basic Concepts (Exceptions, io, OOPS, Overloading, Overriding, Serializations, Generics )	
 
-11.	Restful WebService				  repeat	[tutorial points and java brain video] 	------>>> 	
+11.	Restful WebService				  repeat	[tutorial points and java brain video] 	
 
 --------------------------------------------------------------------REPEAT TOPIC-------------------------------end----
 
-8.	Spring Data Rest:-	---- for DOCS --------------- 										
-	https://docs.spring.io/spring-data/rest/docs/current/reference/html/
 
-25. Spring MVC 							 repeat		====>>
 
-14.	Oracle DataBase						 repeat		====>> [SOME URLs]
+25. Spring MVC 							 repeat		
+
+14.	Oracle DataBase						 repeat		
 
 17.	Hibernante 							repeat [tutorial pounts and video]
-
-15.	Maven								 repeat [java brain video]
 
 21.	Jenkins				---- NEW	 	 ====>> [SOME URLs]
 
@@ -109,6 +111,6 @@ UML diagram
 technical design document
 Functional Document
 Perfromance Testing
-
+=================================================================================
 
 

@@ -51,24 +51,25 @@ Basic idia:-
 	26. Gradle Basic		  		Status: DONE, need to repeat again	[some urls]
 --------------------------------------------------------------------REPEAT TOPIC-------------------------------start---
 
-18.	Core Java:- 5, 7, 8, ---		Status: DONE, need to repeat again [urls from 'importantURls' file]			
+18.	Core Java:-
 	
-19.	Java 8 newly added features - 		repeat											------>>> 				
-		Lamda,				----->>   [java brain video]  --- Status: DONE, need to repeat again
-		Functional Programing ----->> [java brain video]  --- Status: DONE, need to repeat again
-		Stream Api ---->>             [some imp urls] 	  --- Status: DONE, need to repeat again
-		Time and Date Api ---->>      [some imp urls] 	  --- Status: DONE, need to repeat again	
+		Java 8 newly added features  5, 7, 8 - 	Status: DONE, need to repeat again [urls from 'importantURls' file]		 		
+			Lamda,							[java brain video]  	--- Status: DONE, need to repeat again
+			Functional Programing 			[java brain video]  	--- Status: DONE, need to repeat again
+			Stream Api						[some imp urls, video] 	  	--- Status: DONE, need to repeat again
+			Time and Date Api				[some imp urls] 	  	--- Status: DONE, need to repeat again	
 		
-		Concurreny Collection ---->>  [some imp urls]
-		Collection API
-		MultiThreading
-		Basic Concepts (Exceptions, io, OOPS, Overloading, Overriding, Serializations, Generics )	
+		Concurreny Collection 				[some imp urls]
+		
+		Collection API				 -->> 	my notes 
+		
+		MultiThreading						[some urls]
+		
+		Basic Concepts (Exceptions, io, OOPS, Overloading, Overriding, Serializations, Generics ) -->> my notes 
 
 11.	Restful WebService				  repeat	[tutorial points and java brain video] 	
 
 --------------------------------------------------------------------REPEAT TOPIC-------------------------------end----
-
-
 
 25. Spring MVC 							 repeat		
 

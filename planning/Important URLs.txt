@@ -471,3 +471,10 @@ https://www.journaldev.com/8179/gradle-tutorial
 
 http://www.java67.com/2017/08/difference-between-abstract-class-and-interface-in-java8.html	
 https://www.journaldev.com/2752/java-8-interface-changes-static-method-default-method
+
+--------------------------------------------------
+78. fail fast and fail safe
+https://www.geeksforgeeks.org/fail-fast-fail-safe-iterators-java/
+
+--------------------------------------------------
+

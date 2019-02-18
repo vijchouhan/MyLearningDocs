@@ -5,42 +5,78 @@
 https://www.baeldung.com/java-collections-interview-questions
 https://javarevisited.blogspot.com/2011/11/collection-interview-questions-answers.html
 https://www.journaldev.com/1330/java-collections-interview-questions-and-answers
+https://dzone.com/articles/an-introduction-to-the-java-collections-framework
 
 ******
 
 2. Web Service interview question
 --------------------------------------
 https://www.journaldev.com/9193/web-services-interview-questions-soap-restful
-https://www.journaldev.com/10198/restful-web-services-interview-questions
+https://www.tutorialspoint.com/restful/restful_interview_questions.htm
+https://www.softwaretestinghelp.com/restful-web-services-interview-question/
+******
+
+3. Oracle SQL
+--------------------------------------
+https://www.journaldev.com/17773/sql-interview-questions-answers
+
 
 ******
 
-2. 
+4. Spring REst interview question 
+--------------------------------------
+https://javarevisited.blogspot.com/2018/02/top-20-spring-rest-interview-questions-answers-java.html#axzz5fDswcm77
+
+******
+
+5. Spring framework interview question
+--------------------------------------
+https://www.baeldung.com/spring-interview-questions
+******
+
+6. Spring Boot interview question
+--------------------------------------
+https://www.baeldung.com/spring-boot-interview-questions
+******
+
+7. Core Java Interview Quesion 
+--------------------------------------
+https://www.baeldung.com/java-classes-initialization-questions
+https://www.baeldung.com/java-concurrency-interview-questions
+https://www.baeldung.com/java-8-interview-questions
+https://www.baeldung.com/java-memory-management-interview-questions
+https://www.baeldung.com/java-flow-control-interview-questions
+https://www.baeldung.com/java-exceptions-interview-questions
+https://www.baeldung.com/java-annotations-interview-questions
+
+******
+
+7. 
 --------------------------------------
 
 ******
 
-2. 
+8. 
 --------------------------------------
 
 ******
 
-2. 
+9. 
 --------------------------------------
 
 ******
 
-2. 
+10. 
 --------------------------------------
 
 ******
 
-2. 
+11. 
 --------------------------------------
 
 ******
 
-2. 
+12. 
 --------------------------------------
 
 ******

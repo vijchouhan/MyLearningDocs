@@ -51,8 +51,9 @@ https://www.baeldung.com/java-annotations-interview-questions
 
 ******
 
-7. 
+7. Different between Spring and Spring Boot
 --------------------------------------
+https://www.baeldung.com/spring-vs-spring-boot
 
 ******
 

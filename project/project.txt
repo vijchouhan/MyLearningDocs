@@ -82,6 +82,24 @@ This is a micro service architecture based application where development started
 7. Developed web service for operational manager Dashboard for Lease Extraction application, where filter also implemented for today, weekly, monthly and user. For this Stream and Date Time used in Spring boot application. 
 
 
+-------------------------------------------------------------
+Document Classifiers: -
+This project is developed to automate the document classification solution. Document classifier process the uploaded dockets from sftp sources. Different types of documents will be recognized, bookmarked and will be presented to the user to review the classification. After reviewing/updating the classification analyst/user can submit the changes to different servers for multiple automated process like CFP, LEASE, NDA etc.
+
+
+
+Organization:               Wipro Technologies.
+Project Duration:        September 2018 to till date.
+Client:                           AT&T
+Technologies:              Core Java, Spring Boot, Spring Data Mongo, RabbitMQ, 
+                                       AWS Cloud, Docker, Swagger, Microservices, MongoDB
+
+Responsibilities:  
+•	Worked as tech lead to handle a team.
+•	Worked with architect as associate architect and designed the application using microservice architecture.
+•	Developed microservices as per business requirement.
+•	Implemented Swagger, RabbitMQ, Spring Data Mongo.
+•	CICD pipeline created using Jenkins and Docker for application.
 
 
 

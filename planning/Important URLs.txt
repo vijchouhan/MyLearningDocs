@@ -252,6 +252,7 @@ annotations:-	https://dzone.com/tutorials/java/hibernate/hibernate-example/hiber
 42.	swagger:- Documenting a REST API with Swagger and Spring MVC
 
 https://blog.zenika.com/2013/07/11/documenting-a-rest-api-with-swagger-and-spring-mvc/
+https://stackoverflow.com/questions/44596251/swagger-ui-how-do-you-hide-rest-methods-not-implemented
 
 -----------------------------------------------------------
 43.	Spring boot, rest api, exception handling
@@ -480,4 +481,7 @@ https://www.geeksforgeeks.org/fail-fast-fail-safe-iterators-java/
 79. Filter in spring boot application
 
 https://www.baeldung.com/spring-boot-add-filter
+https://www.tutorialspoint.com/spring_boot/spring_boot_servlet_filter.htm
+https://www.javatpoint.com/servlet-filter
+
 --------------------------------------------------

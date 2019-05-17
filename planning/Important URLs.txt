@@ -485,3 +485,7 @@ https://www.tutorialspoint.com/spring_boot/spring_boot_servlet_filter.htm
 https://www.javatpoint.com/servlet-filter
 
 --------------------------------------------------
+80. Problem solving with algorithms and data structures
+
+https://interactivepython.org/courselib/static/pythonds/BasicDS/WhatIsaDeque.html
+

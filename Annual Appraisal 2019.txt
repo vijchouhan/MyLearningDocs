@@ -1,0 +1,43 @@
+CHC Application:- 
+
+1. Created baseline project for all modules by Implementing technologies such as Spring Boot, Logger, Swagger, Spring Data Rest, Restful WebService, RabbitMq, MongoDB, Micro Services and guided same to the  team. 
+2. Created Database model documents for various modules such as  (a) Admin, (b) Orchestrator, (c) User Management.
+3  Developed Orchestrator for CHC application, which contains below services
+    a) OrchestratorScheduler,
+    b) OrchestratorSchedulerConsumer,
+4. Development Analyst and QC Dashboard Service for CHC Application.
+5. Provided support while integrating with UI.
+ 
+
+Lease Extraction Application:- 
+
+1. I have developed Operational Manager Dashboard service (om-dashboard-controller) for below mentioned screens. 
+a) Book of Work, b)Completion Status, c) Number of Contracts Processed, d) Turnaround Time, e) Analyst Errors, f) SLA Performance
+2. I have implemented the filter such as Time scale (i.e. Today, Weekly and Monthly) and user id (i.e. analyst or qc). 
+3. Also developed service to get all QC and Analyst user details. 
+4. Provided support while integrating with UI.
+
+
+Doc Classifier:- 
+
+1. Developed docket queue service which creates the queue in RabbitMQ server and pass the required information with respect to each docket file.         
+2. Developed docket queue consumer service that consumes the required information from the queue and call the cognitive services with respect to each docket file   
+   and updates the database accordingly based on classification response returned from classifier.  
+3. Developed the docket review service for review screen, which updates the docket file based on the classification type.  
+4. Enhanced the SFTP service to support folder level, that download and upload docket file from root along with folder under root.
+5. Involved in security clearance related changes in all service related to doc-classifier also closed various issue found during this.
+6. Provided support while integrating with UI. 
+ 
+
+Doc Classifier Alight:-
+
+1. Lead the team for development for doc-classification 
+2. Distributed task among team to develop service,
+3. Given estimation for development for all service with their break up task.
+4. Provide guidance to the team on various issue,   
+5. Developed below services
+    a) DCProcessFTPFiles, 
+    b) DCProcessConvertedFiles,
+    c) DCProcessHOCRFiles,
+6. Created docker files for all service and shared the details required for CI/CD.
+7. Done integration testing for all micro service developed for doc-classifier, alog with Cognitive service, App Configuration and Data Ops.
